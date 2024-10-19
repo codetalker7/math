@@ -1,0 +1,22 @@
+--- 
+title: "Math Encyclopedia"
+author: "Siddhant Chaudhary"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+header-includes:
+    - \usepackage{bm}
+bibliography: [book.bib]
+description: |
+    A book containing definitions and important lemmas, propositions and
+    theorems without proofs.
+link-citations: true 
+github-repo: codetalker7/math
+---
+
+# Overview 
+
+The aim of this book is to have the most important *definitions*, *lemmas*, *propositions* and
+*theorems* together in the same place, but *without* including proofs. The goal is to
+have these things ready as a reference; I did this since I don't bother with proofs as I 
+forget them sooner or later.

@@ -1,0 +1,120 @@
+# Vector Calculus
+
+Much of this chapter is inspired from [@hubbardcalculus]. Throughout this chapter, we'll be using 
+the word *manifold* to refer to *smooth manifolds embedded in $\mathbb{R}^n$*.
+
+## The Inverse and Implicit function theorems
+
+This section just contains the statements of these two theorems without proof.
+For proofs, I'll refer the reader to Lectures 9 through 11 of these amazing notes:
+https://www.cmi.ac.in/~pramath/ANA2/Lectures/.
+
+::: {.theorem #inverse-function-theorem name="Inverse Function Theorem"}
+
+Let $U$ be an open subset of $\mathbb{R}^n$, $\boldsymbol{f}: U\to\mathbb{R}^n$ be
+a $\mathscr{C}^1$ map, $\boldsymbol{a}\in U$ be a point such that $\boldsymbol{f}'(\boldsymbol{a})$ is
+invertible, and let $\boldsymbol{b} = \boldsymbol{a}$. Then there exists an open neighborhood $V$ of 
+$\boldsymbol{a}$ in $U$, an open neighborhood $W$ of $\boldsymbol{b}$ in $\mathbb{R}^n$ such that
+$W = \boldsymbol{f}(V)$, $\boldsymbol{f}|_{V}:V\to W$ is one-to-one, and the inverse function
+$\boldsymbol{\varphi}^{-1}:W\to V$ of $\boldsymbol{f}|_{V}$ is also $\mathscr{C}^1$.
+
+:::
+
+::: {.theorem #implicit-function-theorem name="Implicit Function Theorem"}
+
+Let $d, m$ be non-negative integers, $n = d + m$, and write all points of
+$\mathbb{R}^n = \mathbb{R}^d\times \mathbb{R}^m$ in the form $(\boldsymbol{x}, \boldsymbol{y})$ with 
+$\boldsymbol{x}\in\mathbb{R}^d$ and $\boldsymbol{y}\in\mathbb{R}^m$. Let $U$ be an open subset of 
+$\mathbb{R}^n$, $\boldsymbol{p} = (\boldsymbol{a}, \boldsymbol{b})$ a point in $U$, and 
+$\boldsymbol{\varphi}:U\to\mathbb{R}^m$ a $\mathscr{C}^1$ map such that the $m\times m$ matrix
+
+\begin{equation}
+\begin{split}
+    \frac{\partial \boldsymbol{\varphi}(\boldsymbol{p})}{\partial \boldsymbol{y}} := 
+    \begin{bmatrix}
+        D_{d + 1}\boldsymbol{\varphi}(\boldsymbol{p}) & D_{d + 2}\boldsymbol{\varphi}(\boldsymbol{p}) & \cdots &  D_{n}\boldsymbol{\varphi}(\boldsymbol{p})
+    \end{bmatrix} 
+\end{split}
+\end{equation}
+
+is invertible. Let $\boldsymbol{c} = \boldsymbol{\varphi}(\boldsymbol{p})$. Then there exists an open 
+neighborhood $W$ of $\boldsymbol{a}$ in $\mathbb{R}^d$, and a unique $\mathscr{C}^1$ map
+$\boldsymbol{f}:W\to\mathbb{R}^m$ with the following properties:
+
+1. $\boldsymbol{f}(\boldsymbol{a}) = \boldsymbol{b}$. 
+2. $(\boldsymbol{x}, \boldsymbol{f}(\boldsymbol{x}))\in U$ for all $\boldsymbol{x}\in W$.
+3. $\boldsymbol{f}$ is an implicit solution of the equation $\boldsymbol{\varphi}(\boldsymbol{x}, \boldsymbol{y}) = \boldsymbol{c}$, i.e 
+
+\begin{equation}
+\begin{split}
+    \boldsymbol{\varphi}(\boldsymbol{x}, \boldsymbol{f}(\boldsymbol{x})) &= \boldsymbol{c}\quad\forall \boldsymbol{x}\in W 
+
+\end{split}
+\end{equation}
+
+:::
+
+
+## Smooth manifolds in $\mathbb{R}^n$
+
+The goal of this section is to define smooth manifolds in $\mathbb{R}^n$,
+*without* resorting to tools from general topological manifolds. This will 
+be helpful to computer scientists who don't want to deal with abstract notions
+pertaining to manifold theory.
+
+::: {.definition #manifold name="Smooth Manifolds"}
+
+A subset $M\subset \mathbb{R}^n$ is a *smooth $k$-dimensional manifold* if locally
+it is the graph of a $\mathscr{C}^1$ mapping $\boldsymbol{f}$ expressing $n - k$ 
+variables as functions of the other $k$ variables. In this book, we don't 
+deal with *topological* manifolds, but only subsets of $\mathbb{R}^n$ for any $n$.
+
+:::
+
+### Identifying manifolds, and manifolds under smooth transformations.
+
+::: {.theorem #manifolds-as-eqns name="Using the implicit function theorem to identify manifolds"}
+
+Here's how to show that a set represented as a locus is a smooth manifold:
+
+1. Let $U\subset \mathbb{R}^n$ be open, $\boldsymbol{F}:U\to\mathbb{R}^{n - k}$ be a $\mathscr{C}^1$ mapping. Let $M$ be a subset of $\mathbb{R}^n$ such that 
+    $$
+        \begin{aligned}
+           M\cap U  &= \left\{\boldsymbol{z}\in U | \boldsymbol{F}(\boldsymbol{z}) = \boldsymbol{0}\right\}
+        \end{aligned}
+    $$
+    If $D\boldsymbol{F}(\boldsymbol{z})$ is onto for every $\boldsymbol{z}\in M\cap U$, then $M\cap U$ is a smooth
+    $k$-dimensional manifold embedded in $\mathbb{R}^n$. If every $z\in M$ is in such
+    a $U$, then $M$ is a $k$-dimensional manifold. 
+
+2. Conversely, if $M$ is a smooth $k$-dimensional manifold embedded in $\mathbb{R}^n$,
+    then every point $\boldsymbol{z}\in M$ has a neighborhood $U\subset\mathbb{R}^n$ such that
+    there exists a $\mathscr{C}^1$ mapping $\boldsymbol{F}:U\to\mathbb{R}^{n - k}$ with 
+    $D\boldsymbol{F}(\boldsymbol{z})$ onto and $M\cap U = \left\{\boldsymbol{y}|\boldsymbol{F}(\boldsymbol{y}) = 0\right\}$. 
+
+:::
+
+The above theorem makes it easy to identify/prove that a certain object is a smooth manifold, without
+knowing the overall geometry of the object. The next theorem shows that the inverse image of a manifold
+under a sufficiently nice transformation still results in a smooth manifold.
+
+::: {.theorem #inverse-image-of-manifold}
+
+Let $M\subset \mathbb{R}^m$ be a $k$-dimensional manifold, $U$ an open 
+subset of $\mathbb{R}^n$, and $\boldsymbol{f}:U\to \mathbb{R}^m$ a $\mathscr{C}^1$ 
+mapping whose derivative $D\boldsymbol{f}(\boldsymbol{x})$ is surjective at every 
+point $\boldsymbol{x}\in \boldsymbol{f}^{-1}(M)$. Then the inverse image 
+$\boldsymbol{f}^{-1}(M)$ is a submanifold of $\mathbb{R}^n$ of 
+dimension $k + n - m$.
+
+:::
+
+::: {.remark name="Manifolds under rotations and translations are still manifolds"}
+
+As a corollary of Theorem \@ref(thm:inverse-image-of-manifold), it's easy to show that for a 
+mapping of the form $\boldsymbol{x}\mapsto A\boldsymbol{x} + \boldsymbol{c}$ with $A$ invertible, 
+the image of a manifold is still a manifold.
+
+:::
+
+

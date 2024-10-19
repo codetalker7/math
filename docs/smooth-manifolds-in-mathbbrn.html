@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia</title>
+  <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="github-repo" content="codetalker7/math" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  
+  <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  
+
+<meta name="author" content="Siddhant Chaudhary" />
+
+
+<meta name="date" content="2024-10-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="the-inverse-and-implicit-function-theorems.html"/>
+
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Math Encyclopedia</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="modern-probability.html"><a href="modern-probability.html"><i class="fa fa-check"></i><b>2</b> Modern Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-important-collections-of-sets.html"><a href="some-important-collections-of-sets.html"><i class="fa fa-check"></i><b>2.1</b> Some important collections of sets</a></li>
+<li class="chapter" data-level="2.2" data-path="set-functions.html"><a href="set-functions.html"><i class="fa fa-check"></i><b>2.2</b> Set Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>3</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-inverse-and-implicit-function-theorems.html"><a href="the-inverse-and-implicit-function-theorems.html"><i class="fa fa-check"></i><b>3.1</b> The Inverse and Implicit function theorems</a></li>
+<li class="chapter" data-level="3.2" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html"><i class="fa fa-check"></i><b>3.2</b> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations."><i class="fa fa-check"></i><b>3.2.1</b> Identifying manifolds, and manifolds under smooth transformations.</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/codetalker7/math" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Math Encyclopedia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="smooth-manifolds-in-mathbbrn" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span><a href="smooth-manifolds-in-mathbbrn.html#smooth-manifolds-in-mathbbrn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The goal of this section is to define smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span>,
+<em>without</em> resorting to tools from general topological manifolds. This will
+be helpful to computer scientists who don’t want to deal with abstract notions
+pertaining to manifold theory.</p>
+<div class="definition">
+<p><span id="def:manifold" class="definition"><strong>Definition 3.1  (Smooth Manifolds) </strong></span>A subset <span class="math inline">\(M\subset \mathbb{R}^n\)</span> is a <em>smooth <span class="math inline">\(k\)</span>-dimensional manifold</em> if locally
+it is the graph of a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{f}\)</span> expressing <span class="math inline">\(n - k\)</span>
+variables as functions of the other <span class="math inline">\(k\)</span> variables. In this book, we don’t
+deal with <em>topological</em> manifolds, but only subsets of <span class="math inline">\(\mathbb{R}^n\)</span> for any <span class="math inline">\(n\)</span>.</p>
+</div>
+<div id="identifying-manifolds-and-manifolds-under-smooth-transformations." class="section level3 hasAnchor" number="3.2.1">
+<h3><span class="header-section-number">3.2.1</span> Identifying manifolds, and manifolds under smooth transformations.<a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:manifolds-as-eqns" class="theorem"><strong>Theorem 3.3  (Using the implicit function theorem to identify manifolds) </strong></span>Here’s how to show that a set represented as a locus is a smooth manifold:</p>
+<ol style="list-style-type: decimal">
+<li><p>Let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be open, <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> mapping. Let <span class="math inline">\(M\)</span> be a subset of <span class="math inline">\(\mathbb{R}^n\)</span> such that
+<span class="math display">\[
+     \begin{aligned}
+        M\cap U  &amp;= \left\{\boldsymbol{z}\in U | \boldsymbol{F}(\boldsymbol{z}) = \boldsymbol{0}\right\}
+     \end{aligned}
+\]</span>
+If <span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> is onto for every <span class="math inline">\(\boldsymbol{z}\in M\cap U\)</span>, then <span class="math inline">\(M\cap U\)</span> is a smooth
+<span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>. If every <span class="math inline">\(z\in M\)</span> is in such
+a <span class="math inline">\(U\)</span>, then <span class="math inline">\(M\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold.</p></li>
+<li><p>Conversely, if <span class="math inline">\(M\)</span> is a smooth <span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>,
+then every point <span class="math inline">\(\boldsymbol{z}\in M\)</span> has a neighborhood <span class="math inline">\(U\subset\mathbb{R}^n\)</span> such that
+there exists a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> with
+<span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> onto and <span class="math inline">\(M\cap U = \left\{\boldsymbol{y}|\boldsymbol{F}(\boldsymbol{y}) = 0\right\}\)</span>.</p></li>
+</ol>
+</div>
+<p>The above theorem makes it easy to identify/prove that a certain object is a smooth manifold, without
+knowing the overall geometry of the object. The next theorem shows that the inverse image of a manifold
+under a sufficiently nice transformation still results in a smooth manifold.</p>
+<div class="theorem">
+<p><span id="thm:inverse-image-of-manifold" class="theorem"><strong>Theorem 3.4  </strong></span>Let <span class="math inline">\(M\subset \mathbb{R}^m\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> an open
+subset of <span class="math inline">\(\mathbb{R}^n\)</span>, and <span class="math inline">\(\boldsymbol{f}:U\to \mathbb{R}^m\)</span> a <span class="math inline">\(\mathscr{C}^1\)</span>
+mapping whose derivative <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x})\)</span> is surjective at every
+point <span class="math inline">\(\boldsymbol{x}\in \boldsymbol{f}^{-1}(M)\)</span>. Then the inverse image
+<span class="math inline">\(\boldsymbol{f}^{-1}(M)\)</span> is a submanifold of <span class="math inline">\(\mathbb{R}^n\)</span> of
+dimension <span class="math inline">\(k + n - m\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-4" class="remark"><em>Remark</em> (Manifolds under rotations and translations are still manifolds). </span>As a corollary of Theorem <a href="smooth-manifolds-in-mathbbrn.html#thm:inverse-image-of-manifold">3.4</a>, it’s easy to show that for a
+mapping of the form <span class="math inline">\(\boldsymbol{x}\mapsto A\boldsymbol{x} + \boldsymbol{c}\)</span> with <span class="math inline">\(A\)</span> invertible,
+the image of a manifold is still a manifold.</p>
+</div>
+
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div class="csl-entry">
+John H. Hubbard, Barbara Burke Hubbard. 2009. <em>Vector Calculus, Linear Algebra and Differential Forms</em>. Fifth. Matrix Editions.
+</div>
+</div>
+</div>
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="the-inverse-and-implicit-function-theorems.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

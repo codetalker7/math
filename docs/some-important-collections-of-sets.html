@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Some important collections of sets | Math Encyclopedia</title>
+  <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Some important collections of sets | Math Encyclopedia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="github-repo" content="codetalker7/math" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Some important collections of sets | Math Encyclopedia" />
+  
+  <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  
+
+<meta name="author" content="Siddhant Chaudhary" />
+
+
+<meta name="date" content="2024-10-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="modern-probability.html"/>
+<link rel="next" href="set-functions.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Math Encyclopedia</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="modern-probability.html"><a href="modern-probability.html"><i class="fa fa-check"></i><b>2</b> Modern Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-important-collections-of-sets.html"><a href="some-important-collections-of-sets.html"><i class="fa fa-check"></i><b>2.1</b> Some important collections of sets</a></li>
+<li class="chapter" data-level="2.2" data-path="set-functions.html"><a href="set-functions.html"><i class="fa fa-check"></i><b>2.2</b> Set Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>3</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-inverse-and-implicit-function-theorems.html"><a href="the-inverse-and-implicit-function-theorems.html"><i class="fa fa-check"></i><b>3.1</b> The Inverse and Implicit function theorems</a></li>
+<li class="chapter" data-level="3.2" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html"><i class="fa fa-check"></i><b>3.2</b> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations."><i class="fa fa-check"></i><b>3.2.1</b> Identifying manifolds, and manifolds under smooth transformations.</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/codetalker7/math" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Math Encyclopedia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="some-important-collections-of-sets" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Some important collections of sets<a href="some-important-collections-of-sets.html#some-important-collections-of-sets" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Throughout, <span class="math inline">\(\Omega\ne \phi\)</span> is any set, and <span class="math inline">\(\mathcal{A}\subseteq 2^\Omega\)</span> is
+used to denote a collection of subsets of <span class="math inline">\(\Omega\)</span>.</p>
+<!--defining sigma algebras-->
+<div class="definition">
+<p><span id="def:sigma-algebra" class="definition"><strong>Definition 2.1  (Sigma algebras) </strong></span>A collection <span class="math inline">\(\mathcal{A}\subseteq 2^\Omega\)</span> is said to be a <em><span class="math inline">\(\sigma\)</span>-algebra</em> if it satisfies the following
+conditions:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\Omega\in\mathcal{A}\)</span>.</li>
+<li><span class="math inline">\(\mathcal{A}\)</span> is closed under complements.</li>
+<li><span class="math inline">\(\mathcal{A}\)</span> is closed under countable unions.</li>
+</ol>
+<p>Intuitively, <span class="math inline">\(\sigma\)</span>-algebras are used to define the collection
+of events of a random experiment which might be of interest to us.</p>
+</div>
+<!--generated sigma algebras-->
+<div class="theorem">
+<p><span id="thm:generated-sigma-algebra" class="theorem"><strong>Theorem 2.1  (Generated Sigma Algebras) </strong></span>Let <span class="math inline">\(\mathcal{E}\subset 2^\Omega\)</span> be any collection of sets. Then there exists a
+smallest <span class="math inline">\(\sigma\)</span>-algebra <span class="math inline">\(\sigma(\mathcal{E})\)</span> with
+<span class="math inline">\(\mathcal{E}\subset\sigma(\mathcal{E})\)</span>, particularly:</p>
+<p><span class="math display" id="eq:label">\[\begin{equation}
+\begin{split}
+    \sigma(\mathcal{E}) := \bigcap_{\mathcal{A}\subset 2^\Omega\text{ is a $\sigma$-algebra}\\ \quad\quad\mathcal{A}\supset \mathcal{E}}\mathcal{A}
+\end{split}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p><span class="math inline">\(\sigma(\mathcal{E})\)</span> is called the <span class="math inline">\(\sigma\)</span>-algebra <strong>generated</strong> by <span class="math inline">\(\mathcal{E}\)</span>.</p>
+</div>
+<!--lim sup and inf-->
+<div class="definition">
+<p><span id="def:liminf" class="definition"><strong>Definition 2.2  (liminf and limsup) </strong></span>Let <span class="math inline">\((A_n)_{n\in\mathbb{N}}\)</span> be a sequence of subsets
+of <span class="math inline">\(\Omega\)</span>. Then</p>
+<p><span class="math display" id="eq:liminf">\[\begin{equation}
+\begin{split}
+    A_* := \liminf_{n\to\infty}A_n &amp;:= \bigcup_{n = 1}^{\infty} \bigcap_{m = n}^{\infty} A_m\\
+    A^* := \limsup_{n\to\infty}A_n &amp;:= \bigcap_{n = 1}^{\infty} \bigcup_{m = n}^{\infty} A_m
+\end{split}
+\tag{2.2}
+\end{equation}\]</span></p>
+<p>Equivalently,</p>
+<p><span class="math display" id="eq:liminf-equiv">\[\begin{equation}
+\begin{split}
+    A_* := \liminf_{n\to\infty}A_n &amp;= \left\{\omega\in\Omega: \#\left\{n\in\mathbb{N}: \omega\notin A_n\right\} &lt; \infty\right\}\\
+    A^* := \limsup_{n\to\infty}A_n &amp;= \left\{\omega\in\Omega: \#\left\{n\in\mathbb{N}: \omega\notin A_n\right\} = \infty\right\}
+\end{split}
+\tag{2.3}
+\end{equation}\]</span></p>
+<p>Or, in simple words, the <em>limes inferior</em> is the event where <em>eventually all of the
+<span class="math inline">\(A_n\)</span> occur</em>, and the <em>limes superior</em> is the event when <em>infinitely many of the <span class="math inline">\(A_n\)</span>
+occur</em>.</p>
+</div>
+<div class="lemma">
+<p><span id="lem:unlabeled-div-1" class="lemma"><strong>Lemma 2.1  </strong></span>Let <span class="math inline">\(\mathcal{A}\)</span> be a <span class="math inline">\(\sigma\)</span>-algebra, and let <span class="math inline">\((A_n)_{n\in\mathbb{N}}\)</span> be a
+sequence of sets such that <span class="math inline">\(A_n\in \mathcal{A}\)</span>. Then, <span class="math inline">\(A_*\in\mathcal{A}\)</span> and
+<span class="math inline">\(A^*\in\mathcal{A}\)</span>.</p>
+</div>
+<!--generated by topologies in metric spaces-->
+<div class="definition">
+<p><span id="def:borel-sigma-algebra" class="definition"><strong>Definition 2.3  (Borel Sigma Algebra) </strong></span>Let <span class="math inline">\(d\)</span> be a metric on <span class="math inline">\(\Omega\)</span>, and let <span class="math inline">\(B_r(x)\)</span> denote an open ball in <span class="math inline">\(\Omega\)</span>
+of radius <span class="math inline">\(r\)</span> centered at <span class="math inline">\(x\)</span>. The usual class of open sets is a topology:</p>
+<p><span class="math display" id="eq:label">\[\begin{equation}
+\begin{split}
+\tau &amp;= \left\{\bigcup_{(x, r)\in F} B_r(x): F\subset \Omega\times (0, \infty)\right\}
+\end{split}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>making <span class="math inline">\((\Omega, \tau)\)</span> a topological spaec. The <span class="math inline">\(\sigma\)</span>-algebra</p>
+<p><span class="math display" id="eq:label">\[\begin{equation}
+\begin{split}
+\mathcal{B}(\Omega) := \mathcal{B}(\omega, \tau) := \sigma(\tau)
+\end{split}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>generated by open sets is called the <strong><em>Borel <span class="math inline">\(\sigma\)</span>-algebra</em></strong> on <span class="math inline">\(\Omega\)</span>. Sets
+<span class="math inline">\(A\in\mathcal{B}(\Omega, \tau)\)</span> are called <strong><em>Borel sets</em></strong> or <strong><em>Borel measurable
+sets</em></strong>.</p>
+</div>
+<!--trace/restriction of class of sets-->
+<div class="definition">
+<p><span id="def:trace" class="definition"><strong>Definition 2.4  (Trace of a class of sets) </strong></span>Let <span class="math inline">\(\mathcal{A}\subset 2^\Omega\)</span> be an arbitrary class of subsets of <span class="math inline">\(\Omega\)</span> and
+let <span class="math inline">\(A\in 2^\Omega\setminus \{\phi\}\)</span>. The class</p>
+<p><span class="math display" id="eq:label">\[\begin{equation}
+\begin{split}
+\mathcal{A}|_{A} := \left\{A\cap B: B\in\mathcal{A}\right\}\subset 2^A
+\end{split}
+\tag{2.1}
+\end{equation}\]</span></p>
+<p>is called the <strong><em>trace</em></strong> or <strong><em>restriction</em></strong> of <span class="math inline">\(\mathcal{A}\)</span> onto <span class="math inline">\(A\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-2" class="theorem"><strong>Theorem 2.2  </strong></span>Let <span class="math inline">\(A\subset \Omega\)</span> be a non-empty set and let <span class="math inline">\(\mathcal{A}\)</span> be a <span class="math inline">\(\sigma\)</span>-algebra.
+Then the trace <span class="math inline">\(\mathcal{A}|_{A}\)</span> is a <span class="math inline">\(\sigma\)</span>-algebra on <span class="math inline">\(A\)</span>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="modern-probability.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="set-functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

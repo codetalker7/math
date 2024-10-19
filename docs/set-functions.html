@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 Set Functions | Math Encyclopedia</title>
+  <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 Set Functions | Math Encyclopedia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="github-repo" content="codetalker7/math" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 Set Functions | Math Encyclopedia" />
+  
+  <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  
+
+<meta name="author" content="Siddhant Chaudhary" />
+
+
+<meta name="date" content="2024-10-19" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="some-important-collections-of-sets.html"/>
+<link rel="next" href="vector-calculus.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Math Encyclopedia</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="modern-probability.html"><a href="modern-probability.html"><i class="fa fa-check"></i><b>2</b> Modern Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-important-collections-of-sets.html"><a href="some-important-collections-of-sets.html"><i class="fa fa-check"></i><b>2.1</b> Some important collections of sets</a></li>
+<li class="chapter" data-level="2.2" data-path="set-functions.html"><a href="set-functions.html"><i class="fa fa-check"></i><b>2.2</b> Set Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>3</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-inverse-and-implicit-function-theorems.html"><a href="the-inverse-and-implicit-function-theorems.html"><i class="fa fa-check"></i><b>3.1</b> The Inverse and Implicit function theorems</a></li>
+<li class="chapter" data-level="3.2" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html"><i class="fa fa-check"></i><b>3.2</b> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations."><i class="fa fa-check"></i><b>3.2.1</b> Identifying manifolds, and manifolds under smooth transformations.</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/codetalker7/math" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Math Encyclopedia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="set-functions" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> Set Functions<a href="set-functions.html#set-functions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>The goal of <em>set functions</em> is to assign weights to each <em>event</em> of a <span class="math inline">\(\sigma\)</span>-algebra.
+This development eventually leads to what we call <em>probability spaces</em>.</p>
+<div class="definition">
+<p><span id="def:set-functions-defn" class="definition"><strong>Definition 2.5  </strong></span>Let <span class="math inline">\(\mathcal{A}\subset 2^\Omega\)</span> be a class of sets and let
+<span class="math inline">\(\mu:\mathcal{A}\to[0, \infty]\)</span> be a set function. Then, <span class="math inline">\(\mu\)</span> is</p>
+<ol style="list-style-type: decimal">
+<li><p><strong><em>monotone</em></strong> if <span class="math inline">\(\mu(A)\le \mu(B)\)</span> for any two sets <span class="math inline">\(A, B\in\mathcal{A}\)</span> with
+<span class="math inline">\(A\subset B\)</span>.</p></li>
+<li><p><strong><em>additive</em></strong> if <span class="math inline">\(\mu\left(\biguplus_{i = 1}^n A_i\right) = \sum_{i = 1}^n \mu(A_i)\)</span>
+for any choice of finitely many mutually disjoint sets <span class="math inline">\((A_i)_{i = 1}^n\in\mathcal{A}\)</span>
+with <span class="math inline">\(\bigcup_{i = 1}^n A_i\in \mathcal{A}\)</span>.</p></li>
+<li><p><strong><em><span class="math inline">\(\sigma\)</span>-additive</em></strong> if
+<span class="math inline">\(\mu\left(\biguplus_{i = 1}^\infty A_i\right) = \sum_{i = 1}^\infty \mu(A_i)\)</span>
+for any choice of countably many mutually disjoint sets
+<span class="math inline">\((A_i)_{i = 1}^\infty\in\mathcal{A}\)</span> with <span class="math inline">\(\bigcup_{i = 1}^\infty A_i\in \mathcal{A}\)</span>.</p></li>
+<li><p><strong><em>subadditive</em></strong> if for any choice of finitely many sets <span class="math inline">\(A\in\mathcal{A}\)</span>,
+<span class="math inline">\((A_i)_{i = 1}^n\in\mathcal{A}\)</span> with <span class="math inline">\(A\subseteq \bigcup_{i = 1}^n A_i\)</span>
+we have <span class="math inline">\(\mu(A)\le \sum_{i = 1}^n \mu(A_i)\)</span>.</p></li>
+<li><p><strong><em><span class="math inline">\(\sigma\)</span>-subadditive</em></strong> if for any choice of countably many sets <span class="math inline">\(A\in\mathcal{A}\)</span>,
+<span class="math inline">\((A_i)_{i = 1}^\infty\in\mathcal{A}\)</span> with <span class="math inline">\(A\subseteq \bigcup_{i = 1}^\infty A_i\)</span>
+we have <span class="math inline">\(\mu(A)\le \sum_{i = 1}^\infty \mu(A_i)\)</span>.</p></li>
+</ol>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-3" class="remark"><em>Remark</em>. </span>The notion of <em>countably many objects</em> becomes important when we move from
+discrete spaces to uncoutable spaces (like <span class="math inline">\(\mathbb{R}^n\)</span>). It’s <em>impossible</em>
+to assign probability weights to <em>all</em> subsets of an uncountable space, and still
+have a working theory of probability. For this reason, we must choose a much smaller
+(countable) collection of events which are interesting to work with.</p>
+</div>
+<div class="definition">
+<p><span id="def:measure" class="definition"><strong>Definition 2.6  (Measures) </strong></span>Let <span class="math inline">\(\mathcal{A}\)</span> be a <span class="math inline">\(\sigma\)</span>-algebra. A set function <span class="math inline">\(\mu:\mathcal{A}\to[0, \infty]\)</span>
+is called a <strong><em>measure</em></strong> on <span class="math inline">\(\mathcal{A}\)</span> if it satisfies the following conditions:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\mu(\phi) = 0\)</span>.</li>
+<li><span class="math inline">\(\mu\)</span> is <span class="math inline">\(\sigma\)</span>-additive.</li>
+</ol>
+<p>Furthermore, <span class="math inline">\(\mu\)</span> is called a <strong><em>probability measure</em></strong> if <span class="math inline">\(\mu(\Omega) = 1\)</span>. <span class="math inline">\(\mu\)</span>
+is said to be <strong><em>finite</em></strong> if <span class="math inline">\(\mu(A) &lt; \infty\)</span> for every <span class="math inline">\(A\in\mathcal{A}\)</span>, and <span class="math inline">\(\mu\)</span>
+is said to be <span class="math inline">\(\sigma\)</span>-finite if there exists a sequence of sets
+<span class="math inline">\((\Omega_n)_{n = 1}^\infty\in\mathcal{A}\)</span> such that
+<span class="math inline">\(\Omega = \bigcup_{n = 1}^\infty\Omega_n\)</span> and <span class="math inline">\(\mu(\Omega_n) &lt; \infty\)</span> for all
+<span class="math inline">\(n\in\mathbb{N}\)</span>.</p>
+</div>
+
+</div>
+<!-- </div> -->
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="some-important-collections-of-sets.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="vector-calculus.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
