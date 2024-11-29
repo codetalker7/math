@@ -1,5 +1,9 @@
 # Modern Probability
 
+The main reference I used for building these pages was [@klenkeprobability]. This book
+is one of the most detailed I've read on this subject, so condensing the notes was a good
+challenge!
+
 ## Some important collections of sets 
 
 Throughout, $\Omega\ne \phi$ is any set, and $\mathcal{A}\subseteq 2^\Omega$ is
@@ -188,5 +192,42 @@ is said to be $\sigma$-finite if there exists a sequence of sets
 $(\Omega_n)_{n = 1}^\infty\in\mathcal{A}$ such that 
 $\Omega = \bigcup_{n = 1}^\infty\Omega_n$ and $\mu(\Omega_n) < \infty$ for all 
 $n\in\mathbb{N}$.
+
+:::
+
+### Basic properties of measures
+
+::: {.proposition #measure-properties name="Basic properties of measures"}
+
+Let $\mathcal{A}$ be a $\sigma$-algebra and let $\mu$ be a measure on $\mathcal{A}$.
+Then the following hold:
+
+1. $\mu(A\cup B) = \mu(A) + \mu(B) - \mu(A\cap B)$ for any $A, B\in\mathcal{A}$. 
+
+2. $\mu$ is monotone. Moreover, $\mu(B) = \mu(A) + \mu(B\setminus A)$ for any sets 
+    $A, B\in\mathcal{A}$ with $A\subseteq B$.
+
+3. $\mu$ is subadditive and also $\sigma$-subadditive.
+
+4. $\sum_{n = 1}^\infty \mu(A_n)\le \mu\left(\bigcup_{n = 1}^\infty A_n\right)$ for
+    any choice of countably many mutually disjoint sets $(A_n)_{n = 1}^\infty$. 
+
+:::
+
+### Continuity of measures
+
+The property of *continuity* of measures is of utter importance in probability theory.
+We first define what *limits* of sets mean, and then we state continuity results
+in the sense of these "set limits".
+
+::: {.definition}
+
+Let $A$, $(A_n)_{n = 1}^\infty$ be sets. We write
+
+1. $A_n\uparrow A$ if $A_i\subseteq A_{i + 1}$ for all $i\ge 1$ and 
+    $\bigcup_{n = 1}^\infty A_n = A$.
+
+2. $A_n\downarrow A$ if $A_i\supseteq A_{i + 1}$ for all $i\ge 1$ and 
+    $\bigcap_{n = 1}^\infty A_n = A$.
 
 :::

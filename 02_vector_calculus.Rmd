@@ -64,10 +64,24 @@ pertaining to manifold theory.
 
 ::: {.definition #manifold name="Smooth Manifolds"}
 
-A subset $M\subset \mathbb{R}^n$ is a *smooth $k$-dimensional manifold* if locally
+A subset $M\subset \mathbb{R}^n$ is a ***smooth $k$-dimensional manifold*** if locally
 it is the graph of a $\mathscr{C}^1$ mapping $\boldsymbol{f}$ expressing $n - k$ 
 variables as functions of the other $k$ variables. In this book, we don't 
 deal with *topological* manifolds, but only subsets of $\mathbb{R}^n$ for any $n$.
+
+More precisely, suppose we write each point $\boldsymbol{p}\in\mathbb{R}^n$ as a point
+$(\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times \mathbb{R}^{n - k}$, where we
+have implicitly assumed that the first $k$ coordinates are independent. Then, 
+this definition implies that for every $(\boldsymbol{x}, \boldsymbol{y})\in M$, there
+is an open neighborhood $\boldsymbol{x}\in U\subset \mathbb{R}^k$ of $\boldsymbol{x}$ 
+and an open neighborhood $W\subset\mathbb{R}^n$ of $(\boldsymbol{x}, \boldsymbol{y})$
+such that
+
+\begin{equation}
+\begin{split}
+M\cap W &= \left\{(\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z})): z\in U\right\}
+\end{split}
+\end{equation}
 
 :::
 
@@ -94,6 +108,23 @@ Here's how to show that a set represented as a locus is a smooth manifold:
 
 :::
 
+::: {.remark}
+
+The first part of the above theorem follows from the **Implicit Function Theorem**
+\@ref(thm:implicit-function-theorem). For the second part, it is enough to consider 
+the map
+
+\begin{equation}
+\begin{split}
+    (\boldsymbol{x}, \boldsymbol{y}) \mapsto \boldsymbol{y} - \boldsymbol{f}(\boldsymbol{x}) 
+\end{split}
+\end{equation}
+
+where the map $\boldsymbol{f}$ is considered right from the definition of a 
+smooth manifold \@ref(def:manifold).
+
+:::
+
 The above theorem makes it easy to identify/prove that a certain object is a smooth manifold, without
 knowing the overall geometry of the object. The next theorem shows that the inverse image of a manifold
 under a sufficiently nice transformation still results in a smooth manifold.
@@ -117,4 +148,541 @@ the image of a manifold is still a manifold.
 
 :::
 
+### Parametrizations of manifolds
 
+Another nice way of representing manifolds is via their *parametrizations*.  
+
+::: {.definition #parametrization-def name="Parametrization of a manifold"}
+
+A ***parametrization*** of a $k$-dimensional manifold $M\subset\mathbb{R}^n$ is
+a mapping $\gamma:U\subset \mathbb{R}^k\to M$ satisfying the following conditions:
+
+1. $U$ is open.
+2. $\gamma$ is $\mathscr{C}^1$, one-to-one, and onto on $M$.
+3. $D\gamma(\boldsymbol{u})$ is one-to-one for every $\boldsymbol{u}\in U$. 
+
+:::
+
+::: {.theorem name="Existence of local parametrizations"}
+
+Let $M\subset\mathbb{R}^m$ be a $k$-dimensional manifold. For every point 
+$\boldsymbol{p}\in M$, there is an open neighborhood $U\subset\mathbb{R}^m$ of 
+$\boldsymbol{p}$ such that $M\cap U$ admits a parametrization 
+$\gamma:\mathbb{R}^k\to M\cap U$.
+
+:::
+
+::: {.proof} 
+
+Without loss of generality, write 
+$\boldsymbol{p} = (\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times\mathbb{R}^{n - k}$ 
+where the first $k$ variables are indepdendent. Let $W\subset\mathbb{R}^k$ be an open 
+neighborhood of $\boldsymbol{x}$ such that 
+
+$$
+    \begin{aligned}
+        M\cap U &= \left\{\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}): \boldsymbol{z}\in W\right\} 
+    \end{aligned}
+$$
+
+Now, define the mapping $\gamma:W\to M\cap U$ by 
+
+$$
+    \begin{aligned}
+         \boldsymbol{z}\mapsto (\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}))
+    \end{aligned}
+$$
+
+Clearly, $\gamma$ is one-one and onto. Moreover, observe that
+
+$$
+    \begin{aligned}
+         D\gamma(\boldsymbol{z}) &=
+            \begin{bmatrix}
+                I \\ D\boldsymbol{f}(\boldsymbol{z})
+            \end{bmatrix}
+    \end{aligned}
+$$
+Clearly, the first $k$ rows of the Jacobian are linearly independent; hence, the matrix 
+is invertible. So, $\gamma$ is indeed a parametrization of $M\cap U$.
+
+:::
+
+
+## Tangent spaces
+
+::: {.definition #tangent-spaces name="Tangent spaces"}
+
+Let $M\subset \mathbb{R}^n$ be a $k$-dimensional manifold given by the equation
+$\boldsymbol{y} = \boldsymbol{f}(\boldsymbol{x})$. The *tangent space* to $M$ at 
+$\boldsymbol{z}_0 := (\boldsymbol{x}_0, \boldsymbol{y}_0)$, 
+denoted by $T_{\boldsymbol{z}_0}M$, is the graph of the linear map 
+$D\boldsymbol{f}(\boldsymbol{x}_0)$.
+
+:::
+
+### Computing tangent spaces
+
+We can use the machinery built by the implicit function theorem and parametrizations
+to easily compute tangent spaces. Without proof, here are two theorems (you can check
+the book for proofs) which essentially tell us what the tangent spaces really are.
+
+::: {.theorem}
+
+Suppose $\boldsymbol{F}(\boldsymbol{z}) = \boldsymbol{0}$ describes a manifold $M$, and 
+$D\boldsymbol{F}(\boldsymbol{z}_0)$ is onto for some $\boldsymbol{z}_0\in M$. Then
+
+\begin{equation}
+\begin{split}
+     T_{\boldsymbol{z}_0}M &= \text{ker}\,D\boldsymbol{F}(\boldsymbol{z}_0) 
+\end{split}
+\end{equation}
+
+:::
+
+::: {.theorem} 
+
+Let $U\subset \mathbb{R}^k$ be an open set and let $\gamma:U\to\mathbb{R}^n$ be 
+a parametrization of a manifold $M$. Then
+
+$$
+    \begin{aligned}
+        T{\gamma(\boldsymbol{u})}M = \text{img}\,D\gamma(\boldsymbol{u}) 
+    \end{aligned}
+$$
+
+
+:::
+
+## Differentiable maps on manifolds
+
+::: {.definition #differentiable-map-manifold name="Smooth maps on manifolds"}
+
+Let $M\subset\mathbb{R}^n$ be an $m$-dimensional manifold, and let 
+$\boldsymbol{f}:M\to\mathbb{R}^k$ be a map. Then $\boldsymbol{f}$ is of class 
+$\mathscr{C}^p$ if every $\boldsymbol{x}\in M$ has a neighborhood $U\subset \mathbb{R}^n$
+such that there exists a $\mathscr{C}^p$ map $\boldsymbol{\tilde{f}}:U\to\mathbb{R}^k$
+with $\boldsymbol{\tilde{f}}|_{U\cap M} = \boldsymbol{f}|_{U\cap M}$. Moreover, 
+for $p\ge 1$, we define the ***derivative*** of $\boldsymbol{f}$ to be
+
+\begin{equation}
+\begin{split}
+    D\boldsymbol{f}(\boldsymbol{x}): T_{\boldsymbol{x}}M\to \mathbb{R}^k := D\boldsymbol{\tilde{f}}|_{T_{\boldsymbol{x}}M} 
+\end{split}
+\end{equation}
+
+:::
+
+::: {.theorem name="Choice of extension doesn't matter"}
+
+In Definition \@ref(def:differentiable-map-manifold), any choice of the extension
+map $\boldsymbol{\tilde{f}}$ results in the same derivative. 
+
+:::
+
+::: {.theorem #chain-rule name="Chain rule for maps on manifolds."}
+
+Let $M\subset\mathbb{R}^n$ be a manifold, and let $\boldsymbol{f}:M\to\mathbb{R}^k$ be
+a $\mathscr{C}^1$ map. Let $U\subset\mathbb{R}^l$ be open and let 
+$\boldsymbol{g}:U\to M$ be a $\mathscr{C}^1$ map. Then,
+
+\begin{equation}
+\begin{split}
+    D(\boldsymbol{f}\circ\boldsymbol{g})(\boldsymbol{x}) &= D\boldsymbol{f}(\boldsymbol{g}(\boldsymbol{x}))D\boldsymbol{g}(\boldsymbol{x})\quad \text{for all }\boldsymbol{x}\in U
+\end{split}
+\end{equation}
+
+:::
+
+## Taylor polynomials in multiple variables
+
+### Taylor's theorem in one variable
+
+::: {.theorem #taylor-thm-one-variable name="Taylor's theorem without remainder in one variable"}
+
+Let $U\subseteq\mathbb{R}$ be an open subset and let $f:U\to\mathbb{R}$ be $k$-times 
+continuously differentiable on $U$. Then, for any $a\in U$, the polynomial
+
+\begin{equation}
+\begin{split}
+    p_{f, a}^k(a + h) := \sum_{i = 0}^k \frac{f^{(i)}(a)}{i!}h^i
+\end{split}
+\end{equation}
+
+is the unique polynomial of degree $\le k$ such that
+
+\begin{equation}
+\begin{split}
+    \lim_{h\to 0} \frac{f(a + h) - p_{f, a}^k(a + h)}{h^k} = 0 
+\end{split}
+\end{equation}
+
+In other words, $p_{f, a}^k$ is the best local approximation to $f$ at the point $a$
+by a polynomial of degree atmost $k$.
+
+:::
+
+### Multi-exponents
+
+To represent Taylor polynomials in higher dimensions, the *multi-exponent notation*
+comes in handy. Formally, a *multi-exponent* $I$ is just an ordered finite list of 
+non-negative whole numbers:
+
+\begin{equation}
+\begin{split}
+    I := (i_1, \cdots, i_n) 
+\end{split}
+\end{equation}
+
+The *total degree* of $I$ is the sum $\sum_{k = 1}^N i_k$, and the *factorial* of $I$
+is the product $\prod_{k = 1}^n i_k!$. For a multi-exponent $I$, the notation
+$\boldsymbol{x}^I := x_1^{i_1}\cdots x_n^{i_n}$, i.e a monomial on $\mathbb{R}^n$. So,
+any polynomial $p$ of degree $m$ in $n$ variables can be written using the notation
+
+\begin{equation}
+\begin{split}
+     p(\boldsymbol{x}) &= \sum_{k = 0}^m\sum_{I}a_I\boldsymbol{x}^I
+\end{split}
+\end{equation}
+
+We use the notation $\mathcal{I}^m_n$ to denote the set of all multi-exponents of total
+degree $m$ in $n$ variables.
+
+### Equality of mixed partials
+
+Mutli-exponents can be used to nicely state a theorem about equality of mixed
+partials of multivariate function. For a function $f:U\to \mathbb{R}$ with 
+$U\subset \mathbb{R}^n$ being open and a multi-exponent $I$, we define
+
+\begin{equation}
+\begin{split}
+    D_If := D_1^{i_1}D_2^{i_2}\cdots D_n^{i_n}f 
+\end{split}
+\end{equation}
+
+The use of multi-exponents in mixed partials can be justified by the following theorem on equality of crossed partials:
+
+::: {.theorem #equality-of-mixed-partials name="Equality of mixed partials"}
+
+Let $U$ be an open subset of $\mathbb{R}^n$, and $f:U\to\mathbb{R}$ a function
+such that all first partial derivatives $D_if$ are differentiable at $\boldsymbol{a}\in U$.
+Then, for any $i, j\in[n]$, we have
+
+\begin{equation}
+\begin{split}
+    D_j(D_if)(\boldsymbol{a}) &= D_i(D_jf)(\boldsymbol{a})
+\end{split}
+\end{equation}
+
+:::
+
+::: {.corollary #kth-order-mixed-partials}
+
+If $f:U\to\mathbb{R}$ is a function, all of whose partial derivatives
+upto order $k$ are continuous, then the partial derivatives of order upto 
+$k$ do not depend on the order in which they are computed.
+
+:::
+
+A special case of this theorem is to compute derivatives of a polynomial,
+which can be succintly written using multi-exponents:
+
+::: {.proposition #polynomial-coefficients name="Coefficients expressed in terms of partial derivatives at 0"}
+
+Let $p$ be a polynomial
+
+\begin{equation}
+\begin{split}
+    p(\boldsymbol{x}) := \sum_{m = 0}^k\sum_{J} a_J\boldsymbol{x}^J
+\end{split}
+\end{equation}
+
+:::
+
+with $\boldsymbol{x}$ a monomial with $n$ variables. Then, for any multi-exponent
+$I$, we have
+
+\begin{equation}
+\begin{split}
+     I!a_I &= D_Ip(\boldsymbol{0})
+\end{split}
+\end{equation}
+
+### Taylor polynomials in higher dimensions
+
+::: {.definition #taylor-polynomials-higher-dimensions name="Taylor polynomial in higher dimensions"}
+
+Let $U\subset\mathbb{R}^n$ be an open subset and let $f:U\to\mathbb{R}$ be a 
+$\mathscr{C}^k$ function. Then the polynomial of degree $k$
+
+\begin{equation}
+\begin{split}
+    P_{f, \boldsymbol{a}}^k(\boldsymbol{a} + \boldsymbol{h}) := \sum_{m = 0}^k\sum_{I} \frac{D_If(\boldsymbol{a})\boldsymbol{h}^I}{I!} 
+\end{split}
+\end{equation}
+
+is called the ***Taylor polynomial*** of degree $k$ of $f$ at $\boldsymbol{a}$. If
+$\boldsymbol{f}:U\to\mathbb{R}^n$ is a $\mathscr{C}^k$ function, its Taylor polynomial
+is the polynomial map $U\to\mathbb{R}^n$ whose coordinate functions are the Taylor 
+polynomials of the coordinate functions of $\boldsymbol{f}$.
+
+:::
+
+::: {.theorem #taylors-theorem-higher-dimensions name="Taylor's theorem without remainder in higher dimensions"}
+
+Let $U\subseteq\mathbb{R}^n$ be open, $\boldsymbol{a}\in U$ be a point, and 
+$f:U\to\mathbb{R}$ be a $\mathscr{C}^k$ function.
+
+1. The polynomial $P_{f, \boldsymbol{a}}^k(\boldsymbol{a} + \boldsymbol{h})$ is
+    the unique polynomial of degree $k$ with the same partial derivatives up
+    to order $k$ at $\boldsymbol{a}$ as $f$.
+
+2. It best approximates $f$ near $\boldsymbol{a}$: it is the unique polynomial 
+    of degree atmost $k$ such that
+
+    \begin{equation}
+    \begin{split}
+       \lim_{\boldsymbol{h}\to \boldsymbol{0}} \frac{f(\boldsymbol{a} + \boldsymbol{h}) - P^k_{f, \boldsymbol{a}}(\boldsymbol{a} + \boldsymbol{h})}{\lVert h\rVert^k} = 0
+    \end{split}
+    \end{equation}
+
+:::
+
+## Quadratic Forms
+
+::: {.definition #quadratic-forms name="Quadratic Forms"}
+
+A ***quadratic form*** $Q:\mathbb{R}^n\to\mathbb{R}$ is a polynomial all of whose terms are
+of degree $2$.
+
+:::
+
+### Quadratic forms as sums of squares
+
+::: {.theorem}
+
+1. For any quadratic form $Q:\mathbb{R}^n\to\mathbb{R}$, there exist $m = k + l$ linearly independent linear functions $\alpha_1,\cdots,\alpha_m:\mathbb{R}^n\to\mathbb{R}$
+    such that
+    $$
+        \begin{aligned}
+            Q(\boldsymbol{x}) &= (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2
+        \end{aligned}
+    $$
+
+2. The number $k$ of plus signs and the number $l$ of minus signs only depend on $Q$. The pair $(k, l)$ is called the ***signature*** of the quadratic form $Q$.
+:::
+
+::: {.definition name="Positive and negative definite forms"}
+
+A quadratic form $Q$ is said to be ***positive definite*** if $Q(\boldsymbol{x}) > 0$ for $\boldsymbol{x}\ne \boldsymbol{0}$, and ***negative definite*** if $Q(\boldsymbol{x}) < 0$
+whenever $\boldsymbol{x} \ne \boldsymbol{0}$.
+
+:::
+
+::: {.proposition}
+
+Suppose $Q(\boldsymbol{x}) = (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2$
+where the $\alpha_i$'s are linearly independent linear functions from $\mathbb{R}^n\to\mathbb{R}$. Then, $k$ is the largest dimension of a subspace of $\mathbb{R}^n$ on which $Q$
+is positive definite, and $l$ is the largest dimension of a subspace of $\mathbb{R}^n$ on which $Q$ is negative definite.
+
+:::
+
+::: {.corollary}
+
+If $Q:\mathbb{R}^n\to\mathbb{R}$ is a quadratic form and $A:\mathbb{R}^n\to\mathbb{R}$ is invertible, then $Q\circ A$ is a quadratic form with the same signature as $Q$.
+
+:::
+
+### Classification of quadratic forms
+
+::: {.definition name="Rank of a quadratic form"}
+
+The ***rank*** of a quadratic form is the number of linearly independent squares that appear when the quadratic form
+is represented as a sum of linearly independent squares. Equivalently, if $(k, l)$ is the signature of the form, 
+it's ***rank*** is the sum $k + l$.
+
+:::
+
+::: {.definition name="Degeneracy of forms"}
+
+A quadratic form on $\mathbb{R}^n$ is ***non-degenerate*** if it's rank is $n$. Otherwise, it's said to be
+***degenerate***.
+
+:::
+
+::: {.proposition}
+
+If $Q:\mathbb{R}^n\to\mathbb{R}$ is a positive definite quadratic form, then there exists a constant $C > 0$ such that
+
+$$
+    \begin{aligned}
+        Q(\boldsymbol{x}) \ge C\lVert\boldsymbol{x}\rVert^2 
+    \end{aligned}
+$$
+
+for all $\boldsymbol{x}\in\mathbb{R}^n$.
+
+:::
+
+### Quadratic forms as symmetric matrices
+
+::: {.theorem}
+
+The mapping $A\mapsto Q_A$, where $Q_A(\boldsymbol{x}) = \boldsymbol{x}^TA \boldsymbol{x}$, is a bijective map from the space of
+$n\times n$ symmetric matrices to the space of quadratic forms on $\mathbb{R}^n$.
+
+:::
+
+## Classifying critical points of a function
+
+Here's a well-known theorem used for classifying the critical points of a single-variable function:
+
+::: {.theorem #extremaOneVariable name="Extrema of functions of one variable"}
+
+Let $U\subset\mathbb{R}$ be an open set and let $f:U\to\mathbb{R}$ be a differentiable function.
+
+1. If $x_0\in U$ is a local minimum or a local maximum of $f$, then $f'(x_0) = 0$.
+2. If $f$ is twice differentiable, and $f'(x_0) = 0$ and $f''(x_0) > 0$, then $x_0$ is a strict local minimum of $f$.
+3. If $f$ is twice differentiable, and $f'(x_0) = 0$ and $f''(x_0) < 0$, then $x_0$ is a strict local maximum of $f$.
+
+:::
+
+We'll now see some machinery for higher-dimensional functions.
+
+::: {.theorem  name="Critical points and critical values."}
+
+Let $U\subseteq \mathbb{R}^n$ be open and let $f:U\to\mathbb{R}$ be a differentiable function. A ***critical point***
+of $f$ is a point where the derivative vanishes. The value of $f$ at a critical points is a ***critical value***.
+
+:::
+
+A simple consequence of Theorem \@ref(thm:extremaOneVariable) is the following high-dimensional version:
+
+::: {.theorem}
+
+Let $U\subset\mathbb{R}^n$ be an open subset and let $f:U\to\mathbb{R}$ be a differentiable function. If $\boldsymbol{x}_0\in U$
+is a local minimum or local maximum of $f$, then $Df(\boldsymbol{x}_0) = \boldsymbol{0}$.
+
+:::
+
+### Second derivative conditions
+
+Just like in one dimension, we usually look at the second derivative of a function to classify a point as being a local maximum or a local
+minimum. The situation for higher dimensions is similar, where instead we look at the quadratic form consisting of the even degree terms
+of the Taylor polynomial.
+
+::: {.theorem  name="Signature of a critical point"}
+
+Let $U\subset \mathbb{R}^n$ be an open set, and let $f:U\to\mathbb{R}$ be of class
+\mathscr{C}^2. Let $\boldsymbol{a}\in U$ be a critical point of $f$. The ***signature***
+of the critical point $\boldsymbol{a}$ is the signature of the quadratic form
+
+$$
+    \begin{aligned}
+Q_{f, \boldsymbol{a}}(\boldsymbol{h}) := \sum_{I\in\mathcal{I}^2_n} \frac{1}{I!}(D_If(\boldsymbol{a}))\boldsymbol{h}^I
+    \end{aligned}
+$$
+
+:::
+
+It turns out that the symmetric matrix associated with the quadratic 
+form $Q_{f, \boldsymbol{a}}$ is the Hessian of $f$, i.e
+
+$$
+    \begin{aligned}
+        Q_{f, \boldsymbol{a}}(\boldsymbol{h}) &= \frac{1}{2}(\boldsymbol{h}^TH \boldsymbol{h})
+    \end{aligned}
+$$
+
+where $H$ is the Hessian of $f$ at $\boldsymbol{a}$.
+
+::: {.definition}
+
+A critical point $\boldsymbol{a}$ of $f$ is said to be ***degenerate*** or 
+***non-degenerate*** precisely when the quadratic form $Q_{f, \boldsymbol{a}}$ 
+is degenerate or non-degenerate.
+
+:::
+
+::: {.theorem name="Quadratic forms and extrema"}
+
+Let $U\subset\mathbb{R}^n$ be an open set, $f:U\to\mathbb{R}$ be of class $\mathscr{C}^2$,
+and let $\boldsymbol{a}\in U$ be a critical point of $f$.
+
+1. If the signature of $\boldsymbol{a}$ is $(n, 0)$, i.e if $Q_{f, \boldsymbol{a}}$ is 
+    positive definite, then $\boldsymbol{a}$ is a strict local minimum of $f$. If the 
+    signature of $\boldsymbol{a}$ is $(k, l)$ with $l > 0$, then $\boldsymbol{a}$ is not
+    a local minimum.
+
+2. An analogous result holds for when the quadratic form is negative definite, with local
+    minimum replaced by local maximum.
+
+:::
+
+
+::: {.definition name="Saddle points"}
+
+If $\boldsymbol{a}$ is a critical point of a $\mathscr{C}^2$ function $f$, and the
+quadratic form $Q_{f, \boldsymbol{a}}$ has signature $(k, l)$ with $k, l > 0$, then
+$\boldsymbol{a}$ is said to be a ***saddle*** point.
+
+:::
+
+::: {.theorem name="Behavior of a function near a saddle"}
+
+Let $U\subset\mathbb{R}^n$ be an open set, and let $f:U\to\mathbb{R}$ be a 
+$\mathscr{C}^2$ function. If $f$ has a saddle at $\boldsymbol{a}\in U$, then in
+every neighborhood of $\boldsymbol{a}$ there are points $\boldsymbol{b}$ and 
+$\boldsymbol{c}$ with $f(\boldsymbol{b}) > f(\boldsymbol{a})$ and 
+$f(\boldsymbol{c}) < f(\boldsymbol{a})$.
+
+:::
+
+## Constrainted critical points and Lagrange Multipliers
+
+::: {.definition name="Critical point of functions defined on manifolds"}
+
+Let $X\subset \mathbb{R}^n$ be a manifold, and let $f:X\to\mathbb{R}$ be a
+$\mathscr{C}^1$ function. A ***critical point*** of $f$ is a point $\boldsymbol{x}\in X$
+where $Df(\boldsymbol{x}) = \boldsymbol{0}$. Such points are also called 
+***constrained critical points***.
+
+:::
+
+Analogous to the unconstrained optimization problem, we have the following theorem:
+
+::: {.theorem}
+
+Let $X\subset\mathbb{R}^n$ be a manifold, $f:X\to\mathbb{R}$ a $\mathscr{C}^1$ function,
+and $\boldsymbol{c}\in X$ a local extremum of $f$. Then $\boldsymbol{c}$ is a constrained
+critical point of $f$.
+
+:::
+
+### Lagrange Multipliers
+
+Suppose we're given a differentiable function on an open set, and we want to optimize it
+on a subset which is *constrained* by another function. So, we have an *objective* function
+and a *constrain* function as part of the problem data. In such a scenario, it turns out
+that computing critical points amounts to calculating a bunch of scalars called 
+*Lagrange Multipliers*. Here's the formal statement of the fact:
+
+::: {.theorem  name="Lagrange Multipliers"}
+
+Let $U\subset\mathbb{R}^n$ be open, and let $\boldsymbol{F}:U\to\mathbb{R}^m$ be a 
+$\mathscr{C}^1$ mapping defining a manifold $X$, with $D\boldsymbol{F}(\boldsymbol{x})$
+onto for every $\boldsymbol{x}\in X$. Let $f:U\to\mathbb{R}$ be a $\mathscr{C}^1$
+mapping. Then $\boldsymbol{a}\in X$ is a critical point of $f|_{X}$ if and only if
+there exist numbers $\lambda_1, ..., \lambda_m$ such that
+
+$$
+    \begin{aligned}
+        Df(\boldsymbol{a}) &= \sum_{i = 1}^m \lambda_i DF_i(\boldsymbol{a}) 
+    \end{aligned}
+$$
+
+The numbers $(\lambda_i)_{i = 1}^m$ are called ***Lagrange Multipliers***.
+
+:::
+
+## Integration

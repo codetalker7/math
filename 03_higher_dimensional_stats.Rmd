@@ -1,0 +1,78 @@
+# Higher dimensional statistics
+
+## Tail and concentration bounds
+
+Tail and concentration bounds can be used to bound the tail-probabilities of a random variable, or to
+study probability bounds on the deviation of a random variable from it's mean. This is usually done by
+controlling the higher-order moments of a random variable; the better we can do it, the better bounds
+we get.
+
+### Classical bounds: Markov, Chebyshev, Chernoff
+
+The first useful bound is ***Markov's inequality***, which states that for a non-negative random variable $X$
+with finite mean, we have:
+
+$$
+    \begin{aligned}
+        \mathbb{P}[X\ge t] \le \frac{\mathbb{E}[X]}{t}\quad \forall t > 0
+    \end{aligned}
+$$
+
+By applying this bound to the random variable $(X - \mathbb{E}[X])^2$ for a random variable with finite
+second moment, we can obtain Chebyshev's inequality:
+
+$$
+    \begin{aligned}
+       \mathbb{P}[|X - \mathbb{E}[X]| \ge \epsilon] \le \frac{\textbf{Var}[X]}{\epsilon^2}
+    \end{aligned}
+$$
+
+Let's try generalizing this to higher-order moments. So, let $X$ be a random variable with finite $k$-th order moment, i.e
+$\mathbb{E}[|X|^k] < \infty$ (and hence all $r$th moments with $k < r$ also exist), and consider the random variable
+$X - \mathbb{E}[X]$. In that case, for any $t > 0$, we have
+
+$$
+    \begin{aligned}
+        |X - \mathbb{E}[X]| \ge t \iff |X - \mathbb{E}[X]|^k \ge t^k 
+    \end{aligned}
+$$
+
+and hence
+
+$$
+    \begin{aligned}
+        \mathbb{P}[|X - \mathbb{E}[X]|\ge t] &= \mathbb{P}[|X - \mathbb{E}[X]|^k\ge t^k]\\
+        \le \frac{\mathbb{E}[|X - \mathbb{E}[X]|^k]}{t^k}
+    \end{aligned}
+$$
+
+We can also apply Markov's inequality to any function to get even better results. For example, suppose $X$ is a random
+variable such that the function $\varphi(\lambda) := \mathbb{E}[e^{\lambda (X - \mathbb{E}[X])}] < \infty$ for all $|\lambda| \le b$. In that case, 
+applying Markov's inequality to the random variable $e^{\lambda(X - \mathbb{E}[X])}$ with $\lambda\in[0, b]$, we get
+
+$$
+    \begin{aligned}
+        \mathbb{P}[X - \mathbb{E}[X] \ge t] &= \mathbb{P}[e^{\lambda (X - \mathbb{E}[X])}\ge e^{\lambda t}]\\
+        &\le \frac{\mathbb{E}[e^{\lambda(X - \mathbb{E}[X])}]}{e^{\lambda t}}
+    \end{aligned}
+$$
+
+The ***Chernoff bound*** is obtained by optimizing for the optimal value of $\lambda$:
+
+$$
+    \begin{aligned}
+        \log\mathbb{P}[(X - \mathbb{E}[X])\ge t] &\le \inf_{\lambda \in[0, b]}\log \mathbb{E}[\lambda(X - \mathbb{E}[X])] - \lambda t
+    \end{aligned}
+$$
+
+## Sub-Gaussian variables and Hoeffding bounds
+
+In this section we motivate the notion of ***sub-Gaussian random variables***. Let $X\sim \mathcal{N}(\mu, \sigma^2)$ be a Gaussian random
+variable with mean $\mu$ and variance $\sigma^2$. Then, for any $\lambda\in\mathbb{R}$, we have
+
+$$
+    \begin{aligned}
+        \mathbb{E}[e^{\lambda X}] &= \frac{1}{\sqrt{2\pi\sigma^2}}\int_{-\infty}^\infty e^{\lambda x}e^{\frac{-(x - \mu)^2}{2\sigma^2}} dx \\
+        &= \frac{1}{\sqrt{2\pi\sigma^2}} \int_{-\infty}^\infty e^{\lambda x - \frac{x^2}{2\sigma^2} - \frac{-\mu^2}{2\sigma^2} + \frac{x\mu}{\sigma^2}}dx 
+    \end{aligned}
+$$
