@@ -17,6 +17,4 @@ github-repo: codetalker7/math
 # Overview 
 
 The aim of this book is to have the most important *definitions*, *lemmas*, *propositions* and
-*theorems* together in the same place, but *without* including proofs. The goal is to
-have these things ready as a reference; I did this since I don't bother with proofs as I 
-forget them sooner or later.
+*theorems* together in the same place, but *without* including proofs of *hard* theorems. The goal is to have these things ready as a reference; I did this since I don't bother with hard proofs as I forget them sooner or later.
