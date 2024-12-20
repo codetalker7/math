@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia</title>
+  <title>3.6 Quadratic Forms | Math Encyclopedia</title>
   <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
 theorems without proofs.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  <meta property="og:title" content="3.6 Quadratic Forms | Math Encyclopedia" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
@@ -17,7 +17,7 @@ theorems without proofs.</p>" />
   <meta name="github-repo" content="codetalker7/math" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  <meta name="twitter:title" content="3.6 Quadratic Forms | Math Encyclopedia" />
   
   <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
 theorems without proofs.</p>" />
@@ -33,8 +33,8 @@ theorems without proofs.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-inverse-and-implicit-function-theorems.html"/>
-<link rel="next" href="tangent-spaces.html"/>
+<link rel="prev" href="tayland-polynomials-in-multiple-variables.html"/>
+<link rel="next" href="classifying-critical-points-of-a-function.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -217,124 +217,66 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="smooth-manifolds-in-mathbbrn" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span><a href="smooth-manifolds-in-mathbbrn.html#smooth-manifolds-in-mathbbrn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The goal of this section is to define smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span>,
-<em>without</em> resorting to tools from general topological manifolds. This will
-be helpful to computer scientists who don’t want to deal with abstract notions
-pertaining to manifold theory.</p>
+<div id="quadratic-forms" class="section level2 hasAnchor" number="3.6">
+<h2><span class="header-section-number">3.6</span> Quadratic Forms<a href="quadratic-forms.html#quadratic-forms" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="definition">
-<p><span id="def:manifold" class="definition"><strong>Definition 3.1  (Smooth Manifolds) </strong></span>A subset <span class="math inline">\(M\subset \mathbb{R}^n\)</span> is a <strong><em>smooth <span class="math inline">\(k\)</span>-dimensional manifold</em></strong> if locally
-it is the graph of a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{f}\)</span> expressing <span class="math inline">\(n - k\)</span>
-variables as functions of the other <span class="math inline">\(k\)</span> variables. In this book, we don’t
-deal with <em>topological</em> manifolds, but only subsets of <span class="math inline">\(\mathbb{R}^n\)</span> for any <span class="math inline">\(n\)</span>.</p>
-<p>More precisely, suppose we write each point <span class="math inline">\(\boldsymbol{p}\in\mathbb{R}^n\)</span> as a point
-<span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times \mathbb{R}^{n - k}\)</span>, where we
-have implicitly assumed that the first <span class="math inline">\(k\)</span> coordinates are independent. Then,
-this definition implies that for every <span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\in M\)</span>, there
-is an open neighborhood <span class="math inline">\(\boldsymbol{x}\in U\subset \mathbb{R}^k\)</span> of <span class="math inline">\(\boldsymbol{x}\)</span>
-and an open neighborhood <span class="math inline">\(W\subset\mathbb{R}^n\)</span> of <span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\)</span>
-such that</p>
-<p><span class="math display">\[\begin{equation}
-\begin{split}
-M\cap W &amp;= \left\{(\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z})): z\in U\right\}
-\end{split}
-\end{equation}\]</span></p>
+<p><span id="def:quadratic-forms" class="definition"><strong>Definition 3.6  (Quadratic Forms) </strong></span>A <strong><em>quadratic form</em></strong> <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a polynomial all of whose terms are
+of degree <span class="math inline">\(2\)</span>.</p>
 </div>
-<div id="identifying-manifolds-and-manifolds-under-smooth-transformations." class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Identifying manifolds, and manifolds under smooth transformations.<a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations." class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="quadratic-forms-as-sums-of-squares" class="section level3 hasAnchor" number="3.6.1">
+<h3><span class="header-section-number">3.6.1</span> Quadratic forms as sums of squares<a href="quadratic-forms.html#quadratic-forms-as-sums-of-squares" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:manifolds-as-eqns" class="theorem"><strong>Theorem 3.3  (Using the implicit function theorem to identify manifolds) </strong></span>Here’s how to show that a set represented as a locus is a smooth manifold:</p>
+<p><span id="thm:unlabeled-div-8" class="theorem"><strong>Theorem 3.13  </strong></span></p>
 <ol style="list-style-type: decimal">
-<li><p>Let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be open, <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> mapping. Let <span class="math inline">\(M\)</span> be a subset of <span class="math inline">\(\mathbb{R}^n\)</span> such that
+<li><p>For any quadratic form <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span>, there exist <span class="math inline">\(m = k + l\)</span> linearly independent linear functions <span class="math inline">\(\alpha_1,\cdots,\alpha_m:\mathbb{R}^n\to\mathbb{R}\)</span>
+such that
 <span class="math display">\[
      \begin{aligned}
-        M\cap U  &amp;= \left\{\boldsymbol{z}\in U | \boldsymbol{F}(\boldsymbol{z}) = \boldsymbol{0}\right\}
+         Q(\boldsymbol{x}) &amp;= (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2
      \end{aligned}
-\]</span>
-If <span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> is onto for every <span class="math inline">\(\boldsymbol{z}\in M\cap U\)</span>, then <span class="math inline">\(M\cap U\)</span> is a smooth
-<span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>. If every <span class="math inline">\(z\in M\)</span> is in such
-a <span class="math inline">\(U\)</span>, then <span class="math inline">\(M\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold.</p></li>
-<li><p>Conversely, if <span class="math inline">\(M\)</span> is a smooth <span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>,
-then every point <span class="math inline">\(\boldsymbol{z}\in M\)</span> has a neighborhood <span class="math inline">\(U\subset\mathbb{R}^n\)</span> such that
-there exists a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> with
-<span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> onto and <span class="math inline">\(M\cap U = \left\{\boldsymbol{y}|\boldsymbol{F}(\boldsymbol{y}) = 0\right\}\)</span>.</p></li>
+\]</span></p></li>
+<li><p>The number <span class="math inline">\(k\)</span> of plus signs and the number <span class="math inline">\(l\)</span> of minus signs only depend on <span class="math inline">\(Q\)</span>. The pair <span class="math inline">\((k, l)\)</span> is called the <strong><em>signature</em></strong> of the quadratic form <span class="math inline">\(Q\)</span>.</p></li>
 </ol>
 </div>
-<div class="remark">
-<p><span id="unlabeled-div-1" class="remark"><em>Remark</em>. </span>The first part of the above theorem follows from the <strong>Implicit Function Theorem</strong>
-<a href="the-inverse-and-implicit-function-theorems.html#thm:implicit-function-theorem">3.2</a>. For the second part, it is enough to consider
-the map</p>
-<p><span class="math display">\[\begin{equation}
-\begin{split}
-    (\boldsymbol{x}, \boldsymbol{y}) \mapsto \boldsymbol{y} - \boldsymbol{f}(\boldsymbol{x})
-\end{split}
-\end{equation}\]</span></p>
-<p>where the map <span class="math inline">\(\boldsymbol{f}\)</span> is considered right from the definition of a
-smooth manifold <a href="smooth-manifolds-in-mathbbrn.html#def:manifold">3.1</a>.</p>
-</div>
-<p>The above theorem makes it easy to identify/prove that a certain object is a smooth manifold, without
-knowing the overall geometry of the object. The next theorem shows that the inverse image of a manifold
-under a sufficiently nice transformation still results in a smooth manifold.</p>
-<div class="theorem">
-<p><span id="thm:inverse-image-of-manifold" class="theorem"><strong>Theorem 3.4  </strong></span>Let <span class="math inline">\(M\subset \mathbb{R}^m\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> an open
-subset of <span class="math inline">\(\mathbb{R}^n\)</span>, and <span class="math inline">\(\boldsymbol{f}:U\to \mathbb{R}^m\)</span> a <span class="math inline">\(\mathscr{C}^1\)</span>
-mapping whose derivative <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x})\)</span> is surjective at every
-point <span class="math inline">\(\boldsymbol{x}\in \boldsymbol{f}^{-1}(M)\)</span>. Then the inverse image
-<span class="math inline">\(\boldsymbol{f}^{-1}(M)\)</span> is a submanifold of <span class="math inline">\(\mathbb{R}^n\)</span> of
-dimension <span class="math inline">\(k + n - m\)</span>.</p>
-</div>
-<div class="remark">
-<p><span id="unlabeled-div-2" class="remark"><em>Remark</em> (Manifolds under rotations and translations are still manifolds). </span>As a corollary of Theorem <a href="smooth-manifolds-in-mathbbrn.html#thm:inverse-image-of-manifold">3.4</a>, it’s easy to show that for a
-mapping of the form <span class="math inline">\(\boldsymbol{x}\mapsto A\boldsymbol{x} + \boldsymbol{c}\)</span> with <span class="math inline">\(A\)</span> invertible,
-the image of a manifold is still a manifold.</p>
-</div>
-</div>
-<div id="parametrizations-of-manifolds" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Parametrizations of manifolds<a href="smooth-manifolds-in-mathbbrn.html#parametrizations-of-manifolds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Another nice way of representing manifolds is via their <em>parametrizations</em>.</p>
 <div class="definition">
-<p><span id="def:parametrization-def" class="definition"><strong>Definition 3.2  (Parametrization of a manifold) </strong></span>A <strong><em>parametrization</em></strong> of a <span class="math inline">\(k\)</span>-dimensional manifold <span class="math inline">\(M\subset\mathbb{R}^n\)</span> is
-a mapping <span class="math inline">\(\gamma:U\subset \mathbb{R}^k\to M\)</span> satisfying the following conditions:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(U\)</span> is open.</li>
-<li><span class="math inline">\(\gamma\)</span> is <span class="math inline">\(\mathscr{C}^1\)</span>, one-to-one, and onto on <span class="math inline">\(M\)</span>.</li>
-<li><span class="math inline">\(D\gamma(\boldsymbol{u})\)</span> is one-to-one for every <span class="math inline">\(\boldsymbol{u}\in U\)</span>.</li>
-</ol>
+<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 3.7  (Positive and negative definite forms) </strong></span>A quadratic form <span class="math inline">\(Q\)</span> is said to be <strong><em>positive definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &gt; 0\)</span> for <span class="math inline">\(\boldsymbol{x}\ne \boldsymbol{0}\)</span>, and <strong><em>negative definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &lt; 0\)</span>
+whenever <span class="math inline">\(\boldsymbol{x} \ne \boldsymbol{0}\)</span>.</p>
 </div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-10" class="proposition"><strong>Proposition 3.2  </strong></span>Suppose <span class="math inline">\(Q(\boldsymbol{x}) = (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2\)</span>
+where the <span class="math inline">\(\alpha_i\)</span>’s are linearly independent linear functions from <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span>. Then, <span class="math inline">\(k\)</span> is the largest dimension of a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> on which <span class="math inline">\(Q\)</span>
+is positive definite, and <span class="math inline">\(l\)</span> is the largest dimension of a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> on which <span class="math inline">\(Q\)</span> is negative definite.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-11" class="corollary"><strong>Corollary 3.2  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a quadratic form and <span class="math inline">\(A:\mathbb{R}^n\to\mathbb{R}\)</span> is invertible, then <span class="math inline">\(Q\circ A\)</span> is a quadratic form with the same signature as <span class="math inline">\(Q\)</span>.</p>
+</div>
+</div>
+<div id="classification-of-quadratic-forms" class="section level3 hasAnchor" number="3.6.2">
+<h3><span class="header-section-number">3.6.2</span> Classification of quadratic forms<a href="quadratic-forms.html#classification-of-quadratic-forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-12" class="definition"><strong>Definition 3.8  (Rank of a quadratic form) </strong></span>The <strong><em>rank</em></strong> of a quadratic form is the number of linearly independent squares that appear when the quadratic form
+is represented as a sum of linearly independent squares. Equivalently, if <span class="math inline">\((k, l)\)</span> is the signature of the form,
+it’s <strong><em>rank</em></strong> is the sum <span class="math inline">\(k + l\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 3.9  (Degeneracy of forms) </strong></span>A quadratic form on <span class="math inline">\(\mathbb{R}^n\)</span> is <strong><em>non-degenerate</em></strong> if it’s rank is <span class="math inline">\(n\)</span>. Otherwise, it’s said to be
+<strong><em>degenerate</em></strong>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 3.3  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a positive definite quadratic form, then there exists a constant <span class="math inline">\(C &gt; 0\)</span> such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        Q(\boldsymbol{x}) \ge C\lVert\boldsymbol{x}\rVert^2
+    \end{aligned}
+\]</span></p>
+<p>for all <span class="math inline">\(\boldsymbol{x}\in\mathbb{R}^n\)</span>.</p>
+</div>
+</div>
+<div id="quadratic-forms-as-symmetric-matrices" class="section level3 hasAnchor" number="3.6.3">
+<h3><span class="header-section-number">3.6.3</span> Quadratic forms as symmetric matrices<a href="quadratic-forms.html#quadratic-forms-as-symmetric-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-3" class="theorem"><strong>Theorem 3.5  (Existence of local parametrizations) </strong></span>Let <span class="math inline">\(M\subset\mathbb{R}^m\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold. For every point
-<span class="math inline">\(\boldsymbol{p}\in M\)</span>, there is an open neighborhood <span class="math inline">\(U\subset\mathbb{R}^m\)</span> of
-<span class="math inline">\(\boldsymbol{p}\)</span> such that <span class="math inline">\(M\cap U\)</span> admits a parametrization
-<span class="math inline">\(\gamma:\mathbb{R}^k\to M\cap U\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>Without loss of generality, write
-<span class="math inline">\(\boldsymbol{p} = (\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times\mathbb{R}^{n - k}\)</span>
-where the first <span class="math inline">\(k\)</span> variables are indepdendent. Let <span class="math inline">\(W\subset\mathbb{R}^k\)</span> be an open
-neighborhood of <span class="math inline">\(\boldsymbol{x}\)</span> such that</p>
-<p><span class="math display">\[
-    \begin{aligned}
-        M\cap U &amp;= \left\{\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}): \boldsymbol{z}\in W\right\}
-    \end{aligned}
-\]</span></p>
-<p>Now, define the mapping <span class="math inline">\(\gamma:W\to M\cap U\)</span> by</p>
-<p><span class="math display">\[
-    \begin{aligned}
-         \boldsymbol{z}\mapsto (\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}))
-    \end{aligned}
-\]</span></p>
-<p>Clearly, <span class="math inline">\(\gamma\)</span> is one-one and onto. Moreover, observe that</p>
-<p><span class="math display">\[
-    \begin{aligned}
-         D\gamma(\boldsymbol{z}) &amp;=
-            \begin{bmatrix}
-                I \\ D\boldsymbol{f}(\boldsymbol{z})
-            \end{bmatrix}
-    \end{aligned}
-\]</span>
-Clearly, the first <span class="math inline">\(k\)</span> rows of the Jacobian are linearly independent; hence, the matrix
-is invertible. So, <span class="math inline">\(\gamma\)</span> is indeed a parametrization of <span class="math inline">\(M\cap U\)</span>.</p>
+<p><span id="thm:unlabeled-div-15" class="theorem"><strong>Theorem 3.14  </strong></span>The mapping <span class="math inline">\(A\mapsto Q_A\)</span>, where <span class="math inline">\(Q_A(\boldsymbol{x}) = \boldsymbol{x}^TA \boldsymbol{x}\)</span>, is a bijective map from the space of
+<span class="math inline">\(n\times n\)</span> symmetric matrices to the space of quadratic forms on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 </div>
 </div>
 </div>
@@ -343,8 +285,8 @@ is invertible. So, <span class="math inline">\(\gamma\)</span> is indeed a param
           </div>
         </div>
       </div>
-<a href="the-inverse-and-implicit-function-theorems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tangent-spaces.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="tayland-polynomials-in-multiple-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="classifying-critical-points-of-a-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

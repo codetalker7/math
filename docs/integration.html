@@ -1,0 +1,1013 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>3.9 Integration | Math Encyclopedia</title>
+  <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="3.9 Integration | Math Encyclopedia" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  <meta name="github-repo" content="codetalker7/math" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="3.9 Integration | Math Encyclopedia" />
+  
+  <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
+theorems without proofs.</p>" />
+  
+
+<meta name="author" content="Siddhant Chaudhary" />
+
+
+<meta name="date" content="2024-12-20" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="constrainted-critical-points-and-lagrange-multipliers.html"/>
+<link rel="next" href="volume-of-manifolds.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Math Encyclopedia</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> Overview</a></li>
+<li class="chapter" data-level="2" data-path="modern-probability.html"><a href="modern-probability.html"><i class="fa fa-check"></i><b>2</b> Modern Probability</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="some-important-collections-of-sets.html"><a href="some-important-collections-of-sets.html"><i class="fa fa-check"></i><b>2.1</b> Some important collections of sets</a></li>
+<li class="chapter" data-level="2.2" data-path="set-functions.html"><a href="set-functions.html"><i class="fa fa-check"></i><b>2.2</b> Set Functions</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="set-functions.html"><a href="set-functions.html#basic-properties-of-measures"><i class="fa fa-check"></i><b>2.2.1</b> Basic properties of measures</a></li>
+<li class="chapter" data-level="2.2.2" data-path="set-functions.html"><a href="set-functions.html#continuity-of-measures"><i class="fa fa-check"></i><b>2.2.2</b> Continuity of measures</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="vector-calculus.html"><a href="vector-calculus.html"><i class="fa fa-check"></i><b>3</b> Vector Calculus</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="the-inverse-and-implicit-function-theorems.html"><a href="the-inverse-and-implicit-function-theorems.html"><i class="fa fa-check"></i><b>3.1</b> The Inverse and Implicit function theorems</a></li>
+<li class="chapter" data-level="3.2" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html"><i class="fa fa-check"></i><b>3.2</b> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span></a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations."><i class="fa fa-check"></i><b>3.2.1</b> Identifying manifolds, and manifolds under smooth transformations.</a></li>
+<li class="chapter" data-level="3.2.2" data-path="smooth-manifolds-in-mathbbrn.html"><a href="smooth-manifolds-in-mathbbrn.html#parametrizations-of-manifolds"><i class="fa fa-check"></i><b>3.2.2</b> Parametrizations of manifolds</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="tangent-spaces.html"><a href="tangent-spaces.html"><i class="fa fa-check"></i><b>3.3</b> Tangent spaces</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
+</ul></li>
+<li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
+<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="quadratic-forms.html"><a href="quadratic-forms.html#quadratic-forms-as-sums-of-squares"><i class="fa fa-check"></i><b>3.6.1</b> Quadratic forms as sums of squares</a></li>
+<li class="chapter" data-level="3.6.2" data-path="quadratic-forms.html"><a href="quadratic-forms.html#classification-of-quadratic-forms"><i class="fa fa-check"></i><b>3.6.2</b> Classification of quadratic forms</a></li>
+<li class="chapter" data-level="3.6.3" data-path="quadratic-forms.html"><a href="quadratic-forms.html#quadratic-forms-as-symmetric-matrices"><i class="fa fa-check"></i><b>3.6.3</b> Quadratic forms as symmetric matrices</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="classifying-critical-points-of-a-function.html"><a href="classifying-critical-points-of-a-function.html"><i class="fa fa-check"></i><b>3.7</b> Classifying critical points of a function</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="classifying-critical-points-of-a-function.html"><a href="classifying-critical-points-of-a-function.html#second-derivative-conditions"><i class="fa fa-check"></i><b>3.7.1</b> Second derivative conditions</a></li>
+</ul></li>
+<li class="chapter" data-level="3.8" data-path="constrainted-critical-points-and-lagrange-multipliers.html"><a href="constrainted-critical-points-and-lagrange-multipliers.html"><i class="fa fa-check"></i><b>3.8</b> Constrainted critical points and Lagrange Multipliers</a>
+<ul>
+<li class="chapter" data-level="3.8.1" data-path="constrainted-critical-points-and-lagrange-multipliers.html"><a href="constrainted-critical-points-and-lagrange-multipliers.html#lagrange-multipliers"><i class="fa fa-check"></i><b>3.8.1</b> Lagrange Multipliers</a></li>
+</ul></li>
+<li class="chapter" data-level="3.9" data-path="integration.html"><a href="integration.html"><i class="fa fa-check"></i><b>3.9</b> Integration</a>
+<ul>
+<li class="chapter" data-level="3.9.1" data-path="integration.html"><a href="integration.html#preliminary-definitions"><i class="fa fa-check"></i><b>3.9.1</b> Preliminary definitions</a></li>
+<li class="chapter" data-level="3.9.2" data-path="integration.html"><a href="integration.html#dyadic-pavings"><i class="fa fa-check"></i><b>3.9.2</b> Dyadic pavings</a></li>
+<li class="chapter" data-level="3.9.3" data-path="integration.html"><a href="integration.html#two-useful-integral-rules"><i class="fa fa-check"></i><b>3.9.3</b> Two useful integral rules</a></li>
+<li class="chapter" data-level="3.9.4" data-path="integration.html"><a href="integration.html#volumes"><i class="fa fa-check"></i><b>3.9.4</b> Volumes</a></li>
+<li class="chapter" data-level="3.9.5" data-path="integration.html"><a href="integration.html#what-functions-can-be-integrated"><i class="fa fa-check"></i><b>3.9.5</b> What functions can be integrated?</a></li>
+<li class="chapter" data-level="3.9.6" data-path="integration.html"><a href="integration.html#measure-zero"><i class="fa fa-check"></i><b>3.9.6</b> Measure zero</a></li>
+<li class="chapter" data-level="3.9.7" data-path="integration.html"><a href="integration.html#integrability-of-almost-continuous-functions"><i class="fa fa-check"></i><b>3.9.7</b> Integrability of almost continuous functions</a></li>
+<li class="chapter" data-level="3.9.8" data-path="integration.html"><a href="integration.html#fubinis-theorem-and-iterated-integrals"><i class="fa fa-check"></i><b>3.9.8</b> Fubini’s Theorem and Iterated Integrals</a></li>
+<li class="chapter" data-level="3.9.9" data-path="integration.html"><a href="integration.html#general-pavings"><i class="fa fa-check"></i><b>3.9.9</b> General Pavings</a></li>
+<li class="chapter" data-level="3.9.10" data-path="integration.html"><a href="integration.html#volumes-and-determinants"><i class="fa fa-check"></i><b>3.9.10</b> Volumes and determinants</a></li>
+<li class="chapter" data-level="3.9.11" data-path="integration.html"><a href="integration.html#the-general-change-of-variables-formula"><i class="fa fa-check"></i><b>3.9.11</b> The general change of variables formula</a></li>
+<li class="chapter" data-level="3.9.12" data-path="integration.html"><a href="integration.html#common-change-of-variable-transformations-and-coordinate-systems"><i class="fa fa-check"></i><b>3.9.12</b> Common change of variable transformations and coordinate systems</a></li>
+<li class="chapter" data-level="3.9.13" data-path="integration.html"><a href="integration.html#lebesgue-integrals"><i class="fa fa-check"></i><b>3.9.13</b> Lebesgue Integrals</a></li>
+</ul></li>
+<li class="chapter" data-level="3.10" data-path="volume-of-manifolds.html"><a href="volume-of-manifolds.html"><i class="fa fa-check"></i><b>3.10</b> Volume of manifolds</a>
+<ul>
+<li class="chapter" data-level="3.10.1" data-path="volume-of-manifolds.html"><a href="volume-of-manifolds.html#parallelograms-and-their-volumes"><i class="fa fa-check"></i><b>3.10.1</b> Parallelograms and their volumes</a></li>
+<li class="chapter" data-level="3.10.2" data-path="volume-of-manifolds.html"><a href="volume-of-manifolds.html#parametrizations"><i class="fa fa-check"></i><b>3.10.2</b> Parametrizations</a></li>
+<li class="chapter" data-level="3.10.3" data-path="volume-of-manifolds.html"><a href="volume-of-manifolds.html#defining-volumes-of-manifolds"><i class="fa fa-check"></i><b>3.10.3</b> Defining volumes of manifolds</a></li>
+</ul></li>
+<li class="chapter" data-level="3.11" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html"><i class="fa fa-check"></i><b>3.11</b> Forms and vector calculus</a>
+<ul>
+<li class="chapter" data-level="3.11.1" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html#forms-on-mathbbrn"><i class="fa fa-check"></i><b>3.11.1</b> Forms on <span class="math inline">\(\mathbb{R}^n\)</span></a></li>
+<li class="chapter" data-level="3.11.2" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html#a-geometric-interpretation-of-standard-forms"><i class="fa fa-check"></i><b>3.11.2</b> A geometric interpretation of standard forms</a></li>
+<li class="chapter" data-level="3.11.3" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html#the-wedge-exterior-product"><i class="fa fa-check"></i><b>3.11.3</b> The wedge (exterior) product</a></li>
+<li class="chapter" data-level="3.11.4" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html#form-fields"><i class="fa fa-check"></i><b>3.11.4</b> Form fields</a></li>
+<li class="chapter" data-level="3.11.5" data-path="forms-and-vector-calculus.html"><a href="forms-and-vector-calculus.html#integrating-form-fields-over-parametrized-domains"><i class="fa fa-check"></i><b>3.11.5</b> Integrating form fields over parametrized domains</a></li>
+</ul></li>
+<li class="chapter" data-level="3.12" data-path="exercises-for-section-6.html"><a href="exercises-for-section-6.html"><i class="fa fa-check"></i><b>3.12</b> Exercises for Section 6.2</a></li>
+<li class="chapter" data-level="3.13" data-path="orientation-of-manifolds.html"><a href="orientation-of-manifolds.html"><i class="fa fa-check"></i><b>3.13</b> Orientation of manifolds</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="higher-dimensional-statistics.html"><a href="higher-dimensional-statistics.html"><i class="fa fa-check"></i><b>4</b> Higher dimensional statistics</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="tail-and-concentration-bounds.html"><a href="tail-and-concentration-bounds.html"><i class="fa fa-check"></i><b>4.1</b> Tail and concentration bounds</a>
+<ul>
+<li class="chapter" data-level="4.1.1" data-path="tail-and-concentration-bounds.html"><a href="tail-and-concentration-bounds.html#classical-bounds-markov-chebyshev-chernoff"><i class="fa fa-check"></i><b>4.1.1</b> Classical bounds: Markov, Chebyshev, Chernoff</a></li>
+</ul></li>
+<li class="chapter" data-level="4.2" data-path="sub-gaussian-variables-and-hoeffding-bounds.html"><a href="sub-gaussian-variables-and-hoeffding-bounds.html"><i class="fa fa-check"></i><b>4.2</b> Sub-Gaussian variables and Hoeffding bounds</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="convex-optimization.html"><a href="convex-optimization.html"><i class="fa fa-check"></i><b>5</b> Convex optimization</a>
+<ul>
+<li class="chapter" data-level="5.1" data-path="convex-sets.html"><a href="convex-sets.html"><i class="fa fa-check"></i><b>5.1</b> Convex sets</a>
+<ul>
+<li class="chapter" data-level="5.1.1" data-path="convex-sets.html"><a href="convex-sets.html#affine-dimension-and-relative-interior"><i class="fa fa-check"></i><b>5.1.1</b> Affine dimension and relative interior</a></li>
+<li class="chapter" data-level="5.1.2" data-path="convex-sets.html"><a href="convex-sets.html#convex-sets-1"><i class="fa fa-check"></i><b>5.1.2</b> Convex sets</a></li>
+<li class="chapter" data-level="5.1.3" data-path="convex-sets.html"><a href="convex-sets.html#generalized-inequalities"><i class="fa fa-check"></i><b>5.1.3</b> Generalized inequalities</a></li>
+<li class="chapter" data-level="5.1.4" data-path="convex-sets.html"><a href="convex-sets.html#separating-and-supporting-hyperplanes"><i class="fa fa-check"></i><b>5.1.4</b> Separating and supporting hyperplanes</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/codetalker7/math" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Math Encyclopedia</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="integration" class="section level2 hasAnchor" number="3.9">
+<h2><span class="header-section-number">3.9</span> Integration<a href="integration.html#integration" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>I’ll try to cover all fundamental definitions of the integral right from the basics.
+I feel this is important since different sources might treat the integral in different
+ways, so it’s better to have one coherent structure and go with it.</p>
+<div id="preliminary-definitions" class="section level3 hasAnchor" number="3.9.1">
+<h3><span class="header-section-number">3.9.1</span> Preliminary definitions<a href="integration.html#preliminary-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 3.13  (Support of a function) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>. Then the <strong><em>support</em></strong> of <span class="math inline">\(f\)</span> is defined as</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{Supp}(f) := \overline{\left\{\boldsymbol{x}\in\mathbb{R}^n: f(\boldsymbol{x})\ne 0\right\}}
+    \end{aligned}
+\]</span></p>
+<p>where the bar denotes the <strong><em>closure</em></strong>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-27" class="definition"><strong>Definition 3.14  (Oscillations) </strong></span>The <strong><em>oscillation</em></strong> of a function <span class="math inline">\(f\)</span> over a set <span class="math inline">\(A\)</span>, denoted by <span class="math inline">\(\text{osc}_A(f)\)</span>,
+is defined as</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{osc}_A(f) := M_A(f) - m_A(f)
+    \end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(M_A(f) := \sup_{\boldsymbol{x}\in A}f(\boldsymbol{x})\)</span>, and <span class="math inline">\(m_A(f)\)</span> is
+similarly defined with the supremum replaced by the infimum.</p>
+</div>
+<p>When <span class="math inline">\(|f|\)</span> is bounded and <span class="math inline">\(f\)</span> has bounded support, all of the above quantities are
+well-defined.</p>
+</div>
+<div id="dyadic-pavings" class="section level3 hasAnchor" number="3.9.2">
+<h3><span class="header-section-number">3.9.2</span> Dyadic pavings<a href="integration.html#dyadic-pavings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>With the oscillation now defined, we’ll define the so called <strong><em>dyadic pavings</em></strong> of
+<span class="math inline">\(\mathbb{R}^n\)</span>; this is just for convenience. Infact we can use any kind of paving
+to define the integral.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 3.15  (Dyadic cube) </strong></span>A <strong><em>dyadic cube</em></strong> <span class="math inline">\(C_{\boldsymbol{k}, N}\subset \mathbb{R}^n\)</span> is defined as</p>
+<p><span class="math display">\[
+    \begin{aligned}
+C_{\boldsymbol{k}, N} := \left\{\boldsymbol{x}\in\mathbb{R}^n: \frac{k_i}{2^N}\le x_i\le \frac{k_i + 1}{2^N} \text{ for }1\le i\le n\right\}
+    \end{aligned}
+\]</span></p>
+<p>where <span class="math inline">\(\boldsymbol{k}\in\mathbb{Z}^n\)</span> is a vector of integers. The collection of all such
+cubes forms the <span class="math inline">\(N\)</span>th <strong><em>dyadic paving</em></strong> of <span class="math inline">\(\mathbb{R}^n\)</span>. The <strong><em>volume</em></strong> of such a
+cube is simply defined to be</p>
+<p><span class="math display">\[
+    \begin{aligned}
+\text{vol}_n(C) := \frac{1}{2^{Nn}}
+    \end{aligned}
+\]</span></p>
+<p>Having defined this, the usual Riemann integral of a function is then defined to be
+the limit of upper/lower Riemann sums with respect to the dyadic paving. Note that,
+as part of the definition of Riemann integrability, we require the function in question
+to be both bounded and have bounded support. The <strong><em>Lebesgue integral</em></strong> is more suited
+to handle more general functions.</p>
+</div>
+</div>
+<div id="two-useful-integral-rules" class="section level3 hasAnchor" number="3.9.3">
+<h3><span class="header-section-number">3.9.3</span> Two useful integral rules<a href="integration.html#two-useful-integral-rules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Here are two rules of integration which are quite useful in some proofs.</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-29" class="proposition"><strong>Proposition 3.4  </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p>A bounded function <span class="math inline">\(f\)</span> with bounded support is integrable if and only if both <span class="math inline">\(f^+\)</span>
+and <span class="math inline">\(f^-\)</span> are integrable.</p></li>
+<li><p>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are integrable, then so are <span class="math inline">\(\sup(f, g)\)</span> and <span class="math inline">\(\inf(f, g)\)</span>.</p></li>
+<li><p>If <span class="math inline">\(f_1:\mathbb{R}^n\to\mathbb{R}\)</span> and <span class="math inline">\(f_2:\mathbb{R}^m\to\mathbb{R}\)</span> are integrable,
+then the function</p>
+<p><span class="math display">\[
+     \begin{aligned}
+g(\boldsymbol{x}, \boldsymbol{y}) := f_1(\boldsymbol{x})f_2(\boldsymbol{y})
+     \end{aligned}
+\]</span></p>
+<p>on <span class="math inline">\(\mathbb{R}^{n + m}\)</span> is integrable, and</p>
+<p><span class="math display">\[
+     \begin{aligned}
+        \int_{\mathbb{R}^{n + m}}g|d^n \boldsymbol{x}||d^m \boldsymbol{y}| &amp;=
+         \left(\int_{\mathbb{R}^n} f_1 |d^n \boldsymbol{x}|\right)\left(\int_{\mathbb{R}^m}f_2 |d^m \boldsymbol{y}|\right)
+     \end{aligned}
+\]</span></p></li>
+</ol>
+</div>
+</div>
+<div id="volumes" class="section level3 hasAnchor" number="3.9.4">
+<h3><span class="header-section-number">3.9.4</span> Volumes<a href="integration.html#volumes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="definition">
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 3.16  (Higher dimensional volume) </strong></span>For any set <span class="math inline">\(A\subset\mathbb{R}^n\)</span>, we define the <strong><em>volume</em></strong> of <span class="math inline">\(A\)</span> as</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{vol}_n(A) := \int_{\mathbb{R}^n}\boldsymbol{1}_A|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+<p>whenever the indicator function is integrable. If the integral is well-defined, then <span class="math inline">\(A\)</span>
+is said to be <strong><em>pavable</em></strong>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-31" class="proposition"><strong>Proposition 3.5  (Volume is invariant under translation) </strong></span>Let <span class="math inline">\(A\)</span> be any pavable subset of <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\boldsymbol{v}\in \mathbb{R}^n\)</span>
+by any vector. Then, <span class="math inline">\(A + \boldsymbol{v}\)</span> is pavable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       \text{vol}_n(A + \boldsymbol{v})  &amp;= \text{vol}_n(A)
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-32" class="proposition"><strong>Proposition 3.6  (Set with volume 0) </strong></span>A bounded set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has volume <span class="math inline">\(0\)</span> if and only if for every
+<span class="math inline">\(\epsilon &gt; 0\)</span> there exists some <span class="math inline">\(N\)</span> such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       \sum_{C\in\mathcal{D}_N(\mathbb{R}^n)\\ C\cap X\ne \phi} \text{vol}_n(C) \le \epsilon
+    \end{aligned}
+\]</span></p>
+<p>where above <span class="math inline">\(\mathcal{D}_N\)</span> is the set of all dyadic cubes at depth <span class="math inline">\(N\)</span>.</p>
+</div>
+<p>Motivated by the above proposition, we can also define the notion of <strong><em><span class="math inline">\(k\)</span>-dimensional
+volume</em></strong> <span class="math inline">\(0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, where <span class="math inline">\(k &lt; n\)</span>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 3.17  (Lower dimensional volume 0) </strong></span></p>
+<ol style="list-style-type: decimal">
+<li><p>A bounded subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has <span class="math inline">\(k\)</span>-dimensional volume <span class="math inline">\(0\)</span> if</p>
+<p><span class="math display">\[
+     \begin{aligned}
+          \lim_{N\to\infty} \sum_{C\in\mathcal{D}_N(\mathbb{R}^n)\\C\cap X\ne \phi} \left(\frac{1}{2^N}\right)^k&amp;= 0
+     \end{aligned}
+\]</span></p></li>
+<li><p>An arbitrary subset <span class="math inline">\(X\subset\mathbb{R}^n\)</span> has <span class="math inline">\(k\)</span>-dimensional volume <span class="math inline">\(0\)</span> if for all
+<span class="math inline">\(R &gt; 0\)</span>, the bounded set <span class="math inline">\(X\cap B_R(\boldsymbol{0})\)</span> has <span class="math inline">\(k\)</span>-dimensional volume <span class="math inline">\(0\)</span>.</p></li>
+</ol>
+</div>
+<p>We have the following useful theorem, which is intuitive, but very useful.</p>
+<div class="theorem">
+<p><span id="thm:manifold-volumes" class="theorem"><strong>Theorem 3.23  (Lower dimensional volumes of manifolds) </strong></span>If integers <span class="math inline">\(m, k, n\)</span> satisfy <span class="math inline">\(0\le m &lt; k \le n\)</span> and <span class="math inline">\(M\subset \mathbb{R}^n\)</span> is a
+manifold of dimension <span class="math inline">\(m\)</span>, any closed subset <span class="math inline">\(X\subset M\)</span> has <span class="math inline">\(k\)</span>-dimensional
+volume <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-34" class="proposition"><strong>Proposition 3.7  (Scaling volume) </strong></span>If <span class="math inline">\(A\subset\mathbb{R}^n\)</span> has volume and <span class="math inline">\(t\in\mathbb{R}\)</span>, then the set
+<span class="math inline">\(tA\)</span> has volume, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{vol}_n(tA) &amp;= |t|^n\text{vol}_n(A)
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="what-functions-can-be-integrated" class="section level3 hasAnchor" number="3.9.5">
+<h3><span class="header-section-number">3.9.5</span> What functions can be integrated?<a href="integration.html#what-functions-can-be-integrated" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-35" class="theorem"><strong>Theorem 3.24  (Criterion for integrability) </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> is integrable if and only if it is bounded
+with bounded support, and for all <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists <span class="math inline">\(N\)</span> such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+\sum_{C\in\mathcal{D}_N : \text{osc}_C(f) &gt; \epsilon} \text{vol}_n(C) &lt; \epsilon
+    \end{aligned}
+\]</span></p>
+<p>where above, <span class="math inline">\(\mathcal{D}_N\)</span> is the set of all dyadic cubes at depth <span class="math inline">\(N\)</span>.</p>
+</div>
+<p>As a consequence of this criterion for integrability of functions, the following facts
+about volumes can be proven:</p>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-36" class="proposition"><strong>Proposition 3.8  (Bounded part of graph of integrable function has volume 0) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be an integrable function with graph <span class="math inline">\(\Gamma(f)\)</span>, and
+let <span class="math inline">\(C_0\in\mathbb{R}^n\)</span> be any dyadic cube. Then</p>
+<p><span class="math display">\[
+    \begin{aligned}
+         \text{vol}_{n + 1}(\Gamma(f)\cap (C_0\times \mathbb{R})) &amp;= 0
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-37" class="theorem"><strong>Theorem 3.25  </strong></span>Any continuous function <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span> with bounded support is integrable.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-38" class="corollary"><strong>Corollary 3.3  </strong></span>Let <span class="math inline">\(X\subset \mathbb{R}^n\)</span> be compact and let <span class="math inline">\(f:X\to\mathbb{R}\)</span> be continuous. Then
+the graph <span class="math inline">\(\Gamma_f\subset \mathbb{R}^{n + 1}\)</span> has volume <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 3.26  </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>, bounded with bounded support, is integrable
+if it is continuous except on a set of volume <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-40" class="corollary"><strong>Corollary 3.4  </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be integrable, and let <span class="math inline">\(g:\mathbb{R}^n\to\mathbb{R}\)</span>
+be a bounded function. If <span class="math inline">\(f = g\)</span> except on a set of volume <span class="math inline">\(0\)</span>, then <span class="math inline">\(g\)</span> is integrable
+and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^n}f|d^n \boldsymbol{x}| &amp;= \int_{\mathbb{R}^n}g|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="measure-zero" class="section level3 hasAnchor" number="3.9.6">
+<h3><span class="header-section-number">3.9.6</span> Measure zero<a href="integration.html#measure-zero" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The notion of <em>measure zero</em> is more important than the notion of <em>volume zero</em> from a
+theoretical viewpoint, since it allows a nice characterization of integrable functions.
+In the following definition, a <strong><em>box</em></strong> in <span class="math inline">\(\mathbb{R}^n\)</span> of sidelength <span class="math inline">\(\delta &gt; 0\)</span>
+is a cube of the form</p>
+<p><span class="math display">\[
+\begin{aligned}
+\left\{\boldsymbol{x}\in\mathbb{R}^n: a_i &lt; x_i &lt; a_i + \delta, i = 1, \cdots, n\right\}
+    \end{aligned}
+\]</span></p>
+<div class="definition">
+<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 3.18  (Measure 0) </strong></span>A set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has <strong><em>measure</em></strong> <span class="math inline">\(0\)</span> if for every <span class="math inline">\(\epsilon &gt; 0\)</span>,
+there exists a countable sequence of open boxes <span class="math inline">\(B_i\)</span> such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        X\subset \bigcup B_i \text{ and } \sum \text{vol}_n (B_i) \le \epsilon
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-42" class="theorem"><strong>Theorem 3.27  </strong></span>A countable union of sets of measure <span class="math inline">\(0\)</span> has measure <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-43" class="corollary"><strong>Corollary 3.5  </strong></span>Let <span class="math inline">\(B_R(\boldsymbol{0})\)</span> be the ball of radius <span class="math inline">\(R\)</span> centered at the origin. If
+for all <span class="math inline">\(R\ge 0\)</span> the subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> satisfies
+<span class="math inline">\(\text{vol}_n(X\cap B_R(\boldsymbol{0})) = 0\)</span>, then <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-44" class="proposition"><strong>Proposition 3.9  </strong></span>Let <span class="math inline">\(X\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> of dimension <span class="math inline">\(k &lt; n\)</span>. Then <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>,
+and any translate of <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-45" class="proof"><em>Proof</em>. </span>Clearly, <span class="math inline">\(X\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold. Hence, by Theorem <a href="integration.html#thm:manifold-volumes">3.23</a>,
+the <span class="math inline">\(n\)</span>-dimensional volume of <span class="math inline">\(X\cap B_R(\boldsymbol{0})\)</span> is <span class="math inline">\(0\)</span> for all <span class="math inline">\(R\ge 0\)</span>, and
+applying the previous corollary the claim follows.</p>
+</div>
+</div>
+<div id="integrability-of-almost-continuous-functions" class="section level3 hasAnchor" number="3.9.7">
+<h3><span class="header-section-number">3.9.7</span> Integrability of almost continuous functions<a href="integration.html#integrability-of-almost-continuous-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-46" class="theorem"><strong>Theorem 3.28  (What functions are integrable) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be bounded with bounded support. Then <span class="math inline">\(f\)</span> is integrable
+if and only if it is continuous except on a set of measure <span class="math inline">\(0\)</span>.</p>
+</div>
+<p>As a result of this theorem, we can also prove the following intuitive fact, but often
+very useful in computations.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-47" class="theorem"><strong>Theorem 3.29  (Boundaries have volume zero) </strong></span>Let <span class="math inline">\(A\subset\mathbb{R}^n\)</span> be a set such that <span class="math inline">\(\partial A\)</span> has a well-defined
+<span class="math inline">\(n\)</span>-dimensional volume. Then, <span class="math inline">\(\text{vol}_n(\partial A) = 0\)</span>, i.e the volume must
+be zero.</p>
+</div>
+<div class="proof">
+<p><span id="unlabeled-div-48" class="proof"><em>Proof</em>. </span>By definition, since <span class="math inline">\(\partial A\)</span> has a volume, the indicator
+<span class="math inline">\(\boldsymbol{1}_{\partial A}\)</span> is integrable, i.e it is continuous almost everywhere.
+If <span class="math inline">\(S\)</span> is the set of points where <span class="math inline">\(\boldsymbol{1}_{\partial A}\)</span> is continous, we claim
+that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        S\subset \left\{\boldsymbol{x} : \boldsymbol{x}\notin \partial A\right\}
+    \end{aligned}
+\]</span></p>
+<p>But this is obvious: note that if <span class="math inline">\(\boldsymbol{1}_{\partial A}\)</span> is continuous at some
+<span class="math inline">\(\boldsymbol{z}\)</span>, then for a sufficiently small open ball around <span class="math inline">\(\boldsymbol{z}\)</span>, all
+<span class="math inline">\(\boldsymbol{y}\)</span> in the ball will have
+<span class="math inline">\(|\boldsymbol{1}_{\partial A}(\boldsymbol{z}) - \boldsymbol{1}_{\partial A}(\boldsymbol{y})|\)</span>
+to be arbitrarily small, which will further imply that
+<span class="math inline">\(\boldsymbol{1}_{\partial A}(\boldsymbol{z}) = \boldsymbol{1}_{\partial A}(\boldsymbol{y})\)</span>
+for all <span class="math inline">\(\boldsymbol{y}\)</span> in that open ball. Clearly, this must mean that
+<span class="math inline">\(\boldsymbol{z}\notin \partial A\)</span>, since for every neighborhood of a point in the boundary
+of a set, we can find points in the set and points not in the set. This proves the claim.</p>
+<p>Taking compliments, the claim implies that <span class="math inline">\(\partial A\subset S^c\)</span>, where <span class="math inline">\(S^c\)</span> is the
+set of discontinuities. Since <span class="math inline">\(S^c\)</span> has measure zero (integrability), it follows that
+<span class="math inline">\(\partial A\)</span> also has measure <span class="math inline">\(0\)</span>. Since <span class="math inline">\(\text{vol}_n(\partial A)\)</span> is well defined,
+this proves that <span class="math inline">\(\text{vol}_n(\partial A) = 0\)</span>.</p>
+</div>
+</div>
+<div id="fubinis-theorem-and-iterated-integrals" class="section level3 hasAnchor" number="3.9.8">
+<h3><span class="header-section-number">3.9.8</span> Fubini’s Theorem and Iterated Integrals<a href="integration.html#fubinis-theorem-and-iterated-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>This is one of the most important tools to compute higher dimensional integrals.
+Essentially, <strong><em>Fubini’s Theorem</em></strong> reduces the problem of computing higher-dimensional
+integrals to the problem of single variable integrals.</p>
+<div class="theorem">
+<p><span id="thm:fubini" class="theorem"><strong>Theorem 3.30  (Fubini's Theorem) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\times \mathbb{R}^m\to\mathbb{R}\)</span> be an integrable function.
+For a fixed <span class="math inline">\(\boldsymbol{x}\)</span>, let the function
+<span class="math inline">\(f_{\boldsymbol{x}}:\mathbb{R}^m\to\mathbb{R}\)</span> be defined by
+<span class="math inline">\(\boldsymbol{y}\mapsto f(\boldsymbol{x}, \boldsymbol{y})\)</span>, and let
+<span class="math inline">\(f^{\boldsymbol{y}}:\mathbb{R}^n\to\mathbb{R}\)</span> be similarly defined. Then,
+the functions <span class="math inline">\(U(f_{\boldsymbol{x}})\)</span>, <span class="math inline">\(L(f_{\boldsymbol{x}})\)</span>,
+<span class="math inline">\(U(f^{\boldsymbol{y}})\)</span>, <span class="math inline">\(L(f^{\boldsymbol{y}})\)</span> are all integrable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       \int_{\mathbb{R}^n} U(f_{\boldsymbol{x}}) |d^n \boldsymbol{x}| &amp;= \int_{\mathbb{R}^n} L(f_{\boldsymbol{x}})|d^n \boldsymbol{x}| = \int_{\mathbb{R}^m} U(f_{\boldsymbol{y}}) |d^n \boldsymbol{y}| = \int_{\mathbb{R}^m} L(f_{\boldsymbol{y}})|d^n \boldsymbol{y}| = \int_{\mathbb{R}^n\times\mathbb{R}^m} f|d^n \boldsymbol{x}||d^m \boldsymbol{y}|
+    \end{aligned}
+\]</span></p>
+<p>Here, <span class="math inline">\(U\)</span> and <span class="math inline">\(L\)</span> denote the upper and lower integrals of the respective functions.</p>
+</div>
+<p>As a corollary of this theorem, we have the following useful facts:</p>
+<div class="corollary">
+<p><span id="cor:unlabeled-div-49" class="corollary"><strong>Corollary 3.6  </strong></span>The set of <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(U(f_{\boldsymbol{x}})\ne L(f_{\boldsymbol{x}})\)</span>
+and the set of <span class="math inline">\(\boldsymbol{y}\)</span> such that <span class="math inline">\(U(f^\boldsymbol{y})\ne L(f^\boldsymbol{y})\)</span>
+both have measure <span class="math inline">\(0\)</span>. Thus, the set of <span class="math inline">\(\boldsymbol{x}\)</span> such that
+<span class="math inline">\(f_{\boldsymbol{x}}\)</span> is not integrable has <span class="math inline">\(n\)</span>-dimensional measure <span class="math inline">\(0\)</span>, and the set
+of <span class="math inline">\(\boldsymbol{y}\)</span> where <span class="math inline">\(f^{\boldsymbol{y}}\)</span> is not integrable has <span class="math inline">\(m\)</span>-dimensional
+measure <span class="math inline">\(0\)</span>.</p>
+</div>
+</div>
+<div id="general-pavings" class="section level3 hasAnchor" number="3.9.9">
+<h3><span class="header-section-number">3.9.9</span> General Pavings<a href="integration.html#general-pavings" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>While dyadic pavings simplify proofs and give us a concrete paving to work with,
+nothing stops us from developing the same theory using other pavings. Infact, we’ll
+give precise definitions of what a <strong><em>paving</em></strong> really is, and we’ll mention theorems
+stating that it doesn’t matter which paving we really use to develop the theory
+of integration.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-50" class="definition"><strong>Definition 3.19  (Pavings) </strong></span>A <strong><em>paving</em></strong> of a subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> is a collection <span class="math inline">\(\mathcal{P}\)</span> of
+bounded subsets <span class="math inline">\(P\subset X\)</span> such that the following hold:</p>
+<ol style="list-style-type: decimal">
+<li><span class="math inline">\(\bigcup_{P\in\mathcal{P}}P = X\)</span>.</li>
+<li><span class="math inline">\(\text{vol}_n(P_1\cap P_2) = 0\)</span> when <span class="math inline">\(P_1, P_2\in\mathcal{P}\)</span> and <span class="math inline">\(P_1\ne P_2\)</span>.</li>
+<li>Any bounded subset of <span class="math inline">\(X\)</span> intersects only finitely many <span class="math inline">\(P\in\mathcal{P}\)</span>.</li>
+<li>For all <span class="math inline">\(P\in\mathcal{P}\)</span>, we have <span class="math inline">\(\text{vol}_n(\partial P) = 0\)</span>.</li>
+</ol>
+<p>For any bounded function <span class="math inline">\(f\)</span> with bounded support, we can define an upper sum
+<span class="math inline">\(U_{\mathcal{P}_N}(f)\)</span> and a lower sum <span class="math inline">\(L_{\mathcal{P}_N}(f)\)</span> with respect to
+any paving:</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        U_{\mathcal{P}_N}(f) := \sum_{P\in\mathcal{P}_N} M_P(f)\text{vol}_n(P)\text{ and } U_{\mathcal{P}_N}(f) := \sum_{P\in\mathcal{P}_N} m_P(f)\text{vol}_n(P)
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 3.20  (Nested Partitions) </strong></span>A sequence <span class="math inline">\(\mathcal{P}_N\)</span> of pavings of <span class="math inline">\(X\subset\mathbb{R}^n\)</span> is called a
+<strong><em>nested partition</em></strong> of <span class="math inline">\(X\)</span> if the following hold:</p>
+<ol style="list-style-type: decimal">
+<li><p><span class="math inline">\(\mathcal{P}_{N + 1}\)</span> is a <em>refinement</em> of <span class="math inline">\(\mathcal{P}_N\)</span>; i.e, every piece of
+<span class="math inline">\(\mathcal{P}_{N + 1}\)</span> is contained in a piece of <span class="math inline">\(\mathcal{P}_N\)</span>.</p></li>
+<li><p>The pieces of <span class="math inline">\(\mathcal{P}_N\)</span> shrink to points as <span class="math inline">\(N\to\infty\)</span>, i.e
+<span class="math display">\[
+     \begin{aligned}
+         \lim_{N\to\infty} \sup_{P\in\mathcal{P}_N} \text{diam}(P) = 0
+     \end{aligned}
+\]</span></p></li>
+</ol>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-52" class="theorem"><strong>Theorem 3.31  (Integrals using arbitrary pavings) </strong></span>Let <span class="math inline">\(X\subset\mathbb{R}^n\)</span> be a bounded subset, and let <span class="math inline">\(\mathcal{P}_N\)</span> be a nested
+partition of <span class="math inline">\(X\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li><p>If <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> is integrable, then the limits
+<span class="math display">\[
+     \begin{aligned}
+         \lim_{N\to\infty}U_{\mathcal{P}_N}(f\boldsymbol{1}_X)\text{ and }\lim_{N\to\infty}L_{\mathcal{P}_N}(f\boldsymbol{1}_X)
+     \end{aligned}
+\]</span>
+exist and are both equal to</p>
+<p><span class="math display">\[
+     \begin{aligned}
+\int_X f(\boldsymbol{x})|d^n \boldsymbol{x}| :=  \int_{\mathbb{R}^n} f(\boldsymbol{x})\boldsymbol{1}_X(\boldsymbol{x})|d^n \boldsymbol{x}|
+     \end{aligned}
+\]</span></p></li>
+<li><p>Conversely, if the mentioned limits are equal, then <span class="math inline">\(f \boldsymbol{1}_X\)</span> is integrable
+and</p>
+<p><span class="math display">\[
+     \begin{aligned}
+         \int_{\mathbb{R}^n} f(\boldsymbol{x})\boldsymbol{1}_X(\boldsymbol{x})|d^n \boldsymbol{x}|
+     \end{aligned}
+\]</span></p>
+<p>is equal to the common limit.</p></li>
+</ol>
+</div>
+</div>
+<div id="volumes-and-determinants" class="section level3 hasAnchor" number="3.9.10">
+<h3><span class="header-section-number">3.9.10</span> Volumes and determinants<a href="integration.html#volumes-and-determinants" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:determinant-scales-volumes" class="theorem"><strong>Theorem 3.32  (Determinant scales volumes) </strong></span>Let <span class="math inline">\(T:\mathbb{R}^n\to\mathbb{R}^n\)</span> be a linear transformation given by the matrix <span class="math inline">\([T]\)</span>.
+Then for any pavable set <span class="math inline">\(A\subset\mathbb{R}^n\)</span>, the image <span class="math inline">\(T(A)\)</span> is pavable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{vol}_n T(A) &amp;= |\det[T]|\text{vol}_n A
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 3.21  (k-parallelograms) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_k\)</span> be <span class="math inline">\(k\)</span> vectors in <span class="math inline">\(\mathbb{R}^n\)</span>.
+The <strong><em><span class="math inline">\(k\)</span>-parallelogram</em></strong> spanned by these vectors is the set of all</p>
+<p><span class="math display">\[
+    \begin{aligned}
+         t_1 \boldsymbol{v}_1 + \cdots + t_k \boldsymbol{v}_k
+    \end{aligned}
+\]</span></p>
+<p>with <span class="math inline">\(0\le t_i\le 1\)</span> for all <span class="math inline">\(1\le i\le k\)</span>. It is denoted
+<span class="math inline">\(P(\boldsymbol{v}_1, ..., \boldsymbol{v}_k)\)</span>.</p>
+</div>
+<p>An application of <a href="integration.html#thm:determinant-scales-volumes">3.32</a> gives the following result.</p>
+<div class="proposition">
+<p><span id="prp:parallelogram-volume" class="proposition"><strong>Proposition 3.10  (Volume of parallelograms) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1,...,\boldsymbol{v}_n\)</span> be vectors in <span class="math inline">\(\mathbb{R}^n\)</span>. Then</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \text{vol}_n P(\boldsymbol{v}_1,...,\boldsymbol{v}_n) &amp;= |\det[\boldsymbol{v}_1, ..., \boldsymbol{v}_n]|
+    \end{aligned}
+\]</span></p>
+</div>
+<div id="linear-change-of-variables" class="section level4 hasAnchor" number="3.9.10.1">
+<h4><span class="header-section-number">3.9.10.1</span> Linear change of variables<a href="integration.html#linear-change-of-variables" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>We’ll state a more general change of variables theorem. Here’s a simpler version of the
+theorem, where we use an invertible linear transformation as our substitution.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-54" class="theorem"><strong>Theorem 3.33  (Linear change of variables) </strong></span>Let <span class="math inline">\(T:\mathbb{R}^n\to\mathbb{R}^n\)</span> be an invertible linear transformation, and let
+<span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be an integrable function. Then <span class="math inline">\(f\circ T\)</span> is integrable,
+and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^n} f(\boldsymbol{y}) |d^n \boldsymbol{y}| &amp;= |\det T| \int_{\mathbb{R}^n} f(T(\boldsymbol{x})) |d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+<div id="the-general-change-of-variables-formula" class="section level3 hasAnchor" number="3.9.11">
+<h3><span class="header-section-number">3.9.11</span> The general change of variables formula<a href="integration.html#the-general-change-of-variables-formula" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="theorem">
+<p><span id="thm:change-of-variables" class="theorem"><strong>Theorem 3.34  (Change of variables formula) </strong></span>Let <span class="math inline">\(X\)</span> be a compact subset of <span class="math inline">\(\mathbb{R}^n\)</span> with boundary <span class="math inline">\(\partial X\)</span> of volume <span class="math inline">\(0\)</span>;
+let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be an open set containing <span class="math inline">\(X\)</span>. Let
+<span class="math inline">\(\boldsymbol{\Phi}:U\to\mathbb{R}^n\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> map that is injective on
+<span class="math inline">\((X - \partial X)\)</span> and has Lipschitz derivative, with
+<span class="math inline">\([D\boldsymbol{\Phi}(\boldsymbol{x})]\)</span> invertible at every
+<span class="math inline">\(\boldsymbol{x}\in (X - \partial X)\)</span>. Set <span class="math inline">\(Y = \boldsymbol{\Phi}(X)\)</span>.</p>
+<p>Then, if <span class="math inline">\(f:Y\to\mathbb{R}\)</span> is integrable,
+<span class="math inline">\(f\circ \boldsymbol{\Phi}|\det [D \boldsymbol{\Phi}]|\)</span> is integrable on <span class="math inline">\(X\)</span>, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_Y f(\boldsymbol{y})|d^n \boldsymbol{y}| &amp;= \int_X (f\circ \boldsymbol{\Phi})(\boldsymbol{x})|\det [D \boldsymbol{\Phi}(\boldsymbol{x})]||d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="common-change-of-variable-transformations-and-coordinate-systems" class="section level3 hasAnchor" number="3.9.12">
+<h3><span class="header-section-number">3.9.12</span> Common change of variable transformations and coordinate systems<a href="integration.html#common-change-of-variable-transformations-and-coordinate-systems" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="polar-coordinates" class="section level4 hasAnchor" number="3.9.12.1">
+<h4><span class="header-section-number">3.9.12.1</span> Polar coordinates<a href="integration.html#polar-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Consider the compact subset <span class="math inline">\(X = [0, R]\times [0, 2\pi]\)</span> of <span class="math inline">\(\mathbb{R}^2\)</span>.
+Let <span class="math inline">\(U\)</span> be the disc centered at the origin of radius <span class="math inline">\(R + 2\pi\)</span>; so, <span class="math inline">\(U\)</span>
+is an open set containing <span class="math inline">\(X\)</span>.
+Clearly, the boundary <span class="math inline">\(\partial X\)</span> has <span class="math inline">\(2\)</span>-dimensional volume <span class="math inline">\(0\)</span>.
+The <strong><em>polar coordinate map</em></strong> <span class="math inline">\(\mathbb{R}^2\to\mathbb{R}^2\)</span> maps a point <span class="math inline">\((r, \theta)\)</span>
+to a point <span class="math inline">\((x, y)\)</span> via the following transformation:</p>
+<p><span class="math display">\[
+    \begin{aligned}
+         (r, \theta) \mapsto (r\cos\theta, r\sin\theta)
+    \end{aligned}
+\]</span></p>
+<p>It is easy to see that the map <span class="math inline">\(P\)</span> is <span class="math inline">\(\mathscr{C}^\infty\)</span>. Moreover, the map <span class="math inline">\(P\)</span>
+is <em>injective</em> on <span class="math inline">\((X - \partial X)\)</span>, and the derivative of <span class="math inline">\(P\)</span> is given by</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        DP(r, \theta) &amp;=
+        \begin{bmatrix}
+            \cos\theta &amp; \sin\theta\\
+            -r\sin\theta &amp; r\cos\theta\\
+        \end{bmatrix}
+    \end{aligned}
+\]</span></p>
+<p>In particular, <span class="math inline">\(\det DP(r, \theta) = r\)</span>, and hence <span class="math inline">\(DP(r, \theta)\)</span> is invertible in
+<span class="math inline">\((X - \partial X)\)</span>.</p>
+<p>Next, we check that <span class="math inline">\(DP\)</span> is Lipschitz, where we restrict the domain of <span class="math inline">\(P\)</span> to <span class="math inline">\(U\)</span>. To that
+end, we consider <span class="math inline">\(DP:U\to\mathbb{R}^4\)</span> defined by</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        (r, \theta) \mapsto (\cos\theta, \sin\theta, r\cos\theta, r\sin\theta)
+    \end{aligned}
+\]</span></p>
+<p>In that case, note that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        D^2P(r, \theta) &amp;=
+        \begin{bmatrix}
+            0 &amp; 0 &amp; \cos\theta &amp; \sin\theta \\
+            -\sin\theta &amp; \cos\theta &amp; -r\sin\theta &amp; r\cos\theta \\
+        \end{bmatrix}
+    \end{aligned}
+\]</span></p>
+<p>In particular, we see that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       \lVert D^2P(r, \theta)\rVert^2  &amp;= 1 + 1 + r^2
+    \end{aligned}
+\]</span></p>
+<p>Hence, the above norm is bounded for all points in <span class="math inline">\(U\)</span>, since <span class="math inline">\(U\)</span> is itself bounded.
+So, we’ve proven that the map <span class="math inline">\(P\)</span> satisfies all conditions of Theorem
+<a href="integration.html#thm:change-of-variables">3.34</a>. In particular, we have proven that for any integrable
+function <span class="math inline">\(f:\mathbb{R}^2\to\mathbb{R}\)</span> (bounded with bounded support, by definition),
+we have</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^2} f(x, y) |dx dy| &amp;= \int_{[0, R]\times [0, 2\pi]} f(r\cos \theta, r\sin\theta) r|dr d\theta|
+    \end{aligned}
+\]</span></p>
+</div>
+<div id="spherical-coordinates" class="section level4 hasAnchor" number="3.9.12.2">
+<h4><span class="header-section-number">3.9.12.2</span> Spherical coordinates<a href="integration.html#spherical-coordinates" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The <strong><em>spherical coordinate map</em></strong> maps a point <span class="math inline">\((r, \theta,\varphi)\)</span> to the point
+<span class="math inline">\((r\cos\theta\cos\varphi, r\sin\theta\cos\varphi, r\sin\varphi)\)</span>. We can repeat a similar
+analysis as in the case of the polar coordinates map to derive a change of variables
+formula for <span class="math inline">\(S\)</span>. In this case, the compact subset <span class="math inline">\(X\)</span> which we’ll have to consider will
+be <span class="math inline">\(X = [0, R]\times [-\pi/2, \pi/2]\times [0, 2\pi]\)</span>.</p>
+</div>
+</div>
+<div id="lebesgue-integrals" class="section level3 hasAnchor" number="3.9.13">
+<h3><span class="header-section-number">3.9.13</span> Lebesgue Integrals<a href="integration.html#lebesgue-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The following definitions and motivation behind the Lebesgue integral have been taken
+from <span class="citation">(<a href="#ref-hubbardcalculus">John H. Hubbard 2009</a>)</span>. This approach is quite different from the standard one, where
+Lebesgue integrals are defined from the ground up using the notion of <em>simple functions</em>.
+Nonetheless, this approach is better suited for the <em>computation</em> of Lebesgue integrals,
+and is equivalent to the standard approach.</p>
+<div id="integrals-and-limits" class="section level4 hasAnchor" number="3.9.13.1">
+<h4><span class="header-section-number">3.9.13.1</span> Integrals and Limits<a href="integration.html#integrals-and-limits" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>One of the motivating properties behind defining the Lebesgue integral is that
+the Lebesgue integral behaves really well w.r.t limits. For the standard Riemann
+integral, <em>uniform convergence</em> is required, which is often not satisfied.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 3.35  (Convergence for Riemann integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of integrable functions <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span>,
+all with support in a fixed bal <span class="math inline">\(B\subset\mathbb{R}^n\)</span>, and converging uniformly
+to a function <span class="math inline">\(f\)</span>. Then <span class="math inline">\(f\)</span> is integrable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \lim_{k\to\infty}\int_{\mathbb{R}^n}f_k(\boldsymbol{x})|d^n \boldsymbol{x}| &amp;= \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}|
+\end{aligned}
+\]</span></p>
+</div>
+<p>We also state the <strong><em>dominated convergence theorem</em></strong> for Riemann integrals, which
+requires one to assume that the limit function is itself integrable.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-56" class="theorem"><strong>Theorem 3.36  (Dominated convergence theorem for Riemann integrals) </strong></span>Let <span class="math inline">\(f_k:\mathbb{R}^n\to\mathbb{R}\)</span> be a sequence of Riemann integrable functions.
+Suppose there exists <span class="math inline">\(R &gt; 0\)</span> such that all <span class="math inline">\(f_k\)</span> have their support in
+<span class="math inline">\(B_R(\boldsymbol{0})\)</span> and satisfy <span class="math inline">\(|f_k|\le R\)</span>. Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>
+be a Riemann integrable function such that
+<span class="math inline">\(f(\boldsymbol{x}) = \lim_{k\to\infty} f_k(\boldsymbol{x})\)</span> almost everywhere. Then</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \lim_{k\to\infty}\int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}| &amp;= \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="lebesgue-equality-and-the-lebesgue-integral-as-a-limit-of-riemann-integrals" class="section level4 hasAnchor" number="3.9.13.2">
+<h4><span class="header-section-number">3.9.13.2</span> Lebesgue equality and the Lebesgue integral as a limit of Riemann integrals<a href="integration.html#lebesgue-equality-and-the-lebesgue-integral-as-a-limit-of-riemann-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>The following theorem will be our basis of defining higher dimensional
+Lebesgue integrals.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-57" class="theorem"><strong>Theorem 3.37  (Convergence except on a set of measure 0) </strong></span>If <span class="math inline">\(f_k\)</span> is a sequence of Riemann-integrable functions on <span class="math inline">\(\mathbb{R}^n\)</span>
+such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |f_k(\boldsymbol{x})| |d^n \boldsymbol{x}|&lt; \infty
+    \end{aligned}
+\]</span></p>
+<p>then the series <span class="math inline">\(\sum_{k = 1}^\infty f_k(\boldsymbol{x})\)</span> converges almost everywhere.</p>
+</div>
+<p>Motivated by this fact, we define our version of the <strong><em>Lebesgue integral</em></strong>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 3.38  (Lebesgue integral) </strong></span>Let <span class="math inline">\((f_k)\)</span> and <span class="math inline">\((g_k)\)</span> be two sequences of Riemann integrable functions
+<span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span> such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |f_k(\boldsymbol{x})| |d^n \boldsymbol{x}|&lt; \infty \text{ and } \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |g_k(\boldsymbol{x})| |d^n \boldsymbol{x}|&lt; \infty
+    \end{aligned}
+\]</span></p>
+<p>and that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sum_{k = 1}^\infty f_k = \sum_{k = 1}^\infty g_k
+    \end{aligned}
+\]</span></p>
+<p>almost everywhere. Then</p>
+<p><span class="math display">\[
+    \begin{aligned}
+         \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |f_k(\boldsymbol{x})| |d^n \boldsymbol{x}|= \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |g_k(\boldsymbol{x})| |d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+<p>In that case, we define the <strong><em>Lebesgue integral</em></strong> of <span class="math inline">\(f := \sum_{k = 1}^\infty f_k\)</span> by</p>
+<p><span class="math display">\[
+    \begin{aligned}
+    \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}| := \sum_{k = 1}^\infty \int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="important-properties-of-the-lebesgue-integral" class="section level4 hasAnchor" number="3.9.13.3">
+<h4><span class="header-section-number">3.9.13.3</span> Important properties of the Lebesgue integral<a href="integration.html#important-properties-of-the-lebesgue-integral" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-59" class="proposition"><strong>Proposition 3.11  </strong></span>The following hold:</p>
+<ol style="list-style-type: decimal">
+<li>The Lebesgue integral is linear.</li>
+<li>If <span class="math inline">\(f\)</span> is Lebesgue integrable on <span class="math inline">\(\mathbb{R}^n\)</span>, and <span class="math inline">\(g\)</span> is Riemann integrable, then
+<span class="math inline">\(fg\)</span> is Lebesgue integrable.</li>
+<li>If <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span> are Lebesgue integrable on <span class="math inline">\(\mathbb{R}^n\)</span> and if <span class="math inline">\(f\le g\)</span> almost
+everywhere, then
+<span class="math display">\[
+     \begin{aligned}
+         \int_{\mathbb{R}^n}f(\boldsymbol{x})|d^n \boldsymbol{x}| \le \int_{\mathbb{R}^n}g(\boldsymbol{x})|d^n \boldsymbol{x}|
+     \end{aligned}
+\]</span></li>
+</ol>
+</div>
+</div>
+<div id="important-theorems-about-lebesgue-integrals" class="section level4 hasAnchor" number="3.9.13.4">
+<h4><span class="header-section-number">3.9.13.4</span> Important theorems about Lebesgue integrals<a href="integration.html#important-theorems-about-lebesgue-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-60" class="theorem"><strong>Theorem 3.39  (A first limit theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions such that</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |f_k(\boldsymbol{x})||d^n \boldsymbol{x}| &lt; \infty
+    \end{aligned}
+\]</span></p>
+<p>Then <span class="math inline">\(f(\boldsymbol{x}) := \sum_{k = 1}^\infty f_k(\boldsymbol{x})\)</span> exists almost
+everywhere, the function <span class="math inline">\(f\)</span> is Lebesgue integrable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}| &amp;= \sum_{k = 1}^\infty \int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 3.40  (Monotone convergence theorem) </strong></span>Let <span class="math inline">\(0\le f_1\le f_2\le \cdots\)</span> be a sequence of Lebesgue integrable functions, where
+each inequality holds almost everywhere. If</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \sup_{k} \int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}| &lt; \infty
+    \end{aligned}
+\]</span></p>
+<p>then the limit <span class="math inline">\(f(\boldsymbol{x}) := \lim_{k\to\infty} f_k(\boldsymbol{x})\)</span> exists for
+almost all <span class="math inline">\(\boldsymbol{x}\)</span>, the function <span class="math inline">\(f\)</span> is Lebesgue integrable, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}| = \sup_{k} \int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+<p>Conversely, if <span class="math inline">\(f\)</span> exists almost everywhere and
+<span class="math inline">\(\sup_{k}\int_{\mathbb{R}^n} f_k(\boldsymbol{x})|d^n \boldsymbol{x}| = \infty\)</span>, then
+<span class="math inline">\(f\)</span> is not Lebesgue integrable.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-62" class="theorem"><strong>Theorem 3.41  (Dominated convergence theorem) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions that converges
+pointwise almost everywhere to some function <span class="math inline">\(f\)</span>. Suppose there is some Lebesgue
+integrable function <span class="math inline">\(F:\mathbb{R}^n\to\mathbb{R}\)</span> such that
+<span class="math inline">\(|f_k(\boldsymbol{x})|\le F(\boldsymbol{x})\)</span> for almost all <span class="math inline">\(\boldsymbol{x}\)</span>. Then
+<span class="math inline">\(f\)</span> is Lebesgue integrable and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       \int_{\mathbb{R}^n} f(\boldsymbol{x})|d^n \boldsymbol{x}| &amp;= \lim_{k\to\infty} \int_{\mathbb{R}^n} f_k(\boldsymbol{x}) |d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-63" class="theorem"><strong>Theorem 3.42  (Change of variables for Lebesgue integrals) </strong></span>Let <span class="math inline">\(U, V\)</span> be open subsets of <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\boldsymbol{\Phi}:U\to V\)</span> be
+bijective, of class <span class="math inline">\(\mathscr{C}^1\)</span>, with inverse of class <span class="math inline">\(\mathscr{C}^1\)</span>, such that
+both <span class="math inline">\(\boldsymbol{\Phi}\)</span> and <span class="math inline">\(\boldsymbol{\Phi}^{-1}\)</span> have Lipschitz derivatives.
+Let <span class="math inline">\(f:V\to\mathbb{R}\)</span> be defined except perhaps on a set of measure <span class="math inline">\(0\)</span>. Then <span class="math inline">\(f\)</span> is
+Lebesgue integrable on <span class="math inline">\(V\)</span> if and only if
+<span class="math inline">\(f\circ \boldsymbol{\Phi}(\det [D\boldsymbol{\Phi}])\)</span> is Lebesgue integrable
+on <span class="math inline">\(U\)</span>, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+         \int_{V} f(\boldsymbol{v}) |d^n \boldsymbol{v}| &amp;= \int_{U} (f\circ \boldsymbol{\Phi})(\boldsymbol{u})|\det [D\boldsymbol{\Phi}(\boldsymbol{u})]| |d^n \boldsymbol{u}|
+    \end{aligned}
+\]</span></p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 3.43  (Fubini's theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\times \mathbb{R}^m\to\mathbb{R}\)</span> be a Lebesgue integrable function.
+Then the function</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \boldsymbol{y} \mapsto \int_{\mathbb{R}^n} f(\boldsymbol{x}, \boldsymbol{y})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+<p>is defined for almost all <span class="math inline">\(\boldsymbol{y}\in\mathbb{R}^m\)</span>, is Lebesgue integrable on
+<span class="math inline">\(\mathbb{R}^m\)</span>, and</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{\mathbb{R}^n\times\mathbb{R}^m} f(\boldsymbol{x}, \boldsymbol{y}) |d^n \boldsymbol{x}||d^m \boldsymbol{y}| &amp;= \int_{\mathbb{R}^m}\int_{\mathbb{R}^n} f(\boldsymbol{x}, \boldsymbol{y})|d^n \boldsymbol{x}||d^m \boldsymbol{y}|
+    \end{aligned}
+\]</span></p>
+<p>Conversely, if <span class="math inline">\(f:\mathbb{R}^n\times\mathbb{R}^m\to\mathbb{R}\)</span> is a function such that</p>
+<ol style="list-style-type: decimal">
+<li><p>every point <span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^{n + m}\)</span> is the center
+of a ball on which <span class="math inline">\(f\)</span> is Lebesgue integrable</p></li>
+<li><p>The function <span class="math inline">\(\boldsymbol{x}\to |f(\boldsymbol{x}, \boldsymbol{y})|\)</span> is Lebesgue
+integrable on <span class="math inline">\(\mathbb{R}^n\)</span> for almost all <span class="math inline">\(\boldsymbol{y}\)</span></p></li>
+<li><p>The function <span class="math inline">\(\boldsymbol{y}\to \int_{\mathbb{R}^n} |f(\boldsymbol{x}, \boldsymbol{y})||d^n \boldsymbol{x}|\)</span> is Lebesgue integrable on <span class="math inline">\(\mathbb{R}^m\)</span>.</p></li>
+</ol>
+<p>Then <span class="math inline">\(f\)</span> is Lebesgue integrable on <span class="math inline">\(\mathbb{R}^{n + m}\)</span>, and the usual equation of Fubini’s Theorem holds.</p>
+</div>
+<p>Quite often, one needs to differentiate functions which are expressed as integrals.
+This is usually referred to as <em>differentiating under the integral sign</em>, and there
+are many theorems related to when this is possible. We state one such theorem below.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-65" class="theorem"><strong>Theorem 3.44  (Differentiating under the integral) </strong></span>Let <span class="math inline">\(f(t, \boldsymbol{x}):\mathbb{R}^{n + 1}\to\mathbb{R}\)</span> be a function such that
+for each fixed <span class="math inline">\(t\)</span>, the integral</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        F(t) := \int_{\mathbb{R}^n} f(t, \boldsymbol{x})|d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+<p>exists. Suppose <span class="math inline">\(D_tf\)</span> exists for almost all <span class="math inline">\(\boldsymbol{x}\)</span>. If there exists
+<span class="math inline">\(\epsilon &gt; 0\)</span> and a Lebesgue integrable function <span class="math inline">\(g\)</span> such that for all <span class="math inline">\(s\ne t\)</span>,</p>
+<p><span class="math display">\[
+    \begin{aligned}
+       |s - t| &lt; \epsilon  \implies \left|\frac{f(s, \boldsymbol{x}) - f(t, \boldsymbol{x})}{s - t}\right| \le g(\boldsymbol{x})
+    \end{aligned}
+\]</span></p>
+<p>then <span class="math inline">\(F\)</span> is differentiable, and it’s derivative is given by</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        F&#39;(t) &amp;= \int_{\mathbb{R}^n} D_t f(t, \boldsymbol{x}) |d^n \boldsymbol{x}|
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-hubbardcalculus" class="csl-entry">
+John H. Hubbard, Barbara Burke Hubbard. 2009. <em>Vector Calculus, Linear Algebra and Differential Forms</em>. Fifth. Matrix Editions.
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="constrainted-critical-points-and-lagrange-multipliers.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="volume-of-manifolds.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

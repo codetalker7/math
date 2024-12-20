@@ -4,12 +4,12 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia</title>
+  <title>3.11 Forms and vector calculus | Math Encyclopedia</title>
   <meta name="description" content="<p>A book containing definitions and important lemmas, propositions and
 theorems without proofs.</p>" />
   <meta name="generator" content="bookdown 0.41 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  <meta property="og:title" content="3.11 Forms and vector calculus | Math Encyclopedia" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="<p>A book containing definitions and important lemmas, propositions and
@@ -17,7 +17,7 @@ theorems without proofs.</p>" />
   <meta name="github-repo" content="codetalker7/math" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="3.2 Smooth manifolds in \(\mathbb{R}^n\) | Math Encyclopedia" />
+  <meta name="twitter:title" content="3.11 Forms and vector calculus | Math Encyclopedia" />
   
   <meta name="twitter:description" content="<p>A book containing definitions and important lemmas, propositions and
 theorems without proofs.</p>" />
@@ -33,8 +33,8 @@ theorems without proofs.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="the-inverse-and-implicit-function-theorems.html"/>
-<link rel="next" href="tangent-spaces.html"/>
+<link rel="prev" href="volume-of-manifolds.html"/>
+<link rel="next" href="exercises-for-section-6.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -217,125 +217,199 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="smooth-manifolds-in-mathbbrn" class="section level2 hasAnchor" number="3.2">
-<h2><span class="header-section-number">3.2</span> Smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span><a href="smooth-manifolds-in-mathbbrn.html#smooth-manifolds-in-mathbbrn" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The goal of this section is to define smooth manifolds in <span class="math inline">\(\mathbb{R}^n\)</span>,
-<em>without</em> resorting to tools from general topological manifolds. This will
-be helpful to computer scientists who don’t want to deal with abstract notions
-pertaining to manifold theory.</p>
+<div id="forms-and-vector-calculus" class="section level2 hasAnchor" number="3.11">
+<h2><span class="header-section-number">3.11</span> Forms and vector calculus<a href="forms-and-vector-calculus.html#forms-and-vector-calculus" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="citation">(<a href="#ref-hubbardcalculus">John H. Hubbard 2009</a>)</span> is, as mentioned before, the book on which the definitions and theory
+here are based. However, <span class="citation">(<a href="#ref-arnoldmechanics">Arnold 1989</a>)</span> is one of the best sources for understanding
+the intuition and applications of many of these concepts.</p>
+<div id="forms-on-mathbbrn" class="section level3 hasAnchor" number="3.11.1">
+<h3><span class="header-section-number">3.11.1</span> Forms on <span class="math inline">\(\mathbb{R}^n\)</span><a href="forms-and-vector-calculus.html#forms-on-mathbbrn" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Intuitively, <strong><em>forms</em></strong> are just analogs of the <em>determinant</em>, i.e they are
+multilinear alternating functions. The only difference is that forms in <span class="math inline">\(\mathbb{R}^n\)</span>
+may operate on fewer than <span class="math inline">\(n\)</span> vectors (recall that the determinant is only defined
+for square matrices). Forms, just like the derivative, are useful since they have
+connections to <em>signed volumes</em>.</p>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 3.47  (k-forms) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form</em></strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(\varphi:\mathbb{R}^n\to\mathbb{R}\)</span>
+which is multilinear and <em>antisymmetric</em>, i.e switching two arguments in <span class="math inline">\(\varphi\)</span>
+switches the sign of the output.</p>
+</div>
+<div class="example">
+<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 3.1  (Standard forms) </strong></span>Let <span class="math inline">\(i_1, ..., i_k\)</span> be any <span class="math inline">\(k\)</span> integers in the set <span class="math inline">\([1, n]\)</span>. We define a form
+<span class="math inline">\(dx_{i_1}\land \cdots\land dx_{i_k}\)</span> which takes <span class="math inline">\(k\)</span> vectors
+<span class="math inline">\(\boldsymbol{v}_1,..., \boldsymbol{v}_k\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, stacks these vectors
+horizontally to make an <span class="math inline">\(n\times k\)</span> matrix, and selects the <span class="math inline">\(k\)</span> rows of this matrix
+indexed by <span class="math inline">\(i_1,...,i_k\)</span> (in order), and computes the determinant of the resultant matrix.
+It is clear that this form is multilinear and antisymmetric.</p>
+<p>A <strong><em><span class="math inline">\(0\)</span>-form</em></strong> can be identified by a constant <span class="math inline">\(\in\mathbb{R}\)</span>. It is also
+straightforward to see that if <span class="math inline">\(k &gt; n\)</span>, any <span class="math inline">\(k\)</span>-form is the trivial form, i.e the
+zero function.</p>
+</div>
+</div>
+<div id="a-geometric-interpretation-of-standard-forms" class="section level3 hasAnchor" number="3.11.2">
+<h3><span class="header-section-number">3.11.2</span> A geometric interpretation of standard forms<a href="forms-and-vector-calculus.html#a-geometric-interpretation-of-standard-forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Consider a <span class="math inline">\(k\)</span>-form <span class="math inline">\(\varphi = dx_{i_1}\land \cdots\land dx_{i_k}\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>.
+From our definition, we see that evaluating <span class="math inline">\(\varphi\)</span> on a set of vectors
+<span class="math inline">\(\boldsymbol{v}_1,...,\boldsymbol{v}_k\)</span> returns the <em>signed</em> <span class="math inline">\(k\)</span>-dimensional volume
+of the projection of the parallelogram spanned by
+<span class="math inline">\(\boldsymbol{v}_1,...,\boldsymbol{v}_k\)</span> onto the <span class="math inline">\((i_1,..., i_k)\)</span>-axes (the projection
+will itself be a parallelogram). In general, a <span class="math inline">\(k\)</span>-form takes in a <span class="math inline">\(k\)</span>-parallelogram
+(it takes as input <span class="math inline">\(k\)</span> vectors, but we interpret those vectors as the parallogram
+which they span), and returns a number proportional to the <span class="math inline">\(k\)</span>-dimensional
+volume of the parallelogram. The details of this intuitive description of <span class="math inline">\(k\)</span>-forms
+can be found in this discussion: <a href="https://math.stackexchange.com/questions/548131/whats-the-geometrical-intuition-behind-differential-forms" class="uri">https://math.stackexchange.com/questions/548131/whats-the-geometrical-intuition-behind-differential-forms</a>. Here is another interesting
+article about the intuition behind forms (and other notions of integration)
+by Terry Tao: <a href="https://terrytao.wordpress.com/2007/12/25/pcm-article-differential-forms/" class="uri">https://terrytao.wordpress.com/2007/12/25/pcm-article-differential-forms/</a>.</p>
+<p>As we’ll see, <span class="math inline">\(k\)</span>-forms are just the kind of integrand
+we need to integrate over <span class="math inline">\(k\)</span>-dimensional manifolds with orientation. Intuitively,
+a <span class="math inline">\(k\)</span>-form will give us the signed volume of a parallelogram based on a point on
+a manifold, spanned by vectors of partial derivatives of a parametrization of the
+manifold. This is very similar to when we compute unsigned volumes of manifolds,
+with the only difference here being that the signed volume takes orientation into account.</p>
 <div class="definition">
-<p><span id="def:manifold" class="definition"><strong>Definition 3.1  (Smooth Manifolds) </strong></span>A subset <span class="math inline">\(M\subset \mathbb{R}^n\)</span> is a <strong><em>smooth <span class="math inline">\(k\)</span>-dimensional manifold</em></strong> if locally
-it is the graph of a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{f}\)</span> expressing <span class="math inline">\(n - k\)</span>
-variables as functions of the other <span class="math inline">\(k\)</span> variables. In this book, we don’t
-deal with <em>topological</em> manifolds, but only subsets of <span class="math inline">\(\mathbb{R}^n\)</span> for any <span class="math inline">\(n\)</span>.</p>
-<p>More precisely, suppose we write each point <span class="math inline">\(\boldsymbol{p}\in\mathbb{R}^n\)</span> as a point
-<span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times \mathbb{R}^{n - k}\)</span>, where we
-have implicitly assumed that the first <span class="math inline">\(k\)</span> coordinates are independent. Then,
-this definition implies that for every <span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\in M\)</span>, there
-is an open neighborhood <span class="math inline">\(\boldsymbol{x}\in U\subset \mathbb{R}^k\)</span> of <span class="math inline">\(\boldsymbol{x}\)</span>
-and an open neighborhood <span class="math inline">\(W\subset\mathbb{R}^n\)</span> of <span class="math inline">\((\boldsymbol{x}, \boldsymbol{y})\)</span>
-such that</p>
-<p><span class="math display">\[\begin{equation}
-\begin{split}
-M\cap W &amp;= \left\{(\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z})): z\in U\right\}
-\end{split}
-\end{equation}\]</span></p>
-</div>
-<div id="identifying-manifolds-and-manifolds-under-smooth-transformations." class="section level3 hasAnchor" number="3.2.1">
-<h3><span class="header-section-number">3.2.1</span> Identifying manifolds, and manifolds under smooth transformations.<a href="smooth-manifolds-in-mathbbrn.html#identifying-manifolds-and-manifolds-under-smooth-transformations." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="theorem">
-<p><span id="thm:manifolds-as-eqns" class="theorem"><strong>Theorem 3.3  (Using the implicit function theorem to identify manifolds) </strong></span>Here’s how to show that a set represented as a locus is a smooth manifold:</p>
-<ol style="list-style-type: decimal">
-<li><p>Let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be open, <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> mapping. Let <span class="math inline">\(M\)</span> be a subset of <span class="math inline">\(\mathbb{R}^n\)</span> such that
-<span class="math display">\[
-     \begin{aligned}
-        M\cap U  &amp;= \left\{\boldsymbol{z}\in U | \boldsymbol{F}(\boldsymbol{z}) = \boldsymbol{0}\right\}
-     \end{aligned}
-\]</span>
-If <span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> is onto for every <span class="math inline">\(\boldsymbol{z}\in M\cap U\)</span>, then <span class="math inline">\(M\cap U\)</span> is a smooth
-<span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>. If every <span class="math inline">\(z\in M\)</span> is in such
-a <span class="math inline">\(U\)</span>, then <span class="math inline">\(M\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold.</p></li>
-<li><p>Conversely, if <span class="math inline">\(M\)</span> is a smooth <span class="math inline">\(k\)</span>-dimensional manifold embedded in <span class="math inline">\(\mathbb{R}^n\)</span>,
-then every point <span class="math inline">\(\boldsymbol{z}\in M\)</span> has a neighborhood <span class="math inline">\(U\subset\mathbb{R}^n\)</span> such that
-there exists a <span class="math inline">\(\mathscr{C}^1\)</span> mapping <span class="math inline">\(\boldsymbol{F}:U\to\mathbb{R}^{n - k}\)</span> with
-<span class="math inline">\(D\boldsymbol{F}(\boldsymbol{z})\)</span> onto and <span class="math inline">\(M\cap U = \left\{\boldsymbol{y}|\boldsymbol{F}(\boldsymbol{y}) = 0\right\}\)</span>.</p></li>
-</ol>
-</div>
-<div class="remark">
-<p><span id="unlabeled-div-1" class="remark"><em>Remark</em>. </span>The first part of the above theorem follows from the <strong>Implicit Function Theorem</strong>
-<a href="the-inverse-and-implicit-function-theorems.html#thm:implicit-function-theorem">3.2</a>. For the second part, it is enough to consider
-the map</p>
-<p><span class="math display">\[\begin{equation}
-\begin{split}
-    (\boldsymbol{x}, \boldsymbol{y}) \mapsto \boldsymbol{y} - \boldsymbol{f}(\boldsymbol{x})
-\end{split}
-\end{equation}\]</span></p>
-<p>where the map <span class="math inline">\(\boldsymbol{f}\)</span> is considered right from the definition of a
-smooth manifold <a href="smooth-manifolds-in-mathbbrn.html#def:manifold">3.1</a>.</p>
-</div>
-<p>The above theorem makes it easy to identify/prove that a certain object is a smooth manifold, without
-knowing the overall geometry of the object. The next theorem shows that the inverse image of a manifold
-under a sufficiently nice transformation still results in a smooth manifold.</p>
-<div class="theorem">
-<p><span id="thm:inverse-image-of-manifold" class="theorem"><strong>Theorem 3.4  </strong></span>Let <span class="math inline">\(M\subset \mathbb{R}^m\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> an open
-subset of <span class="math inline">\(\mathbb{R}^n\)</span>, and <span class="math inline">\(\boldsymbol{f}:U\to \mathbb{R}^m\)</span> a <span class="math inline">\(\mathscr{C}^1\)</span>
-mapping whose derivative <span class="math inline">\(D\boldsymbol{f}(\boldsymbol{x})\)</span> is surjective at every
-point <span class="math inline">\(\boldsymbol{x}\in \boldsymbol{f}^{-1}(M)\)</span>. Then the inverse image
-<span class="math inline">\(\boldsymbol{f}^{-1}(M)\)</span> is a submanifold of <span class="math inline">\(\mathbb{R}^n\)</span> of
-dimension <span class="math inline">\(k + n - m\)</span>.</p>
-</div>
-<div class="remark">
-<p><span id="unlabeled-div-2" class="remark"><em>Remark</em> (Manifolds under rotations and translations are still manifolds). </span>As a corollary of Theorem <a href="smooth-manifolds-in-mathbbrn.html#thm:inverse-image-of-manifold">3.4</a>, it’s easy to show that for a
-mapping of the form <span class="math inline">\(\boldsymbol{x}\mapsto A\boldsymbol{x} + \boldsymbol{c}\)</span> with <span class="math inline">\(A\)</span> invertible,
-the image of a manifold is still a manifold.</p>
-</div>
-</div>
-<div id="parametrizations-of-manifolds" class="section level3 hasAnchor" number="3.2.2">
-<h3><span class="header-section-number">3.2.2</span> Parametrizations of manifolds<a href="smooth-manifolds-in-mathbbrn.html#parametrizations-of-manifolds" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Another nice way of representing manifolds is via their <em>parametrizations</em>.</p>
-<div class="definition">
-<p><span id="def:parametrization-def" class="definition"><strong>Definition 3.2  (Parametrization of a manifold) </strong></span>A <strong><em>parametrization</em></strong> of a <span class="math inline">\(k\)</span>-dimensional manifold <span class="math inline">\(M\subset\mathbb{R}^n\)</span> is
-a mapping <span class="math inline">\(\gamma:U\subset \mathbb{R}^k\to M\)</span> satisfying the following conditions:</p>
-<ol style="list-style-type: decimal">
-<li><span class="math inline">\(U\)</span> is open.</li>
-<li><span class="math inline">\(\gamma\)</span> is <span class="math inline">\(\mathscr{C}^1\)</span>, one-to-one, and onto on <span class="math inline">\(M\)</span>.</li>
-<li><span class="math inline">\(D\gamma(\boldsymbol{u})\)</span> is one-to-one for every <span class="math inline">\(\boldsymbol{u}\in U\)</span>.</li>
-</ol>
-</div>
-<div class="theorem">
-<p><span id="thm:unlabeled-div-3" class="theorem"><strong>Theorem 3.5  (Existence of local parametrizations) </strong></span>Let <span class="math inline">\(M\subset\mathbb{R}^m\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold. For every point
-<span class="math inline">\(\boldsymbol{p}\in M\)</span>, there is an open neighborhood <span class="math inline">\(U\subset\mathbb{R}^m\)</span> of
-<span class="math inline">\(\boldsymbol{p}\)</span> such that <span class="math inline">\(M\cap U\)</span> admits a parametrization
-<span class="math inline">\(\gamma:\mathbb{R}^k\to M\cap U\)</span>.</p>
-</div>
-<div class="proof">
-<p><span id="unlabeled-div-4" class="proof"><em>Proof</em>. </span>Without loss of generality, write
-<span class="math inline">\(\boldsymbol{p} = (\boldsymbol{x}, \boldsymbol{y})\in\mathbb{R}^k\times\mathbb{R}^{n - k}\)</span>
-where the first <span class="math inline">\(k\)</span> variables are indepdendent. Let <span class="math inline">\(W\subset\mathbb{R}^k\)</span> be an open
-neighborhood of <span class="math inline">\(\boldsymbol{x}\)</span> such that</p>
+<p><span id="def:unlabeled-div-75" class="definition"><strong>Definition 3.25  (Elementary forms) </strong></span>An <strong><em>elementary <span class="math inline">\(k\)</span>-form</em></strong> is a form of type</p>
 <p><span class="math display">\[
     \begin{aligned}
-        M\cap U &amp;= \left\{\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}): \boldsymbol{z}\in W\right\}
+        d_{x_1}\land\cdots\land dx_{i_k}
     \end{aligned}
 \]</span></p>
-<p>Now, define the mapping <span class="math inline">\(\gamma:W\to M\cap U\)</span> by</p>
+<p>where <span class="math inline">\(1\le i_1 &lt; i_2 &lt; \cdots &lt; i_k\le n\)</span>. The only elementary <span class="math inline">\(0\)</span>-form
+is the form, denoted by <span class="math inline">\(1\)</span>, which evaluated on zero vectors returns <span class="math inline">\(1\)</span>.</p>
+</div>
+<div class="definition">
+<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 3.26  (Space of forms) </strong></span>The space of <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span> is a vector space and is denoted by
+<span class="math inline">\(A^k_c(\mathbb{R}^n)\)</span>.</p>
+</div>
+<div class="theorem">
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 3.48  (Elementary k-forms form a basis of the space of forms) </strong></span>The elementary <span class="math inline">\(k\)</span>-forms form a basis of <span class="math inline">\(A^k_c(\mathbb{R}^n)\)</span>. Hence, every <span class="math inline">\(k\)</span>-form
+<span class="math inline">\(\varphi\)</span> can be uniquely written as a linear combination</p>
 <p><span class="math display">\[
     \begin{aligned}
-         \boldsymbol{z}\mapsto (\boldsymbol{z}, \boldsymbol{f}(\boldsymbol{z}))
+        \varphi &amp;= \sum_{1\le i_1 &lt; \cdots &lt; i_k\le n} a_{i_1 ,..., i_k}dx_{i_1}\land \cdots\land dx_{i_k}
     \end{aligned}
 \]</span></p>
-<p>Clearly, <span class="math inline">\(\gamma\)</span> is one-one and onto. Moreover, observe that</p>
+<p>where the coefficients are given by</p>
 <p><span class="math display">\[
     \begin{aligned}
-         D\gamma(\boldsymbol{z}) &amp;=
-            \begin{bmatrix}
-                I \\ D\boldsymbol{f}(\boldsymbol{z})
-            \end{bmatrix}
+        a_{i_1,...,i_k} &amp;= \varphi(\boldsymbol{e}_{i_1}, ..., \boldsymbol{e}_{i_k})
     \end{aligned}
-\]</span>
-Clearly, the first <span class="math inline">\(k\)</span> rows of the Jacobian are linearly independent; hence, the matrix
-is invertible. So, <span class="math inline">\(\gamma\)</span> is indeed a parametrization of <span class="math inline">\(M\cap U\)</span>.</p>
+\]</span></p>
+<p>Hence, <span class="math inline">\(\dim A^k_c(\mathbb{R}^n) = \binom{n}{k}\)</span>.</p>
 </div>
+</div>
+<div id="the-wedge-exterior-product" class="section level3 hasAnchor" number="3.11.3">
+<h3><span class="header-section-number">3.11.3</span> The wedge (exterior) product<a href="forms-and-vector-calculus.html#the-wedge-exterior-product" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>The <strong><em>wedge product</em></strong> takes two forms and returns another form which takes more
+arguments. The definition will justify the use of the <span class="math inline">\(\land\)</span> symbol in elementary
+forms.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 3.27  (Wedge product) </strong></span>The <em>wedge product</em> of two forms <span class="math inline">\(\varphi\in A^k_c(\mathbb{R}^n)\)</span> and
+<span class="math inline">\(\omega\in A^l_c(\mathbb{R}^n)\)</span> is the element
+<span class="math inline">\(\varphi\land\omega\in A^{k + l}_c(\mathbb{R}^n)\)</span> defined by</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        (\varphi\land\omega)(\boldsymbol{v}_1,...,\boldsymbol{v}_{k + l}) &amp;= \sum_{\sigma\in \text{Perm}(k, l)}\text{sgn}(\sigma)\varphi(\boldsymbol{v}_{\sigma(1)}, ..., \boldsymbol{v}_{\sigma(k)})\omega(\boldsymbol{v}_{\sigma(k + 1)}, ..., \boldsymbol{v}_{\sigma(k + l)})
+    \end{aligned}
+\]</span></p>
+<p>where above, <span class="math inline">\(\text{Perm}(k, l)\)</span> is the set of all permutations <span class="math inline">\(\sigma\)</span> of <span class="math inline">\([1, k + l]\)</span>
+such that <span class="math inline">\(\sigma(1) &lt; \sigma(2) \cdots &lt; \sigma(k)\)</span> and
+<span class="math inline">\(\sigma(k + 1) &lt; \cdots &lt; \sigma(k + l)\)</span>.</p>
+</div>
+<div class="proposition">
+<p><span id="prp:unlabeled-div-79" class="proposition"><strong>Proposition 3.14  (Properties of wedge products) </strong></span>The wedge product satisfies the following properties:</p>
+<ol style="list-style-type: decimal">
+<li>Distributivity, i.e <span class="math inline">\(\varphi\land (\omega_1 + \omega_2) = \varphi\land \omega_1 + \varphi\land \omega_2\)</span>.</li>
+<li>Associativity, i.e <span class="math inline">\((\varphi_1\land\varphi_2)\land \varphi_3 = \varphi_1\land (\varphi_2\land \varphi_3)\)</span>.</li>
+<li>Skew commutativity, i.e if <span class="math inline">\(\varphi\)</span> is a <span class="math inline">\(k\)</span>-form and <span class="math inline">\(\omega\)</span> is an <span class="math inline">\(l\)</span>-form, then</li>
+</ol>
+<p><span class="math display">\[
+    \begin{aligned}
+        \varphi\land\omega &amp;= (-1)^{kl}\omega\land\varphi
+    \end{aligned}
+\]</span></p>
+</div>
+</div>
+<div id="form-fields" class="section level3 hasAnchor" number="3.11.4">
+<h3><span class="header-section-number">3.11.4</span> Form fields<a href="forms-and-vector-calculus.html#form-fields" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>In general, an <span class="math inline">\(x\)</span>-field on a set <span class="math inline">\(U\subset\mathbb{R}^n\)</span> is just a mapping that assigns
+to each point of <span class="math inline">\(U\)</span> an object of type <span class="math inline">\(x\)</span>. This is exactly what a <strong><em>form field</em></strong> is
+going to be; these fields are also called <strong><em>differential forms</em></strong>.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 3.28  (Form fields) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form field</em></strong> on an open subset <span class="math inline">\(U\subset\mathbb{R}^n\)</span> is a map
+<span class="math inline">\(\varphi:U\to A^k_c(\mathbb{R}^n)\)</span>. The space of <span class="math inline">\(k\)</span>-form fields on <span class="math inline">\(U\)</span> is denoted by
+<span class="math inline">\(A^k(U)\)</span>.</p>
+</div>
+<p>Let’s disect the definition a bit and see what’s really going on. Let <span class="math inline">\(\varphi\in A^k(U)\)</span>
+be a <span class="math inline">\(k\)</span>-form field on <span class="math inline">\(U\)</span>. So, for each <span class="math inline">\(\boldsymbol{x}\in U\)</span>,
+<span class="math inline">\(\varphi(\boldsymbol{x})\in A^k_c(\mathbb{R}^n)\)</span>. We can write this form as a linear
+combination of the elementary forms (since they are a basis):</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \varphi(\boldsymbol{x}) &amp;= \sum_{1\le i_1 &lt; i_2 &lt; \cdots &lt; i_k\le n} a_{i_1,...,i_k}(\boldsymbol{x})dx_{i_1}\land\cdots \land dx_{i_k}
+    \end{aligned}
+\]</span></p>
+<p>Note that the coefficients <span class="math inline">\(a_{i_1,...,i_k}\)</span> are really <em>functions</em> <span class="math inline">\(U\to\mathbb{R}\)</span>
+(Equivalently, the coefficients are <span class="math inline">\(0\)</span>-form fields, which are just functions). So,
+such a form field <span class="math inline">\(\varphi\)</span> is to be said of class <span class="math inline">\(\mathscr{C}^p\)</span> if each of these
+coefficient functions are of class <span class="math inline">\(\mathscr{C}^p\)</span>.</p>
+<p>From this, we can immediately (kind-of) see a notion of <em>integration of forms fields</em>.
+Note that, a form field associates to <span class="math inline">\(U\)</span> a set of functions
+(the coefficient functions) and signed volume elements (namely the elementary forms);
+this is exactly the data we need to perform integration. However, as we’ll see later,
+to make such a notion of integration well-defined, we’ll also need a notion of
+<em>orienation</em>.</p>
+<p>Finally, an important interpretation: let <span class="math inline">\(\varphi\in A^k(U)\)</span> be a <span class="math inline">\(k\)</span>-form field on <span class="math inline">\(U\)</span>.
+To each point <span class="math inline">\(\boldsymbol{x}\in U\)</span>, the form field associated a <span class="math inline">\(k\)</span>-form
+<span class="math inline">\(\varphi(\boldsymbol{x})\)</span> to <span class="math inline">\(\boldsymbol{x}\)</span>. Recall that <span class="math inline">\(k\)</span>-forms are nothing but
+objects that take as input a parallelogram, and return a number proportional to the
+<span class="math inline">\(k\)</span>-dimensional volume of a projection of the parallelogram. To that end, we introduce
+the notation</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \varphi(P_{\boldsymbol{x}}(\boldsymbol{v}_1,...,\boldsymbol{v}_k)) := \varphi(\boldsymbol{x})(\boldsymbol{v}_1,...,\boldsymbol{v}_k)
+    \end{aligned}
+\]</span></p>
+<p>where above, as usual, <span class="math inline">\(P_{\boldsymbol{x}}(\boldsymbol{v}_1 ,..., \boldsymbol{v}_k)\)</span> is
+the parallelogram spanned by these vectors. This geometric intuition is important
+to understand why we deal with forms in the first place: they provide a notion of
+a signed integrand, helpful to perform integration with orientation.</p>
+</div>
+<div id="integrating-form-fields-over-parametrized-domains" class="section level3 hasAnchor" number="3.11.5">
+<h3><span class="header-section-number">3.11.5</span> Integrating form fields over parametrized domains<a href="forms-and-vector-calculus.html#integrating-form-fields-over-parametrized-domains" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>First, we’ll define what it means to integrate a form over a manifold given by a
+parametrization. In this setting, the <em>orientation</em> of the manifold will be part
+of the parametrization.</p>
+<div class="definition">
+<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 3.29  (Integrating a form field over a parametrized domain) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^k\)</span> be a bounded open set with <span class="math inline">\(\text{vol}_k \partial U = 0\)</span>.
+Let <span class="math inline">\(\gamma: U\to\mathbb{R}^n\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> mapping. The set <span class="math inline">\(\gamma(U)\)</span>
+is said to be a <strong><em>domain in <span class="math inline">\(\mathbb{R}^n\)</span> parametrized by <span class="math inline">\(U\)</span></em></strong>, and the pair
+<span class="math inline">\((U, \gamma)\)</span> is denoted by <span class="math inline">\([\gamma(U)]\)</span> (the pair is usually thought of as the
+image set along with some extra data, i.e how <span class="math inline">\(\gamma\)</span> defines an implicit orientation
+on <span class="math inline">\(U\)</span>).</p>
+<p>Let <span class="math inline">\(V\subset\mathbb{R}^n\)</span> be open, and suppose <span class="math inline">\(\gamma(U)\subset V\)</span>. Also,
+let <span class="math inline">\(\varphi\)</span> be a <span class="math inline">\(k\)</span>-form field on <span class="math inline">\(V\)</span>. The <strong><em>integral</em></strong> of <span class="math inline">\(\varphi\)</span> over <span class="math inline">\([\gamma(U)]\)</span> is defined as</p>
+<p><span class="math display">\[
+    \begin{aligned}
+        \int_{[\gamma(U)]}\varphi := \int_U \varphi\left(P_{\gamma(\boldsymbol{u})}(D_1\gamma(\boldsymbol{u})), ..., D_k(\gamma(\boldsymbol{u}))\right) |d^k \boldsymbol{u}|
+    \end{aligned}
+\]</span></p>
+<p>i.e we compute the form field over the parallelogram spanned by the partial derivatives
+of the parametrization <span class="math inline">\(\gamma\)</span>.</p>
+</div>
+<div class="remark">
+<p><span id="unlabeled-div-82" class="remark"><em>Remark</em> (Parametrized domains need not be parametrizations of manifolds). </span>It should be noted that in this definition, <span class="math inline">\(\gamma\)</span> is <em>any</em> <span class="math inline">\(\mathscr{C}^1\)</span> map (and
+need not satisfy the definitions of parametrizations/relaxed parametrizations of
+manifolds that we have defined).</p>
+</div>
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0">
+<div id="ref-arnoldmechanics" class="csl-entry">
+Arnold, V. I. 1989. <em>Mathematical Methods of Classical Mechanics</em>. Second. Springer.
+</div>
+<div id="ref-hubbardcalculus" class="csl-entry">
+John H. Hubbard, Barbara Burke Hubbard. 2009. <em>Vector Calculus, Linear Algebra and Differential Forms</em>. Fifth. Matrix Editions.
 </div>
 </div>
             </section>
@@ -343,8 +417,8 @@ is invertible. So, <span class="math inline">\(\gamma\)</span> is indeed a param
           </div>
         </div>
       </div>
-<a href="the-inverse-and-implicit-function-theorems.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="tangent-spaces.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="volume-of-manifolds.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="exercises-for-section-6.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
