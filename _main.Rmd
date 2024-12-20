@@ -1,3 +1,54 @@
+--- 
+title: "Math Encyclopedia"
+author: "Siddhant Chaudhary"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+header-includes:
+    - \usepackage{bm}
+bibliography: [book.bib]
+description: |
+    A book containing definitions and important lemmas, propositions and
+    theorems without proofs.
+link-citations: true 
+github-repo: codetalker7/math
+---
+--- 
+title: "Math Encyclopedia"
+author: "Siddhant Chaudhary"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+documentclass: book
+header-includes:
+    - \usepackage{bm}
+bibliography: [book.bib]
+description: |
+    A book containing definitions and important lemmas, propositions and
+    theorems without proofs.
+link-citations: true 
+github-repo: codetalker7/math
+---
+
+# Overview 
+
+The aim of this book is to have the most important *definitions*, *lemmas*, *propositions* and
+*theorems* together in the same place, but *without* including proofs of *hard* theorems. The goal is to have these things ready as a reference; I did this since I don't bother with hard proofs as I forget them sooner or later.
+
+<!--chapter:end:index.Rmd-->
+
+
+# Modern Probability
+
+Placeholder
+
+
+## Some important collections of sets 
+## Set Functions
+### Basic properties of measures
+### Continuity of measures
+
+<!--chapter:end:01_modern_probability.Rmd-->
+
 # Vector Calculus
 
 Much of this chapter is inspired from [@hubbardcalculus]. Throughout this chapter, we'll be using 
@@ -2034,3 +2085,32 @@ We first begin by defining *orientations of vector spaces*.
 
 
 :::
+
+<!--chapter:end:02_vector_calculus.Rmd-->
+
+
+# Higher dimensional statistics
+
+Placeholder
+
+
+## Tail and concentration bounds
+### Classical bounds: Markov, Chebyshev, Chernoff
+## Sub-Gaussian variables and Hoeffding bounds
+
+<!--chapter:end:03_higher_dimensional_stats.Rmd-->
+
+
+# Convex optimization 
+
+Placeholder
+
+
+## Convex sets 
+### Affine dimension and relative interior
+### Convex sets
+### Generalized inequalities
+### Separating and supporting hyperplanes
+
+<!--chapter:end:04_convex_optimization.Rmd-->
+

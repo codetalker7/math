@@ -1,0 +1,201 @@
+# Convex optimization 
+
+## Convex sets 
+
+::: {.definition name="Lines and line segments"}
+
+Let $\boldsymbol{x}_1\ne \boldsymbol{x}_2$ be two points in $\mathbb{R}^n$. Points of 
+the form
+
+$$
+    \begin{aligned}
+        y &= \theta \boldsymbol{x}_1 + (1 - \theta)\boldsymbol{x}_2
+    \end{aligned}
+$$
+
+for $\theta\in\mathbb{R}$ form the ***line*** passing through $\boldsymbol{x}_1$ and 
+$\boldsymbol{x}_2$. Points for $\theta\in[0, 1]$ form the ***line segment***
+between $\boldsymbol{x}_1$ and $\boldsymbol{x}_2$.
+
+:::
+
+::: {.definition name="Affine sets and affine hulls"}
+
+A set $C\subset \mathbb{R}^n$ is ***affine*** if the line through any two distinct
+points in $C$ lies in $C$. A point of the form 
+$\theta_1 \boldsymbol{x}_1 + \cdots + \theta_k \boldsymbol{x}_k$ where 
+$\theta_1 + \cdots + \theta_k = 1$ is called an ***affine combination*** of the 
+points $\boldsymbol{x}_1, ..., \boldsymbol{x}_k$.
+
+For any set $C\subset\mathbb{R}^n$, the ***affine hull*** of $C$ is defined to be
+the set of all affine combinations of points in $C$. It is the *smallest* affine
+set that contains $C$.
+
+:::
+
+::: {.proposition}
+
+If $C$ is an affine set and if $\boldsymbol{x}_0\in C$, then the set
+
+$$
+    \begin{aligned}
+        V := C - \boldsymbol{x}_0
+    \end{aligned}
+$$
+
+is a subspace. Moreover, this subspace does not depend on the choice of 
+$\boldsymbol{x}_0$. The ***dimension*** of the affine set $C$
+is defined to be the dimension of $V$.
+
+:::
+
+### Affine dimension and relative interior
+
+::: {.definition}
+
+The ***affine dimension*** of a set $C$ is the dimension of its affine hull. The
+***relative interior*** of a set $C$, denoted by $\textbf{relint}(C)$, is 
+the interior relative to $\textbf{aff}(C)$:
+
+$$
+    \begin{aligned}
+\textbf{relint}(C) := \left\{\boldsymbol{x}\in C | B(\boldsymbol{x}, r)\cap \textbf{aff}(C)\subset C\text{ for some }r > 0\right\}  
+    \end{aligned}
+$$
+
+The ***relative boundary*** is then defined to be 
+$\overline{C}\setminus \textbf{relint}(C)$, where $\overline{C}$ is the closure of $C$.
+:::
+
+### Convex sets
+
+::: {.definition}
+
+A set $C$ is ***convex*** if the line segment between any two points in $C$ lies in $C$.
+The ***convex hull*** of a set $C$, denoted by $\textbf{conv}(C)$, is the set of all 
+convex combinations of points in $C$; it is the *smallest* convex set that contains $C$. 
+
+:::
+
+### Generalized inequalities
+
+::: {.definition name="Proper cones"}
+
+A cone $K\subset \mathbb{R}^n$ is called a ***proper cone*** if the following are true:
+
+1. $K$ is convex.
+2. $K$ is closed.
+3. $K$ is *solid*, i.e it has a non-empty interior.
+4. $K$ is *pointed*, i.e it contains no line. 
+
+:::
+
+Proper cones can be used to define so called *generalized inequalities* in $\mathbb{R}^n$;
+these are partial orderings of $\mathbb{R}^n$. For a proper cone $K$, we define 
+
+$$
+    \begin{aligned}
+        \boldsymbol{x} \preceq_K \boldsymbol{y} \iff \boldsymbol{y} - \boldsymbol{x}\in K 
+    \end{aligned}
+$$
+
+An associated strict partial ordering is defined by the following:
+
+$$
+    \begin{aligned}
+         \boldsymbol{x} \prec_K \boldsymbol{y} \iff \boldsymbol{y} - \boldsymbol{x}\in \textbf{int}(K) 
+    \end{aligned}
+$$
+
+### Separating and supporting hyperplanes
+
+In this section, we'll state and prove a famous theorem about the existence
+of hyperplanes that separate disjoint convex sets.
+
+::: {.theorem name="Separating hyperplane theorem"}
+
+Let $C$ and $D$ be nonempty disjoint convex sets, i.e $C\cap D = \phi$. Then, there exist
+$\boldsymbol{a}\ne 0$ and $b$ such that $\boldsymbol{a}^T \boldsymbol{x}\le b$ for all
+$x\in C$ and $\boldsymbol{a}^T \boldsymbol{x}\ge b$ for all $x\in D$. Such a hyperplane
+is said to be a ***separating hyperplane***.
+
+:::
+
+::: {.proof}
+
+We first assume that the *distance* between $C$ and $D$ is *positive*, and that there
+are points in $C$ and $D$ which achieve this distance; the distance is defined to be
+
+$$
+    \begin{aligned}
+\textbf{dist}(C, D) &= \inf\left\{\lVert \boldsymbol{u} - \boldsymbol{v}\rVert_2: \boldsymbol{u}\in C, \boldsymbol{v}\in D\right\} 
+    \end{aligned}
+$$
+
+After proving the theorem with this assumption, we'll do the general proof.
+
+So, let $\boldsymbol{c}\in C$ and $\boldsymbol{d}\in D$ be points that achieve the minimum
+distance. Define
+
+$$
+    \begin{aligned}
+        \boldsymbol{a} := \boldsymbol{d} - \boldsymbol{c}\quad,\quad b = \frac{\lVert \boldsymbol{d}\rVert_2^2 - \lVert \boldsymbol{c}\rVert_2^2}{2}
+    \end{aligned}
+$$
+
+We then show that the affine function 
+$f(b\boldsymbol{x}) := \boldsymbol{a}^T \boldsymbol{x} - b$ is nonpositive on $C$ and 
+nonnegative on $D$. It can be checked that this hyperplane is perpendicular to the line
+segment between $\boldsymbol{c}$ and $\boldsymbol{d}$ and that it passes through it's 
+midpoint.
+
+We show that $f$ is nonnegative on $D$, and a symmetric argument will complete the proof
+of nonpositivity on $C$ by considering $-f$. So, suppose there were a point 
+$\boldsymbol{u}\in D$ for which
+
+$$
+    \begin{aligned}
+        f(\boldsymbol{u}) &= (\boldsymbol{d} - \boldsymbol{c})^T\left(\boldsymbol{u} - \frac{1}{2}(\boldsymbol{d} + \boldsymbol{c})\right) < 0 
+    \end{aligned}
+$$
+
+Now, $f(\boldsymbol{u})$ can be written as
+
+$$
+    \begin{aligned}
+        f(\boldsymbol{u}) &= (\boldsymbol{d} - \boldsymbol{c})^T(\boldsymbol{u} - \boldsymbol{d}) + (1/2)(\boldsymbol{d} - \boldsymbol{c}))\\
+&= (\boldsymbol{d} - \boldsymbol{c})^T(\boldsymbol{u} - \boldsymbol{d}) + 1/2\lVert \boldsymbol{d} - \boldsymbol{c}\rVert_2^2
+    \end{aligned}
+$$
+
+Note that $f(\boldsymbol{u}) < 0$ implies that 
+$(\boldsymbol{d} - \boldsymbol{c})^T(\boldsymbol{u} - \boldsymbol{d}) < 0$. Moreover,
+observe that
+
+$$
+    \begin{aligned}
+        \left.\frac{d}{dt}\lVert \boldsymbol{d} + t(\boldsymbol{u} - \boldsymbol{d}) - \boldsymbol{c}\rVert_2^2\right|_{t = 0} &= 2(\boldsymbol{d} - \boldsymbol{c})^T(\boldsymbol{u} - \boldsymbol{d}) < 0 
+    \end{aligned}
+$$
+
+and hence for some $t > 0$, with $t\le 1$ we have
+
+$$
+    \begin{aligned}
+        \left\lVert \boldsymbol{d} + t(\boldsymbol{u} - \boldsymbol{d}) - \boldsymbol{c}\right\rVert_2 < \left\lVert \boldsymbol{d} - \boldsymbol{c}\right\rVert_2
+    \end{aligned}
+$$
+
+In simple words, the point $\boldsymbol{d} + t(\boldsymbol{u} - \boldsymbol{d})$ is closer
+to $\boldsymbol{c}$ than $\boldsymbol{d}$ is. Since $D$ is convex and contains 
+$\boldsymbol{d}$ and $\boldsymbol{u}$, we have 
+$\boldsymbol{d} + t(\boldsymbol{u} - \boldsymbol{d})\in D$. But this is impossible,
+since $\boldsymbol{d}$ is assumed to be the point in $D$ which is the closest to
+$\boldsymbol{c}$.
+
+Next, we consider the general case. So, let $C, D$ be non-empty, disjoint convex sets.
+Now, consider the set $C - D$; clearly, $C - D$ does not contain the origin. Moreover,
+$C - D$ is a *convex set* (which is easily seen). Now, let $\boldsymbol{p}\in C - D$
+be any point, and consider the point $-\boldsymbol{p}$.
+
+:::
