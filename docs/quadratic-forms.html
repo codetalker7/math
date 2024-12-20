@@ -33,7 +33,7 @@ theorems without proofs.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="tayland-polynomials-in-multiple-variables.html"/>
+<link rel="prev" href="taylor-polynomials-in-multiple-variables.html"/>
 <link rel="next" href="classifying-critical-points-of-a-function.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -125,12 +125,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
-<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<li class="chapter" data-level="3.5" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Taylor polynomials in multiple variables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
-<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
-<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
-<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylors-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Taylor’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylor-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Taylor polynomials in higher dimensions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
 <ul>
@@ -226,7 +226,7 @@ of degree <span class="math inline">\(2\)</span>.</p>
 <div id="quadratic-forms-as-sums-of-squares" class="section level3 hasAnchor" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Quadratic forms as sums of squares<a href="quadratic-forms.html#quadratic-forms-as-sums-of-squares" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-8" class="theorem"><strong>Theorem 3.13  </strong></span></p>
+<p><span id="thm:unlabeled-div-12" class="theorem"><strong>Theorem 3.13  </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p>For any quadratic form <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span>, there exist <span class="math inline">\(m = k + l\)</span> linearly independent linear functions <span class="math inline">\(\alpha_1,\cdots,\alpha_m:\mathbb{R}^n\to\mathbb{R}\)</span>
 such that
@@ -239,31 +239,31 @@ such that
 </ol>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-9" class="definition"><strong>Definition 3.7  (Positive and negative definite forms) </strong></span>A quadratic form <span class="math inline">\(Q\)</span> is said to be <strong><em>positive definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &gt; 0\)</span> for <span class="math inline">\(\boldsymbol{x}\ne \boldsymbol{0}\)</span>, and <strong><em>negative definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &lt; 0\)</span>
+<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 3.7  (Positive and negative definite forms) </strong></span>A quadratic form <span class="math inline">\(Q\)</span> is said to be <strong><em>positive definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &gt; 0\)</span> for <span class="math inline">\(\boldsymbol{x}\ne \boldsymbol{0}\)</span>, and <strong><em>negative definite</em></strong> if <span class="math inline">\(Q(\boldsymbol{x}) &lt; 0\)</span>
 whenever <span class="math inline">\(\boldsymbol{x} \ne \boldsymbol{0}\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-10" class="proposition"><strong>Proposition 3.2  </strong></span>Suppose <span class="math inline">\(Q(\boldsymbol{x}) = (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2\)</span>
+<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 3.2  </strong></span>Suppose <span class="math inline">\(Q(\boldsymbol{x}) = (\alpha_1(\boldsymbol{x}))^2 + \cdots + (\alpha_k(\boldsymbol{x}))^2 - (\alpha_{k + 1}(\boldsymbol{x}))^2 - \cdots + (\alpha_{k + l}(\boldsymbol{x}))^2\)</span>
 where the <span class="math inline">\(\alpha_i\)</span>’s are linearly independent linear functions from <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span>. Then, <span class="math inline">\(k\)</span> is the largest dimension of a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> on which <span class="math inline">\(Q\)</span>
 is positive definite, and <span class="math inline">\(l\)</span> is the largest dimension of a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> on which <span class="math inline">\(Q\)</span> is negative definite.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-11" class="corollary"><strong>Corollary 3.2  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a quadratic form and <span class="math inline">\(A:\mathbb{R}^n\to\mathbb{R}\)</span> is invertible, then <span class="math inline">\(Q\circ A\)</span> is a quadratic form with the same signature as <span class="math inline">\(Q\)</span>.</p>
+<p><span id="cor:unlabeled-div-15" class="corollary"><strong>Corollary 3.2  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a quadratic form and <span class="math inline">\(A:\mathbb{R}^n\to\mathbb{R}\)</span> is invertible, then <span class="math inline">\(Q\circ A\)</span> is a quadratic form with the same signature as <span class="math inline">\(Q\)</span>.</p>
 </div>
 </div>
 <div id="classification-of-quadratic-forms" class="section level3 hasAnchor" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Classification of quadratic forms<a href="quadratic-forms.html#classification-of-quadratic-forms" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-12" class="definition"><strong>Definition 3.8  (Rank of a quadratic form) </strong></span>The <strong><em>rank</em></strong> of a quadratic form is the number of linearly independent squares that appear when the quadratic form
+<p><span id="def:unlabeled-div-16" class="definition"><strong>Definition 3.8  (Rank of a quadratic form) </strong></span>The <strong><em>rank</em></strong> of a quadratic form is the number of linearly independent squares that appear when the quadratic form
 is represented as a sum of linearly independent squares. Equivalently, if <span class="math inline">\((k, l)\)</span> is the signature of the form,
 it’s <strong><em>rank</em></strong> is the sum <span class="math inline">\(k + l\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-13" class="definition"><strong>Definition 3.9  (Degeneracy of forms) </strong></span>A quadratic form on <span class="math inline">\(\mathbb{R}^n\)</span> is <strong><em>non-degenerate</em></strong> if it’s rank is <span class="math inline">\(n\)</span>. Otherwise, it’s said to be
+<p><span id="def:unlabeled-div-17" class="definition"><strong>Definition 3.9  (Degeneracy of forms) </strong></span>A quadratic form on <span class="math inline">\(\mathbb{R}^n\)</span> is <strong><em>non-degenerate</em></strong> if it’s rank is <span class="math inline">\(n\)</span>. Otherwise, it’s said to be
 <strong><em>degenerate</em></strong>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-14" class="proposition"><strong>Proposition 3.3  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a positive definite quadratic form, then there exists a constant <span class="math inline">\(C &gt; 0\)</span> such that</p>
+<p><span id="prp:unlabeled-div-18" class="proposition"><strong>Proposition 3.3  </strong></span>If <span class="math inline">\(Q:\mathbb{R}^n\to\mathbb{R}\)</span> is a positive definite quadratic form, then there exists a constant <span class="math inline">\(C &gt; 0\)</span> such that</p>
 <p><span class="math display">\[
     \begin{aligned}
         Q(\boldsymbol{x}) \ge C\lVert\boldsymbol{x}\rVert^2
@@ -275,7 +275,7 @@ it’s <strong><em>rank</em></strong> is the sum <span class="math inline">\(k +
 <div id="quadratic-forms-as-symmetric-matrices" class="section level3 hasAnchor" number="3.6.3">
 <h3><span class="header-section-number">3.6.3</span> Quadratic forms as symmetric matrices<a href="quadratic-forms.html#quadratic-forms-as-symmetric-matrices" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-15" class="theorem"><strong>Theorem 3.14  </strong></span>The mapping <span class="math inline">\(A\mapsto Q_A\)</span>, where <span class="math inline">\(Q_A(\boldsymbol{x}) = \boldsymbol{x}^TA \boldsymbol{x}\)</span>, is a bijective map from the space of
+<p><span id="thm:unlabeled-div-19" class="theorem"><strong>Theorem 3.14  </strong></span>The mapping <span class="math inline">\(A\mapsto Q_A\)</span>, where <span class="math inline">\(Q_A(\boldsymbol{x}) = \boldsymbol{x}^TA \boldsymbol{x}\)</span>, is a bijective map from the space of
 <span class="math inline">\(n\times n\)</span> symmetric matrices to the space of quadratic forms on <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 </div>
 </div>
@@ -285,7 +285,7 @@ it’s <strong><em>rank</em></strong> is the sum <span class="math inline">\(k +
           </div>
         </div>
       </div>
-<a href="tayland-polynomials-in-multiple-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taylor-polynomials-in-multiple-variables.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="classifying-critical-points-of-a-function.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

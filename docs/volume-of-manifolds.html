@@ -125,12 +125,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
-<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<li class="chapter" data-level="3.5" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Taylor polynomials in multiple variables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
-<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
-<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
-<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylors-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Taylor’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylor-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Taylor polynomials in higher dimensions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
 <ul>
@@ -226,7 +226,7 @@ will mostly cover more details about volumes of manifolds.</p>
 <p>We start with a simple formula, which allows us to extend the definition of volumes
 to <span class="math inline">\(k\)</span>-parallelograms in <span class="math inline">\(\mathbb{R}^n\)</span>.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-66" class="proposition"><strong>Proposition 3.12  (Volume of a parallelogram) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_k\)</span> be <span class="math inline">\(k\)</span> vectors in <span class="math inline">\(\mathbb{R}^k\)</span>, and let
+<p><span id="prp:unlabeled-div-70" class="proposition"><strong>Proposition 3.12  (Volume of a parallelogram) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_k\)</span> be <span class="math inline">\(k\)</span> vectors in <span class="math inline">\(\mathbb{R}^k\)</span>, and let
 <span class="math inline">\(T = [\boldsymbol{v}_1, ..., \boldsymbol{v}_k]\)</span> be the corresponding <span class="math inline">\(k\times k\)</span> square
 matrix. Then</p>
 <p><span class="math display">\[
@@ -239,7 +239,7 @@ matrix. Then</p>
 <a href="integration.html#prp:parallelogram-volume">3.10</a>, but it also allows us to <em>define</em> <span class="math inline">\(k\)</span>-dimensional
 volumes of manifolds in <span class="math inline">\(\mathbb{R}^n\)</span>, even when <span class="math inline">\(k &lt; n\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-67" class="definition"><strong>Definition 3.22  (General volumes of parallelograms) </strong></span>Let <span class="math inline">\(T = [\boldsymbol{v}_1, ... \boldsymbol{v}_k]\)</span> be an <span class="math inline">\(n\times k\)</span> matrix. Then
+<p><span id="def:unlabeled-div-71" class="definition"><strong>Definition 3.22  (General volumes of parallelograms) </strong></span>Let <span class="math inline">\(T = [\boldsymbol{v}_1, ... \boldsymbol{v}_k]\)</span> be an <span class="math inline">\(n\times k\)</span> matrix. Then
 the <strong><em><span class="math inline">\(k\)</span>-dimensional volume</em></strong> of <span class="math inline">\(P(\boldsymbol{v}_1, ..., \boldsymbol{v}_k)\)</span>
 (the parallelogram spanned by the vectors) is defined to be</p>
 <p><span class="math display">\[
@@ -256,7 +256,7 @@ will help us compute volumes. The main reason behind not using the more stricter
 version of <a href="smooth-manifolds-in-mathbbrn.html#def:parametrization-def">3.2</a> is to allow things to go wrong on sets
 of volume <span class="math inline">\(0\)</span>, which are irrelevant when computing volumes.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-68" class="definition"><strong>Definition 3.23  (Relaxed parametrizations of manifolds) </strong></span>Let <span class="math inline">\(M\subseteq\mathbb{R}^n\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold and let <span class="math inline">\(U\subset\mathbb{R}^k\)</span>
+<p><span id="def:unlabeled-div-72" class="definition"><strong>Definition 3.23  (Relaxed parametrizations of manifolds) </strong></span>Let <span class="math inline">\(M\subseteq\mathbb{R}^n\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold and let <span class="math inline">\(U\subset\mathbb{R}^k\)</span>
 be a subset with boundary of <span class="math inline">\(k\)</span>-dimensional volume <span class="math inline">\(0\)</span>. Let <span class="math inline">\(X\subset U\)</span> be such that
 <span class="math inline">\(U - X\)</span> is open. Then a continuous mapping <span class="math inline">\(\gamma:U\to\mathbb{R}^n\)</span> <strong><em>parametrizes</em></strong>
 <span class="math inline">\(M\)</span> if</p>
@@ -271,7 +271,7 @@ in <span class="math inline">\(U - X\)</span>.</li>
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-69" class="theorem"><strong>Theorem 3.45  (Existence of relaxed parametrizations) </strong></span>All manifolds can be parametrized with a relaxed parametrization.</p>
+<p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 3.45  (Existence of relaxed parametrizations) </strong></span>All manifolds can be parametrized with a relaxed parametrization.</p>
 </div>
 </div>
 <div id="defining-volumes-of-manifolds" class="section level3 hasAnchor" number="3.10.3">
@@ -292,7 +292,7 @@ volume</em></strong>.</p>
 compute values of <span class="math inline">\(k\)</span>-parallelograms spanned by the partial derivatives of <span class="math inline">\(\gamma\)</span>,
 sum them, and take the limit as the tiling becomes finer.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-70" class="theorem"><strong>Theorem 3.46  (Volume of a manifold) </strong></span>Let <span class="math inline">\(M\subset\mathbb{R}^n\)</span> be a smooth <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> a pavable
+<p><span id="thm:unlabeled-div-74" class="theorem"><strong>Theorem 3.46  (Volume of a manifold) </strong></span>Let <span class="math inline">\(M\subset\mathbb{R}^n\)</span> be a smooth <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> a pavable
 subset of <span class="math inline">\(\mathbb{R}^k\)</span>, and let <span class="math inline">\(\gamma: U\to M\)</span> be a relaxed parametrization of <span class="math inline">\(M\)</span>.
 Let <span class="math inline">\(X\)</span> be as in the definition of the relaxed parametrization. Then</p>
 <p><span class="math display">\[
@@ -303,7 +303,7 @@ Let <span class="math inline">\(X\)</span> be as in the definition of the relaxe
 </div>
 <p>Using this notion, we can also define <strong><em>integrals over manifolds w.r.t volumes</em></strong>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-71" class="definition"><strong>Definition 3.24  (Integrals over manifolds w.r.t volumes) </strong></span>Let <span class="math inline">\(M\subset \mathbb{R}^n\)</span> be a smooth <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> be a pavable
+<p><span id="def:unlabeled-div-75" class="definition"><strong>Definition 3.24  (Integrals over manifolds w.r.t volumes) </strong></span>Let <span class="math inline">\(M\subset \mathbb{R}^n\)</span> be a smooth <span class="math inline">\(k\)</span>-dimensional manifold, <span class="math inline">\(U\)</span> be a pavable
 subset of <span class="math inline">\(\mathbb{R}^k\)</span>, and <span class="math inline">\(\gamma: U\to M\)</span> be a relaxed parametrization. Let
 <span class="math inline">\(X\)</span> be as in the definition of a relaxed parametrization. Then, <span class="math inline">\(f:M\to\mathbb{R}\)</span>
 is said to be <strong><em>integrable</em></strong> over <span class="math inline">\(M\)</span> with respect to volume if the following integral
@@ -316,7 +316,7 @@ exists:</p>
 </div>
 <p>The following fact ensures that it doesn’t matter which parametrization we use:</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-72" class="proposition"><strong>Proposition 3.13  (Integrals are independent of parametrizations) </strong></span>Let <span class="math inline">\(M\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold in <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(f:M\to\mathbb{R}\)</span>
+<p><span id="prp:unlabeled-div-76" class="proposition"><strong>Proposition 3.13  (Integrals are independent of parametrizations) </strong></span>Let <span class="math inline">\(M\)</span> be a <span class="math inline">\(k\)</span>-dimensional manifold in <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(f:M\to\mathbb{R}\)</span>
 a function. Let <span class="math inline">\(U_1\)</span>, <span class="math inline">\(U_2\)</span> be subsets of <span class="math inline">\(\mathbb{R}^k\)</span>, and let <span class="math inline">\(\gamma_1: U_1\to M\)</span>,
 <span class="math inline">\(\gamma_2:U_2\to M\)</span> be two parametrizations of <span class="math inline">\(M\)</span>. Then</p>
 <p><span class="math display">\[

@@ -125,12 +125,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
-<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<li class="chapter" data-level="3.5" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Taylor polynomials in multiple variables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
-<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
-<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
-<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylors-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Taylor’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylor-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Taylor polynomials in higher dimensions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
 <ul>
@@ -230,21 +230,21 @@ div.csl-indent {
 </div>
 <p>We’ll now see some machinery for higher-dimensional functions.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-16" class="theorem"><strong>Theorem 3.16  (Critical points and critical values.) </strong></span>Let <span class="math inline">\(U\subseteq \mathbb{R}^n\)</span> be open and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a differentiable function. A <strong><em>critical point</em></strong>
+<p><span id="thm:unlabeled-div-20" class="theorem"><strong>Theorem 3.16  (Critical points and critical values.) </strong></span>Let <span class="math inline">\(U\subseteq \mathbb{R}^n\)</span> be open and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a differentiable function. A <strong><em>critical point</em></strong>
 of <span class="math inline">\(f\)</span> is a point where the derivative vanishes. The value of <span class="math inline">\(f\)</span> at a critical points is a <strong><em>critical value</em></strong>.</p>
 </div>
 <p>A simple consequence of Theorem <a href="classifying-critical-points-of-a-function.html#thm:extremaOneVariable">3.15</a> is the following high-dimensional version:</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-17" class="theorem"><strong>Theorem 3.17  </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open subset and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a differentiable function. If <span class="math inline">\(\boldsymbol{x}_0\in U\)</span>
+<p><span id="thm:unlabeled-div-21" class="theorem"><strong>Theorem 3.17  </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open subset and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a differentiable function. If <span class="math inline">\(\boldsymbol{x}_0\in U\)</span>
 is a local minimum or local maximum of <span class="math inline">\(f\)</span>, then <span class="math inline">\(Df(\boldsymbol{x}_0) = \boldsymbol{0}\)</span>.</p>
 </div>
 <div id="second-derivative-conditions" class="section level3 hasAnchor" number="3.7.1">
 <h3><span class="header-section-number">3.7.1</span> Second derivative conditions<a href="classifying-critical-points-of-a-function.html#second-derivative-conditions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Just like in one dimension, we usually look at the second derivative of a function to classify a point as being a local maximum or a local
 minimum. The situation for higher dimensions is similar, where instead we look at the quadratic form consisting of the even degree terms
-of the Tayland polynomial.</p>
+of the Taylor polynomial.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-18" class="theorem"><strong>Theorem 3.18  (Signature of a critical point) </strong></span>Let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be an open set, and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be of class
+<p><span id="thm:unlabeled-div-22" class="theorem"><strong>Theorem 3.18  (Signature of a critical point) </strong></span>Let <span class="math inline">\(U\subset \mathbb{R}^n\)</span> be an open set, and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be of class
 ^2. Let <span class="math inline">\(\boldsymbol{a}\in U\)</span> be a critical point of <span class="math inline">\(f\)</span>. The <strong><em>signature</em></strong>
 of the critical point <span class="math inline">\(\boldsymbol{a}\)</span> is the signature of the quadratic form</p>
 <p><span class="math display">\[
@@ -262,12 +262,12 @@ form <span class="math inline">\(Q_{f, \boldsymbol{a}}\)</span> is the Hessian o
 \]</span></p>
 <p>where <span class="math inline">\(H\)</span> is the Hessian of <span class="math inline">\(f\)</span> at <span class="math inline">\(\boldsymbol{a}\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-19" class="definition"><strong>Definition 3.10  </strong></span>A critical point <span class="math inline">\(\boldsymbol{a}\)</span> of <span class="math inline">\(f\)</span> is said to be <strong><em>degenerate</em></strong> or
+<p><span id="def:unlabeled-div-23" class="definition"><strong>Definition 3.10  </strong></span>A critical point <span class="math inline">\(\boldsymbol{a}\)</span> of <span class="math inline">\(f\)</span> is said to be <strong><em>degenerate</em></strong> or
 <strong><em>non-degenerate</em></strong> precisely when the quadratic form <span class="math inline">\(Q_{f, \boldsymbol{a}}\)</span>
 is degenerate or non-degenerate.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-20" class="theorem"><strong>Theorem 3.19  (Quadratic forms and extrema) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open set, <span class="math inline">\(f:U\to\mathbb{R}\)</span> be of class <span class="math inline">\(\mathscr{C}^2\)</span>,
+<p><span id="thm:unlabeled-div-24" class="theorem"><strong>Theorem 3.19  (Quadratic forms and extrema) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open set, <span class="math inline">\(f:U\to\mathbb{R}\)</span> be of class <span class="math inline">\(\mathscr{C}^2\)</span>,
 and let <span class="math inline">\(\boldsymbol{a}\in U\)</span> be a critical point of <span class="math inline">\(f\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>If the signature of <span class="math inline">\(\boldsymbol{a}\)</span> is <span class="math inline">\((n, 0)\)</span>, i.e if <span class="math inline">\(Q_{f, \boldsymbol{a}}\)</span> is
@@ -279,12 +279,12 @@ minimum replaced by local maximum.</p></li>
 </ol>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-21" class="definition"><strong>Definition 3.11  (Saddle points) </strong></span>If <span class="math inline">\(\boldsymbol{a}\)</span> is a critical point of a <span class="math inline">\(\mathscr{C}^2\)</span> function <span class="math inline">\(f\)</span>, and the
+<p><span id="def:unlabeled-div-25" class="definition"><strong>Definition 3.11  (Saddle points) </strong></span>If <span class="math inline">\(\boldsymbol{a}\)</span> is a critical point of a <span class="math inline">\(\mathscr{C}^2\)</span> function <span class="math inline">\(f\)</span>, and the
 quadratic form <span class="math inline">\(Q_{f, \boldsymbol{a}}\)</span> has signature <span class="math inline">\((k, l)\)</span> with <span class="math inline">\(k, l &gt; 0\)</span>, then
 <span class="math inline">\(\boldsymbol{a}\)</span> is said to be a <strong><em>saddle</em></strong> point.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-22" class="theorem"><strong>Theorem 3.20  (Behavior of a function near a saddle) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open set, and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a
+<p><span id="thm:unlabeled-div-26" class="theorem"><strong>Theorem 3.20  (Behavior of a function near a saddle) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^n\)</span> be an open set, and let <span class="math inline">\(f:U\to\mathbb{R}\)</span> be a
 <span class="math inline">\(\mathscr{C}^2\)</span> function. If <span class="math inline">\(f\)</span> has a saddle at <span class="math inline">\(\boldsymbol{a}\in U\)</span>, then in
 every neighborhood of <span class="math inline">\(\boldsymbol{a}\)</span> there are points <span class="math inline">\(\boldsymbol{b}\)</span> and
 <span class="math inline">\(\boldsymbol{c}\)</span> with <span class="math inline">\(f(\boldsymbol{b}) &gt; f(\boldsymbol{a})\)</span> and

@@ -125,12 +125,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
-<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<li class="chapter" data-level="3.5" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Taylor polynomials in multiple variables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
-<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
-<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
-<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylors-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Taylor’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylor-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Taylor polynomials in higher dimensions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
 <ul>
@@ -225,7 +225,7 @@ ways, so it’s better to have one coherent structure and go with it.</p>
 <div id="preliminary-definitions" class="section level3 hasAnchor" number="3.9.1">
 <h3><span class="header-section-number">3.9.1</span> Preliminary definitions<a href="integration.html#preliminary-definitions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-26" class="definition"><strong>Definition 3.13  (Support of a function) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>. Then the <strong><em>support</em></strong> of <span class="math inline">\(f\)</span> is defined as</p>
+<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 3.13  (Support of a function) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>. Then the <strong><em>support</em></strong> of <span class="math inline">\(f\)</span> is defined as</p>
 <p><span class="math display">\[
     \begin{aligned}
         \text{Supp}(f) := \overline{\left\{\boldsymbol{x}\in\mathbb{R}^n: f(\boldsymbol{x})\ne 0\right\}}
@@ -234,7 +234,7 @@ ways, so it’s better to have one coherent structure and go with it.</p>
 <p>where the bar denotes the <strong><em>closure</em></strong>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-27" class="definition"><strong>Definition 3.14  (Oscillations) </strong></span>The <strong><em>oscillation</em></strong> of a function <span class="math inline">\(f\)</span> over a set <span class="math inline">\(A\)</span>, denoted by <span class="math inline">\(\text{osc}_A(f)\)</span>,
+<p><span id="def:unlabeled-div-31" class="definition"><strong>Definition 3.14  (Oscillations) </strong></span>The <strong><em>oscillation</em></strong> of a function <span class="math inline">\(f\)</span> over a set <span class="math inline">\(A\)</span>, denoted by <span class="math inline">\(\text{osc}_A(f)\)</span>,
 is defined as</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -253,7 +253,7 @@ well-defined.</p>
 <span class="math inline">\(\mathbb{R}^n\)</span>; this is just for convenience. Infact we can use any kind of paving
 to define the integral.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-28" class="definition"><strong>Definition 3.15  (Dyadic cube) </strong></span>A <strong><em>dyadic cube</em></strong> <span class="math inline">\(C_{\boldsymbol{k}, N}\subset \mathbb{R}^n\)</span> is defined as</p>
+<p><span id="def:unlabeled-div-32" class="definition"><strong>Definition 3.15  (Dyadic cube) </strong></span>A <strong><em>dyadic cube</em></strong> <span class="math inline">\(C_{\boldsymbol{k}, N}\subset \mathbb{R}^n\)</span> is defined as</p>
 <p><span class="math display">\[
     \begin{aligned}
 C_{\boldsymbol{k}, N} := \left\{\boldsymbol{x}\in\mathbb{R}^n: \frac{k_i}{2^N}\le x_i\le \frac{k_i + 1}{2^N} \text{ for }1\le i\le n\right\}
@@ -278,7 +278,7 @@ to handle more general functions.</p>
 <h3><span class="header-section-number">3.9.3</span> Two useful integral rules<a href="integration.html#two-useful-integral-rules" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Here are two rules of integration which are quite useful in some proofs.</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-29" class="proposition"><strong>Proposition 3.4  </strong></span></p>
+<p><span id="prp:unlabeled-div-33" class="proposition"><strong>Proposition 3.4  </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p>A bounded function <span class="math inline">\(f\)</span> with bounded support is integrable if and only if both <span class="math inline">\(f^+\)</span>
 and <span class="math inline">\(f^-\)</span> are integrable.</p></li>
@@ -303,7 +303,7 @@ g(\boldsymbol{x}, \boldsymbol{y}) := f_1(\boldsymbol{x})f_2(\boldsymbol{y})
 <div id="volumes" class="section level3 hasAnchor" number="3.9.4">
 <h3><span class="header-section-number">3.9.4</span> Volumes<a href="integration.html#volumes" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="definition">
-<p><span id="def:unlabeled-div-30" class="definition"><strong>Definition 3.16  (Higher dimensional volume) </strong></span>For any set <span class="math inline">\(A\subset\mathbb{R}^n\)</span>, we define the <strong><em>volume</em></strong> of <span class="math inline">\(A\)</span> as</p>
+<p><span id="def:unlabeled-div-34" class="definition"><strong>Definition 3.16  (Higher dimensional volume) </strong></span>For any set <span class="math inline">\(A\subset\mathbb{R}^n\)</span>, we define the <strong><em>volume</em></strong> of <span class="math inline">\(A\)</span> as</p>
 <p><span class="math display">\[
     \begin{aligned}
         \text{vol}_n(A) := \int_{\mathbb{R}^n}\boldsymbol{1}_A|d^n \boldsymbol{x}|
@@ -313,7 +313,7 @@ g(\boldsymbol{x}, \boldsymbol{y}) := f_1(\boldsymbol{x})f_2(\boldsymbol{y})
 is said to be <strong><em>pavable</em></strong>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-31" class="proposition"><strong>Proposition 3.5  (Volume is invariant under translation) </strong></span>Let <span class="math inline">\(A\)</span> be any pavable subset of <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\boldsymbol{v}\in \mathbb{R}^n\)</span>
+<p><span id="prp:unlabeled-div-35" class="proposition"><strong>Proposition 3.5  (Volume is invariant under translation) </strong></span>Let <span class="math inline">\(A\)</span> be any pavable subset of <span class="math inline">\(\mathbb{R}^n\)</span> and <span class="math inline">\(\boldsymbol{v}\in \mathbb{R}^n\)</span>
 by any vector. Then, <span class="math inline">\(A + \boldsymbol{v}\)</span> is pavable, and</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -322,7 +322,7 @@ by any vector. Then, <span class="math inline">\(A + \boldsymbol{v}\)</span> is 
 \]</span></p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-32" class="proposition"><strong>Proposition 3.6  (Set with volume 0) </strong></span>A bounded set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has volume <span class="math inline">\(0\)</span> if and only if for every
+<p><span id="prp:unlabeled-div-36" class="proposition"><strong>Proposition 3.6  (Set with volume 0) </strong></span>A bounded set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has volume <span class="math inline">\(0\)</span> if and only if for every
 <span class="math inline">\(\epsilon &gt; 0\)</span> there exists some <span class="math inline">\(N\)</span> such that</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -334,7 +334,7 @@ by any vector. Then, <span class="math inline">\(A + \boldsymbol{v}\)</span> is 
 <p>Motivated by the above proposition, we can also define the notion of <strong><em><span class="math inline">\(k\)</span>-dimensional
 volume</em></strong> <span class="math inline">\(0\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, where <span class="math inline">\(k &lt; n\)</span>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-33" class="definition"><strong>Definition 3.17  (Lower dimensional volume 0) </strong></span></p>
+<p><span id="def:unlabeled-div-37" class="definition"><strong>Definition 3.17  (Lower dimensional volume 0) </strong></span></p>
 <ol style="list-style-type: decimal">
 <li><p>A bounded subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has <span class="math inline">\(k\)</span>-dimensional volume <span class="math inline">\(0\)</span> if</p>
 <p><span class="math display">\[
@@ -353,7 +353,7 @@ manifold of dimension <span class="math inline">\(m\)</span>, any closed subset 
 volume <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-34" class="proposition"><strong>Proposition 3.7  (Scaling volume) </strong></span>If <span class="math inline">\(A\subset\mathbb{R}^n\)</span> has volume and <span class="math inline">\(t\in\mathbb{R}\)</span>, then the set
+<p><span id="prp:unlabeled-div-38" class="proposition"><strong>Proposition 3.7  (Scaling volume) </strong></span>If <span class="math inline">\(A\subset\mathbb{R}^n\)</span> has volume and <span class="math inline">\(t\in\mathbb{R}\)</span>, then the set
 <span class="math inline">\(tA\)</span> has volume, and</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -365,7 +365,7 @@ volume <span class="math inline">\(0\)</span>.</p>
 <div id="what-functions-can-be-integrated" class="section level3 hasAnchor" number="3.9.5">
 <h3><span class="header-section-number">3.9.5</span> What functions can be integrated?<a href="integration.html#what-functions-can-be-integrated" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-35" class="theorem"><strong>Theorem 3.24  (Criterion for integrability) </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> is integrable if and only if it is bounded
+<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 3.24  (Criterion for integrability) </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> is integrable if and only if it is bounded
 with bounded support, and for all <span class="math inline">\(\epsilon &gt; 0\)</span>, there exists <span class="math inline">\(N\)</span> such that</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -377,7 +377,7 @@ with bounded support, and for all <span class="math inline">\(\epsilon &gt; 0\)<
 <p>As a consequence of this criterion for integrability of functions, the following facts
 about volumes can be proven:</p>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-36" class="proposition"><strong>Proposition 3.8  (Bounded part of graph of integrable function has volume 0) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be an integrable function with graph <span class="math inline">\(\Gamma(f)\)</span>, and
+<p><span id="prp:unlabeled-div-40" class="proposition"><strong>Proposition 3.8  (Bounded part of graph of integrable function has volume 0) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be an integrable function with graph <span class="math inline">\(\Gamma(f)\)</span>, and
 let <span class="math inline">\(C_0\in\mathbb{R}^n\)</span> be any dyadic cube. Then</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -386,18 +386,18 @@ let <span class="math inline">\(C_0\in\mathbb{R}^n\)</span> be any dyadic cube. 
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-37" class="theorem"><strong>Theorem 3.25  </strong></span>Any continuous function <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span> with bounded support is integrable.</p>
+<p><span id="thm:unlabeled-div-41" class="theorem"><strong>Theorem 3.25  </strong></span>Any continuous function <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span> with bounded support is integrable.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-38" class="corollary"><strong>Corollary 3.3  </strong></span>Let <span class="math inline">\(X\subset \mathbb{R}^n\)</span> be compact and let <span class="math inline">\(f:X\to\mathbb{R}\)</span> be continuous. Then
+<p><span id="cor:unlabeled-div-42" class="corollary"><strong>Corollary 3.3  </strong></span>Let <span class="math inline">\(X\subset \mathbb{R}^n\)</span> be compact and let <span class="math inline">\(f:X\to\mathbb{R}\)</span> be continuous. Then
 the graph <span class="math inline">\(\Gamma_f\subset \mathbb{R}^{n + 1}\)</span> has volume <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-39" class="theorem"><strong>Theorem 3.26  </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>, bounded with bounded support, is integrable
+<p><span id="thm:unlabeled-div-43" class="theorem"><strong>Theorem 3.26  </strong></span>A function <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>, bounded with bounded support, is integrable
 if it is continuous except on a set of volume <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-40" class="corollary"><strong>Corollary 3.4  </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be integrable, and let <span class="math inline">\(g:\mathbb{R}^n\to\mathbb{R}\)</span>
+<p><span id="cor:unlabeled-div-44" class="corollary"><strong>Corollary 3.4  </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be integrable, and let <span class="math inline">\(g:\mathbb{R}^n\to\mathbb{R}\)</span>
 be a bounded function. If <span class="math inline">\(f = g\)</span> except on a set of volume <span class="math inline">\(0\)</span>, then <span class="math inline">\(g\)</span> is integrable
 and</p>
 <p><span class="math display">\[
@@ -419,7 +419,7 @@ is a cube of the form</p>
     \end{aligned}
 \]</span></p>
 <div class="definition">
-<p><span id="def:unlabeled-div-41" class="definition"><strong>Definition 3.18  (Measure 0) </strong></span>A set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has <strong><em>measure</em></strong> <span class="math inline">\(0\)</span> if for every <span class="math inline">\(\epsilon &gt; 0\)</span>,
+<p><span id="def:unlabeled-div-45" class="definition"><strong>Definition 3.18  (Measure 0) </strong></span>A set <span class="math inline">\(X\subset \mathbb{R}^n\)</span> has <strong><em>measure</em></strong> <span class="math inline">\(0\)</span> if for every <span class="math inline">\(\epsilon &gt; 0\)</span>,
 there exists a countable sequence of open boxes <span class="math inline">\(B_i\)</span> such that</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -428,19 +428,19 @@ there exists a countable sequence of open boxes <span class="math inline">\(B_i\
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-42" class="theorem"><strong>Theorem 3.27  </strong></span>A countable union of sets of measure <span class="math inline">\(0\)</span> has measure <span class="math inline">\(0\)</span>.</p>
+<p><span id="thm:unlabeled-div-46" class="theorem"><strong>Theorem 3.27  </strong></span>A countable union of sets of measure <span class="math inline">\(0\)</span> has measure <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-43" class="corollary"><strong>Corollary 3.5  </strong></span>Let <span class="math inline">\(B_R(\boldsymbol{0})\)</span> be the ball of radius <span class="math inline">\(R\)</span> centered at the origin. If
+<p><span id="cor:unlabeled-div-47" class="corollary"><strong>Corollary 3.5  </strong></span>Let <span class="math inline">\(B_R(\boldsymbol{0})\)</span> be the ball of radius <span class="math inline">\(R\)</span> centered at the origin. If
 for all <span class="math inline">\(R\ge 0\)</span> the subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> satisfies
 <span class="math inline">\(\text{vol}_n(X\cap B_R(\boldsymbol{0})) = 0\)</span>, then <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-44" class="proposition"><strong>Proposition 3.9  </strong></span>Let <span class="math inline">\(X\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> of dimension <span class="math inline">\(k &lt; n\)</span>. Then <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>,
+<p><span id="prp:unlabeled-div-48" class="proposition"><strong>Proposition 3.9  </strong></span>Let <span class="math inline">\(X\)</span> be a subspace of <span class="math inline">\(\mathbb{R}^n\)</span> of dimension <span class="math inline">\(k &lt; n\)</span>. Then <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>,
 and any translate of <span class="math inline">\(X\)</span> has measure <span class="math inline">\(0\)</span>.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-45" class="proof"><em>Proof</em>. </span>Clearly, <span class="math inline">\(X\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold. Hence, by Theorem <a href="integration.html#thm:manifold-volumes">3.23</a>,
+<p><span id="unlabeled-div-49" class="proof"><em>Proof</em>. </span>Clearly, <span class="math inline">\(X\)</span> is a <span class="math inline">\(k\)</span>-dimensional manifold. Hence, by Theorem <a href="integration.html#thm:manifold-volumes">3.23</a>,
 the <span class="math inline">\(n\)</span>-dimensional volume of <span class="math inline">\(X\cap B_R(\boldsymbol{0})\)</span> is <span class="math inline">\(0\)</span> for all <span class="math inline">\(R\ge 0\)</span>, and
 applying the previous corollary the claim follows.</p>
 </div>
@@ -448,18 +448,18 @@ applying the previous corollary the claim follows.</p>
 <div id="integrability-of-almost-continuous-functions" class="section level3 hasAnchor" number="3.9.7">
 <h3><span class="header-section-number">3.9.7</span> Integrability of almost continuous functions<a href="integration.html#integrability-of-almost-continuous-functions" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-46" class="theorem"><strong>Theorem 3.28  (What functions are integrable) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be bounded with bounded support. Then <span class="math inline">\(f\)</span> is integrable
+<p><span id="thm:unlabeled-div-50" class="theorem"><strong>Theorem 3.28  (What functions are integrable) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be bounded with bounded support. Then <span class="math inline">\(f\)</span> is integrable
 if and only if it is continuous except on a set of measure <span class="math inline">\(0\)</span>.</p>
 </div>
 <p>As a result of this theorem, we can also prove the following intuitive fact, but often
 very useful in computations.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-47" class="theorem"><strong>Theorem 3.29  (Boundaries have volume zero) </strong></span>Let <span class="math inline">\(A\subset\mathbb{R}^n\)</span> be a set such that <span class="math inline">\(\partial A\)</span> has a well-defined
+<p><span id="thm:unlabeled-div-51" class="theorem"><strong>Theorem 3.29  (Boundaries have volume zero) </strong></span>Let <span class="math inline">\(A\subset\mathbb{R}^n\)</span> be a set such that <span class="math inline">\(\partial A\)</span> has a well-defined
 <span class="math inline">\(n\)</span>-dimensional volume. Then, <span class="math inline">\(\text{vol}_n(\partial A) = 0\)</span>, i.e the volume must
 be zero.</p>
 </div>
 <div class="proof">
-<p><span id="unlabeled-div-48" class="proof"><em>Proof</em>. </span>By definition, since <span class="math inline">\(\partial A\)</span> has a volume, the indicator
+<p><span id="unlabeled-div-52" class="proof"><em>Proof</em>. </span>By definition, since <span class="math inline">\(\partial A\)</span> has a volume, the indicator
 <span class="math inline">\(\boldsymbol{1}_{\partial A}\)</span> is integrable, i.e it is continuous almost everywhere.
 If <span class="math inline">\(S\)</span> is the set of points where <span class="math inline">\(\boldsymbol{1}_{\partial A}\)</span> is continous, we claim
 that</p>
@@ -505,7 +505,7 @@ the functions <span class="math inline">\(U(f_{\boldsymbol{x}})\)</span>, <span 
 </div>
 <p>As a corollary of this theorem, we have the following useful facts:</p>
 <div class="corollary">
-<p><span id="cor:unlabeled-div-49" class="corollary"><strong>Corollary 3.6  </strong></span>The set of <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(U(f_{\boldsymbol{x}})\ne L(f_{\boldsymbol{x}})\)</span>
+<p><span id="cor:unlabeled-div-53" class="corollary"><strong>Corollary 3.6  </strong></span>The set of <span class="math inline">\(\boldsymbol{x}\)</span> such that <span class="math inline">\(U(f_{\boldsymbol{x}})\ne L(f_{\boldsymbol{x}})\)</span>
 and the set of <span class="math inline">\(\boldsymbol{y}\)</span> such that <span class="math inline">\(U(f^\boldsymbol{y})\ne L(f^\boldsymbol{y})\)</span>
 both have measure <span class="math inline">\(0\)</span>. Thus, the set of <span class="math inline">\(\boldsymbol{x}\)</span> such that
 <span class="math inline">\(f_{\boldsymbol{x}}\)</span> is not integrable has <span class="math inline">\(n\)</span>-dimensional measure <span class="math inline">\(0\)</span>, and the set
@@ -521,7 +521,7 @@ give precise definitions of what a <strong><em>paving</em></strong> really is, a
 stating that it doesn’t matter which paving we really use to develop the theory
 of integration.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-50" class="definition"><strong>Definition 3.19  (Pavings) </strong></span>A <strong><em>paving</em></strong> of a subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> is a collection <span class="math inline">\(\mathcal{P}\)</span> of
+<p><span id="def:unlabeled-div-54" class="definition"><strong>Definition 3.19  (Pavings) </strong></span>A <strong><em>paving</em></strong> of a subset <span class="math inline">\(X\subset \mathbb{R}^n\)</span> is a collection <span class="math inline">\(\mathcal{P}\)</span> of
 bounded subsets <span class="math inline">\(P\subset X\)</span> such that the following hold:</p>
 <ol style="list-style-type: decimal">
 <li><span class="math inline">\(\bigcup_{P\in\mathcal{P}}P = X\)</span>.</li>
@@ -539,7 +539,7 @@ any paving:</p>
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-51" class="definition"><strong>Definition 3.20  (Nested Partitions) </strong></span>A sequence <span class="math inline">\(\mathcal{P}_N\)</span> of pavings of <span class="math inline">\(X\subset\mathbb{R}^n\)</span> is called a
+<p><span id="def:unlabeled-div-55" class="definition"><strong>Definition 3.20  (Nested Partitions) </strong></span>A sequence <span class="math inline">\(\mathcal{P}_N\)</span> of pavings of <span class="math inline">\(X\subset\mathbb{R}^n\)</span> is called a
 <strong><em>nested partition</em></strong> of <span class="math inline">\(X\)</span> if the following hold:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(\mathcal{P}_{N + 1}\)</span> is a <em>refinement</em> of <span class="math inline">\(\mathcal{P}_N\)</span>; i.e, every piece of
@@ -553,7 +553,7 @@ any paving:</p>
 </ol>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-52" class="theorem"><strong>Theorem 3.31  (Integrals using arbitrary pavings) </strong></span>Let <span class="math inline">\(X\subset\mathbb{R}^n\)</span> be a bounded subset, and let <span class="math inline">\(\mathcal{P}_N\)</span> be a nested
+<p><span id="thm:unlabeled-div-56" class="theorem"><strong>Theorem 3.31  (Integrals using arbitrary pavings) </strong></span>Let <span class="math inline">\(X\subset\mathbb{R}^n\)</span> be a bounded subset, and let <span class="math inline">\(\mathcal{P}_N\)</span> be a nested
 partition of <span class="math inline">\(X\)</span>.</p>
 <ol style="list-style-type: decimal">
 <li><p>If <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> is integrable, then the limits
@@ -591,7 +591,7 @@ Then for any pavable set <span class="math inline">\(A\subset\mathbb{R}^n\)</spa
 \]</span></p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-53" class="definition"><strong>Definition 3.21  (k-parallelograms) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_k\)</span> be <span class="math inline">\(k\)</span> vectors in <span class="math inline">\(\mathbb{R}^n\)</span>.
+<p><span id="def:unlabeled-div-57" class="definition"><strong>Definition 3.21  (k-parallelograms) </strong></span>Let <span class="math inline">\(\boldsymbol{v}_1, ..., \boldsymbol{v}_k\)</span> be <span class="math inline">\(k\)</span> vectors in <span class="math inline">\(\mathbb{R}^n\)</span>.
 The <strong><em><span class="math inline">\(k\)</span>-parallelogram</em></strong> spanned by these vectors is the set of all</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -615,7 +615,7 @@ The <strong><em><span class="math inline">\(k\)</span>-parallelogram</em></stron
 <p>We’ll state a more general change of variables theorem. Here’s a simpler version of the
 theorem, where we use an invertible linear transformation as our substitution.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-54" class="theorem"><strong>Theorem 3.33  (Linear change of variables) </strong></span>Let <span class="math inline">\(T:\mathbb{R}^n\to\mathbb{R}^n\)</span> be an invertible linear transformation, and let
+<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 3.33  (Linear change of variables) </strong></span>Let <span class="math inline">\(T:\mathbb{R}^n\to\mathbb{R}^n\)</span> be an invertible linear transformation, and let
 <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span> be an integrable function. Then <span class="math inline">\(f\circ T\)</span> is integrable,
 and</p>
 <p><span class="math display">\[
@@ -728,7 +728,7 @@ and is equivalent to the standard approach.</p>
 the Lebesgue integral behaves really well w.r.t limits. For the standard Riemann
 integral, <em>uniform convergence</em> is required, which is often not satisfied.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-55" class="theorem"><strong>Theorem 3.35  (Convergence for Riemann integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of integrable functions <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span>,
+<p><span id="thm:unlabeled-div-59" class="theorem"><strong>Theorem 3.35  (Convergence for Riemann integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of integrable functions <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span>,
 all with support in a fixed bal <span class="math inline">\(B\subset\mathbb{R}^n\)</span>, and converging uniformly
 to a function <span class="math inline">\(f\)</span>. Then <span class="math inline">\(f\)</span> is integrable, and</p>
 <p><span class="math display">\[
@@ -740,7 +740,7 @@ to a function <span class="math inline">\(f\)</span>. Then <span class="math inl
 <p>We also state the <strong><em>dominated convergence theorem</em></strong> for Riemann integrals, which
 requires one to assume that the limit function is itself integrable.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-56" class="theorem"><strong>Theorem 3.36  (Dominated convergence theorem for Riemann integrals) </strong></span>Let <span class="math inline">\(f_k:\mathbb{R}^n\to\mathbb{R}\)</span> be a sequence of Riemann integrable functions.
+<p><span id="thm:unlabeled-div-60" class="theorem"><strong>Theorem 3.36  (Dominated convergence theorem for Riemann integrals) </strong></span>Let <span class="math inline">\(f_k:\mathbb{R}^n\to\mathbb{R}\)</span> be a sequence of Riemann integrable functions.
 Suppose there exists <span class="math inline">\(R &gt; 0\)</span> such that all <span class="math inline">\(f_k\)</span> have their support in
 <span class="math inline">\(B_R(\boldsymbol{0})\)</span> and satisfy <span class="math inline">\(|f_k|\le R\)</span>. Let <span class="math inline">\(f:\mathbb{R}^n\to\mathbb{R}\)</span>
 be a Riemann integrable function such that
@@ -757,7 +757,7 @@ be a Riemann integrable function such that
 <p>The following theorem will be our basis of defining higher dimensional
 Lebesgue integrals.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-57" class="theorem"><strong>Theorem 3.37  (Convergence except on a set of measure 0) </strong></span>If <span class="math inline">\(f_k\)</span> is a sequence of Riemann-integrable functions on <span class="math inline">\(\mathbb{R}^n\)</span>
+<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 3.37  (Convergence except on a set of measure 0) </strong></span>If <span class="math inline">\(f_k\)</span> is a sequence of Riemann-integrable functions on <span class="math inline">\(\mathbb{R}^n\)</span>
 such that</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -768,7 +768,7 @@ such that</p>
 </div>
 <p>Motivated by this fact, we define our version of the <strong><em>Lebesgue integral</em></strong>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-58" class="theorem"><strong>Theorem 3.38  (Lebesgue integral) </strong></span>Let <span class="math inline">\((f_k)\)</span> and <span class="math inline">\((g_k)\)</span> be two sequences of Riemann integrable functions
+<p><span id="thm:unlabeled-div-62" class="theorem"><strong>Theorem 3.38  (Lebesgue integral) </strong></span>Let <span class="math inline">\((f_k)\)</span> and <span class="math inline">\((g_k)\)</span> be two sequences of Riemann integrable functions
 <span class="math inline">\(\mathbb{R}^n\to\mathbb{R}\)</span> such that</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -798,7 +798,7 @@ such that</p>
 <div id="important-properties-of-the-lebesgue-integral" class="section level4 hasAnchor" number="3.9.13.3">
 <h4><span class="header-section-number">3.9.13.3</span> Important properties of the Lebesgue integral<a href="integration.html#important-properties-of-the-lebesgue-integral" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-59" class="proposition"><strong>Proposition 3.11  </strong></span>The following hold:</p>
+<p><span id="prp:unlabeled-div-63" class="proposition"><strong>Proposition 3.11  </strong></span>The following hold:</p>
 <ol style="list-style-type: decimal">
 <li>The Lebesgue integral is linear.</li>
 <li>If <span class="math inline">\(f\)</span> is Lebesgue integrable on <span class="math inline">\(\mathbb{R}^n\)</span>, and <span class="math inline">\(g\)</span> is Riemann integrable, then
@@ -816,7 +816,7 @@ everywhere, then
 <div id="important-theorems-about-lebesgue-integrals" class="section level4 hasAnchor" number="3.9.13.4">
 <h4><span class="header-section-number">3.9.13.4</span> Important theorems about Lebesgue integrals<a href="integration.html#important-theorems-about-lebesgue-integrals" class="anchor-section" aria-label="Anchor link to header"></a></h4>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-60" class="theorem"><strong>Theorem 3.39  (A first limit theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions such that</p>
+<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 3.39  (A first limit theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions such that</p>
 <p><span class="math display">\[
     \begin{aligned}
         \sum_{k = 1}^\infty \int_{\mathbb{R}^n} |f_k(\boldsymbol{x})||d^n \boldsymbol{x}| &lt; \infty
@@ -831,7 +831,7 @@ everywhere, the function <span class="math inline">\(f\)</span> is Lebesgue inte
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-61" class="theorem"><strong>Theorem 3.40  (Monotone convergence theorem) </strong></span>Let <span class="math inline">\(0\le f_1\le f_2\le \cdots\)</span> be a sequence of Lebesgue integrable functions, where
+<p><span id="thm:unlabeled-div-65" class="theorem"><strong>Theorem 3.40  (Monotone convergence theorem) </strong></span>Let <span class="math inline">\(0\le f_1\le f_2\le \cdots\)</span> be a sequence of Lebesgue integrable functions, where
 each inequality holds almost everywhere. If</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -850,7 +850,7 @@ almost all <span class="math inline">\(\boldsymbol{x}\)</span>, the function <sp
 <span class="math inline">\(f\)</span> is not Lebesgue integrable.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-62" class="theorem"><strong>Theorem 3.41  (Dominated convergence theorem) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions that converges
+<p><span id="thm:unlabeled-div-66" class="theorem"><strong>Theorem 3.41  (Dominated convergence theorem) </strong></span>Let <span class="math inline">\((f_k)\)</span> be a sequence of Lebesgue integrable functions that converges
 pointwise almost everywhere to some function <span class="math inline">\(f\)</span>. Suppose there is some Lebesgue
 integrable function <span class="math inline">\(F:\mathbb{R}^n\to\mathbb{R}\)</span> such that
 <span class="math inline">\(|f_k(\boldsymbol{x})|\le F(\boldsymbol{x})\)</span> for almost all <span class="math inline">\(\boldsymbol{x}\)</span>. Then
@@ -862,7 +862,7 @@ integrable function <span class="math inline">\(F:\mathbb{R}^n\to\mathbb{R}\)</s
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-63" class="theorem"><strong>Theorem 3.42  (Change of variables for Lebesgue integrals) </strong></span>Let <span class="math inline">\(U, V\)</span> be open subsets of <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\boldsymbol{\Phi}:U\to V\)</span> be
+<p><span id="thm:unlabeled-div-67" class="theorem"><strong>Theorem 3.42  (Change of variables for Lebesgue integrals) </strong></span>Let <span class="math inline">\(U, V\)</span> be open subsets of <span class="math inline">\(\mathbb{R}^n\)</span>, and let <span class="math inline">\(\boldsymbol{\Phi}:U\to V\)</span> be
 bijective, of class <span class="math inline">\(\mathscr{C}^1\)</span>, with inverse of class <span class="math inline">\(\mathscr{C}^1\)</span>, such that
 both <span class="math inline">\(\boldsymbol{\Phi}\)</span> and <span class="math inline">\(\boldsymbol{\Phi}^{-1}\)</span> have Lipschitz derivatives.
 Let <span class="math inline">\(f:V\to\mathbb{R}\)</span> be defined except perhaps on a set of measure <span class="math inline">\(0\)</span>. Then <span class="math inline">\(f\)</span> is
@@ -876,7 +876,7 @@ on <span class="math inline">\(U\)</span>, and</p>
 \]</span></p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-64" class="theorem"><strong>Theorem 3.43  (Fubini's theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\times \mathbb{R}^m\to\mathbb{R}\)</span> be a Lebesgue integrable function.
+<p><span id="thm:unlabeled-div-68" class="theorem"><strong>Theorem 3.43  (Fubini's theorem for Lebesgue integrals) </strong></span>Let <span class="math inline">\(f:\mathbb{R}^n\times \mathbb{R}^m\to\mathbb{R}\)</span> be a Lebesgue integrable function.
 Then the function</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -904,7 +904,7 @@ integrable on <span class="math inline">\(\mathbb{R}^n\)</span> for almost all <
 This is usually referred to as <em>differentiating under the integral sign</em>, and there
 are many theorems related to when this is possible. We state one such theorem below.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-65" class="theorem"><strong>Theorem 3.44  (Differentiating under the integral) </strong></span>Let <span class="math inline">\(f(t, \boldsymbol{x}):\mathbb{R}^{n + 1}\to\mathbb{R}\)</span> be a function such that
+<p><span id="thm:unlabeled-div-69" class="theorem"><strong>Theorem 3.44  (Differentiating under the integral) </strong></span>Let <span class="math inline">\(f(t, \boldsymbol{x}):\mathbb{R}^{n + 1}\to\mathbb{R}\)</span> be a function such that
 for each fixed <span class="math inline">\(t\)</span>, the integral</p>
 <p><span class="math display">\[
     \begin{aligned}

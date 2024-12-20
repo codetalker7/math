@@ -125,12 +125,12 @@ div.csl-indent {
 <li class="chapter" data-level="3.3.1" data-path="tangent-spaces.html"><a href="tangent-spaces.html#computing-tangent-spaces"><i class="fa fa-check"></i><b>3.3.1</b> Computing tangent spaces</a></li>
 </ul></li>
 <li class="chapter" data-level="3.4" data-path="differentiable-maps-on-manifolds.html"><a href="differentiable-maps-on-manifolds.html"><i class="fa fa-check"></i><b>3.4</b> Differentiable maps on manifolds</a></li>
-<li class="chapter" data-level="3.5" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Tayland polynomials in multiple variables</a>
+<li class="chapter" data-level="3.5" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html"><i class="fa fa-check"></i><b>3.5</b> Taylor polynomials in multiple variables</a>
 <ul>
-<li class="chapter" data-level="3.5.1" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#taylands-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Tayland’s theorem in one variable</a></li>
-<li class="chapter" data-level="3.5.2" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
-<li class="chapter" data-level="3.5.3" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
-<li class="chapter" data-level="3.5.4" data-path="tayland-polynomials-in-multiple-variables.html"><a href="tayland-polynomials-in-multiple-variables.html#tayland-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Tayland polynomials in higher dimensions</a></li>
+<li class="chapter" data-level="3.5.1" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylors-theorem-in-one-variable"><i class="fa fa-check"></i><b>3.5.1</b> Taylor’s theorem in one variable</a></li>
+<li class="chapter" data-level="3.5.2" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#multi-exponents"><i class="fa fa-check"></i><b>3.5.2</b> Multi-exponents</a></li>
+<li class="chapter" data-level="3.5.3" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#equality-of-mixed-partials"><i class="fa fa-check"></i><b>3.5.3</b> Equality of mixed partials</a></li>
+<li class="chapter" data-level="3.5.4" data-path="taylor-polynomials-in-multiple-variables.html"><a href="taylor-polynomials-in-multiple-variables.html#taylor-polynomials-in-higher-dimensions"><i class="fa fa-check"></i><b>3.5.4</b> Taylor polynomials in higher dimensions</a></li>
 </ul></li>
 <li class="chapter" data-level="3.6" data-path="quadratic-forms.html"><a href="quadratic-forms.html"><i class="fa fa-check"></i><b>3.6</b> Quadratic Forms</a>
 <ul>
@@ -230,12 +230,12 @@ may operate on fewer than <span class="math inline">\(n\)</span> vectors (recall
 for square matrices). Forms, just like the derivative, are useful since they have
 connections to <em>signed volumes</em>.</p>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-73" class="theorem"><strong>Theorem 3.47  (k-forms) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form</em></strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(\varphi:\mathbb{R}^n\to\mathbb{R}\)</span>
+<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 3.47  (k-forms) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form</em></strong> on <span class="math inline">\(\mathbb{R}^n\)</span> is a function <span class="math inline">\(\varphi:\mathbb{R}^n\to\mathbb{R}\)</span>
 which is multilinear and <em>antisymmetric</em>, i.e switching two arguments in <span class="math inline">\(\varphi\)</span>
 switches the sign of the output.</p>
 </div>
 <div class="example">
-<p><span id="exm:unlabeled-div-74" class="example"><strong>Example 3.1  (Standard forms) </strong></span>Let <span class="math inline">\(i_1, ..., i_k\)</span> be any <span class="math inline">\(k\)</span> integers in the set <span class="math inline">\([1, n]\)</span>. We define a form
+<p><span id="exm:unlabeled-div-78" class="example"><strong>Example 3.1  (Standard forms) </strong></span>Let <span class="math inline">\(i_1, ..., i_k\)</span> be any <span class="math inline">\(k\)</span> integers in the set <span class="math inline">\([1, n]\)</span>. We define a form
 <span class="math inline">\(dx_{i_1}\land \cdots\land dx_{i_k}\)</span> which takes <span class="math inline">\(k\)</span> vectors
 <span class="math inline">\(\boldsymbol{v}_1,..., \boldsymbol{v}_k\)</span> in <span class="math inline">\(\mathbb{R}^n\)</span>, stacks these vectors
 horizontally to make an <span class="math inline">\(n\times k\)</span> matrix, and selects the <span class="math inline">\(k\)</span> rows of this matrix
@@ -267,7 +267,7 @@ a manifold, spanned by vectors of partial derivatives of a parametrization of th
 manifold. This is very similar to when we compute unsigned volumes of manifolds,
 with the only difference here being that the signed volume takes orientation into account.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-75" class="definition"><strong>Definition 3.25  (Elementary forms) </strong></span>An <strong><em>elementary <span class="math inline">\(k\)</span>-form</em></strong> is a form of type</p>
+<p><span id="def:unlabeled-div-79" class="definition"><strong>Definition 3.25  (Elementary forms) </strong></span>An <strong><em>elementary <span class="math inline">\(k\)</span>-form</em></strong> is a form of type</p>
 <p><span class="math display">\[
     \begin{aligned}
         d_{x_1}\land\cdots\land dx_{i_k}
@@ -277,11 +277,11 @@ with the only difference here being that the signed volume takes orientation int
 is the form, denoted by <span class="math inline">\(1\)</span>, which evaluated on zero vectors returns <span class="math inline">\(1\)</span>.</p>
 </div>
 <div class="definition">
-<p><span id="def:unlabeled-div-76" class="definition"><strong>Definition 3.26  (Space of forms) </strong></span>The space of <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span> is a vector space and is denoted by
+<p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 3.26  (Space of forms) </strong></span>The space of <span class="math inline">\(k\)</span>-forms on <span class="math inline">\(\mathbb{R}^n\)</span> is a vector space and is denoted by
 <span class="math inline">\(A^k_c(\mathbb{R}^n)\)</span>.</p>
 </div>
 <div class="theorem">
-<p><span id="thm:unlabeled-div-77" class="theorem"><strong>Theorem 3.48  (Elementary k-forms form a basis of the space of forms) </strong></span>The elementary <span class="math inline">\(k\)</span>-forms form a basis of <span class="math inline">\(A^k_c(\mathbb{R}^n)\)</span>. Hence, every <span class="math inline">\(k\)</span>-form
+<p><span id="thm:unlabeled-div-81" class="theorem"><strong>Theorem 3.48  (Elementary k-forms form a basis of the space of forms) </strong></span>The elementary <span class="math inline">\(k\)</span>-forms form a basis of <span class="math inline">\(A^k_c(\mathbb{R}^n)\)</span>. Hence, every <span class="math inline">\(k\)</span>-form
 <span class="math inline">\(\varphi\)</span> can be uniquely written as a linear combination</p>
 <p><span class="math display">\[
     \begin{aligned}
@@ -303,7 +303,7 @@ is the form, denoted by <span class="math inline">\(1\)</span>, which evaluated 
 arguments. The definition will justify the use of the <span class="math inline">\(\land\)</span> symbol in elementary
 forms.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-78" class="definition"><strong>Definition 3.27  (Wedge product) </strong></span>The <em>wedge product</em> of two forms <span class="math inline">\(\varphi\in A^k_c(\mathbb{R}^n)\)</span> and
+<p><span id="def:unlabeled-div-82" class="definition"><strong>Definition 3.27  (Wedge product) </strong></span>The <em>wedge product</em> of two forms <span class="math inline">\(\varphi\in A^k_c(\mathbb{R}^n)\)</span> and
 <span class="math inline">\(\omega\in A^l_c(\mathbb{R}^n)\)</span> is the element
 <span class="math inline">\(\varphi\land\omega\in A^{k + l}_c(\mathbb{R}^n)\)</span> defined by</p>
 <p><span class="math display">\[
@@ -316,7 +316,7 @@ such that <span class="math inline">\(\sigma(1) &lt; \sigma(2) \cdots &lt; \sigm
 <span class="math inline">\(\sigma(k + 1) &lt; \cdots &lt; \sigma(k + l)\)</span>.</p>
 </div>
 <div class="proposition">
-<p><span id="prp:unlabeled-div-79" class="proposition"><strong>Proposition 3.14  (Properties of wedge products) </strong></span>The wedge product satisfies the following properties:</p>
+<p><span id="prp:unlabeled-div-83" class="proposition"><strong>Proposition 3.14  (Properties of wedge products) </strong></span>The wedge product satisfies the following properties:</p>
 <ol style="list-style-type: decimal">
 <li>Distributivity, i.e <span class="math inline">\(\varphi\land (\omega_1 + \omega_2) = \varphi\land \omega_1 + \varphi\land \omega_2\)</span>.</li>
 <li>Associativity, i.e <span class="math inline">\((\varphi_1\land\varphi_2)\land \varphi_3 = \varphi_1\land (\varphi_2\land \varphi_3)\)</span>.</li>
@@ -335,7 +335,7 @@ such that <span class="math inline">\(\sigma(1) &lt; \sigma(2) \cdots &lt; \sigm
 to each point of <span class="math inline">\(U\)</span> an object of type <span class="math inline">\(x\)</span>. This is exactly what a <strong><em>form field</em></strong> is
 going to be; these fields are also called <strong><em>differential forms</em></strong>.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-80" class="definition"><strong>Definition 3.28  (Form fields) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form field</em></strong> on an open subset <span class="math inline">\(U\subset\mathbb{R}^n\)</span> is a map
+<p><span id="def:unlabeled-div-84" class="definition"><strong>Definition 3.28  (Form fields) </strong></span>A <strong><em><span class="math inline">\(k\)</span>-form field</em></strong> on an open subset <span class="math inline">\(U\subset\mathbb{R}^n\)</span> is a map
 <span class="math inline">\(\varphi:U\to A^k_c(\mathbb{R}^n)\)</span>. The space of <span class="math inline">\(k\)</span>-form fields on <span class="math inline">\(U\)</span> is denoted by
 <span class="math inline">\(A^k(U)\)</span>.</p>
 </div>
@@ -380,7 +380,7 @@ a signed integrand, helpful to perform integration with orientation.</p>
 parametrization. In this setting, the <em>orientation</em> of the manifold will be part
 of the parametrization.</p>
 <div class="definition">
-<p><span id="def:unlabeled-div-81" class="definition"><strong>Definition 3.29  (Integrating a form field over a parametrized domain) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^k\)</span> be a bounded open set with <span class="math inline">\(\text{vol}_k \partial U = 0\)</span>.
+<p><span id="def:unlabeled-div-85" class="definition"><strong>Definition 3.29  (Integrating a form field over a parametrized domain) </strong></span>Let <span class="math inline">\(U\subset\mathbb{R}^k\)</span> be a bounded open set with <span class="math inline">\(\text{vol}_k \partial U = 0\)</span>.
 Let <span class="math inline">\(\gamma: U\to\mathbb{R}^n\)</span> be a <span class="math inline">\(\mathscr{C}^1\)</span> mapping. The set <span class="math inline">\(\gamma(U)\)</span>
 is said to be a <strong><em>domain in <span class="math inline">\(\mathbb{R}^n\)</span> parametrized by <span class="math inline">\(U\)</span></em></strong>, and the pair
 <span class="math inline">\((U, \gamma)\)</span> is denoted by <span class="math inline">\([\gamma(U)]\)</span> (the pair is usually thought of as the
@@ -397,7 +397,7 @@ let <span class="math inline">\(\varphi\)</span> be a <span class="math inline">
 of the parametrization <span class="math inline">\(\gamma\)</span>.</p>
 </div>
 <div class="remark">
-<p><span id="unlabeled-div-82" class="remark"><em>Remark</em> (Parametrized domains need not be parametrizations of manifolds). </span>It should be noted that in this definition, <span class="math inline">\(\gamma\)</span> is <em>any</em> <span class="math inline">\(\mathscr{C}^1\)</span> map (and
+<p><span id="unlabeled-div-86" class="remark"><em>Remark</em> (Parametrized domains need not be parametrizations of manifolds). </span>It should be noted that in this definition, <span class="math inline">\(\gamma\)</span> is <em>any</em> <span class="math inline">\(\mathscr{C}^1\)</span> map (and
 need not satisfy the definitions of parametrizations/relaxed parametrizations of
 manifolds that we have defined).</p>
 </div>
